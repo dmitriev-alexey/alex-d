@@ -7,39 +7,39 @@ layout: default
     <a href="#" class="tooltip-test" data-original-title="Download"><img src="img/download.png"></a>
 </div>
 <div class="container well">
-    <div class="row">
-        <div class="span12">
-            <div id="photo"><img src="img/user.png" width="186px"></div>
-            <div id="data">
-                <table class="table">
-                      <tbody>
-                        <tr>
-                          <td><h3>Birth</h3></td>
-                          <td>17 August 1987</td>
-                        </tr>
-                        <tr>
-                          <td><h3>Address</h3></td>
-                          <td>Minsk, BY</td>
-                        </tr>
-                        <tr>
-                          <td><h3>Phone</h3></td>
-                          <td>+375 25 740 58 93</td>
-                        </tr>
-                        <tr>
-                          <td><h3>Mail</h3></td>
-                          <td>dmitriew.alexej@gmail.com</td>
-                        </tr>
-                      </tbody>
-                </table>
-            </div>
-            <div id="social">
-                <a href="#" class="tooltip-test" data-original-title="Facebook"><img src="img/facebook.png"></a>
-                <a href="#" class="tooltip-test" data-original-title="Google +"><img src="img/google.png"></a>
-                <a href="#" class="tooltip-test" data-original-title="Twitter"><img src="img/twitter.png"></a>
-                <a href="#" class="tooltip-test" data-original-title="Youtube"><img src="img/youtube.png"></a>
-          </div>
-        </div>
-    </div>
+	<div class="row">
+	    <div class="span12">
+	        <div id="photo"><img src="img/user.png" width="186px"></div>
+	        <div id="data">
+	            <table class="table">
+	              <tbody>
+	                <tr>
+	                  <td><h3>Birth</h3></td>
+	                  <td>17 August 1987</td>
+	                </tr>
+	                <tr>
+	                  <td><h3>Address</h3></td>
+	                  <td>Minsk, BY</td>
+	                </tr>
+	                <tr>
+	                  <td><h3>Phone</h3></td>
+	                  <td>+375 25 740 58 93</td>
+	                </tr>
+	                <tr>
+	                  <td><h3>Mail</h3></td>
+	                  <td>dmitriew.alexej@gmail.com</td>
+	                </tr>
+	              </tbody>
+	            </table>
+	        </div>
+	        <div id="social">
+	            <a href="#" class="tooltip-test" data-original-title="Facebook"><img src="img/facebook.png"></a>
+	            <a href="#" class="tooltip-test" data-original-title="Google +"><img src="img/google.png"></a>
+	            <a href="#" class="tooltip-test" data-original-title="Twitter"><img src="img/twitter.png"></a>
+	            <a href="#" class="tooltip-test" data-original-title="Youtube"><img src="img/youtube.png"></a>
+	      </div>
+	    </div>
+	</div>
 </div>
 
 <div class="container well">
