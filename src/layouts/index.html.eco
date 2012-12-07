@@ -12,24 +12,24 @@ layout: default
             <div id="photo"><img src="img/user.png" width="186px"></div>
             <div id="data">
                 <table class="table">
-                  <tbody>
-                    <tr>
-                      <td><h3>Birth</h3></td>
-                      <td>05 June 1984</td>
-                    </tr>
-                    <tr>
-                      <td><h3>Address</h3></td>
-                      <td>150 5th Avenue, NY</td>
-                    </tr>
-                    <tr>
-                      <td><h3>Phone</h3></td>
-                      <td>15 3333-8854</td>
-                    </tr>
-                    <tr>
-                      <td><h3>Mail</h3></td>
-                      <td>contato@ficticio.com</td>
-                    </tr>
-                  </tbody>
+                      <tbody>
+                        <tr>
+                          <td><h3>Birth</h3></td>
+                          <td>17 August 1987</td>
+                        </tr>
+                        <tr>
+                          <td><h3>Address</h3></td>
+                          <td>Minsk, BY</td>
+                        </tr>
+                        <tr>
+                          <td><h3>Phone</h3></td>
+                          <td>+375 25 740 58 93</td>
+                        </tr>
+                        <tr>
+                          <td><h3>Mail</h3></td>
+                          <td>dmitriew.alexej@gmail.com</td>
+                        </tr>
+                      </tbody>
                 </table>
             </div>
             <div id="social">
