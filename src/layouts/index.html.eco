@@ -33,10 +33,9 @@ layout: default
 	            </table>
 	        </div>
 	        <div id="social">
-	            <a href="#" class="tooltip-test" data-original-title="Facebook"><img src="img/facebook.png"></a>
-	            <a href="#" class="tooltip-test" data-original-title="Google +"><img src="img/google.png"></a>
-	            <a href="#" class="tooltip-test" data-original-title="Twitter"><img src="img/twitter.png"></a>
-	            <a href="#" class="tooltip-test" data-original-title="Youtube"><img src="img/youtube.png"></a>
+	            <a href="https://www.facebook.com/tut.bandit" class="tooltip-test" data-original-title="Facebook"><img src="img/facebook.png"></a>
+	            <a href="https://plus.google.com/106480329302252336303/posts" class="tooltip-test" data-original-title="Google +"><img src="img/google.png"></a>
+	            <a href="https://twitter.com/dev_software" class="tooltip-test" data-original-title="Twitter"><img src="img/twitter.png"></a>
 	      </div>
 	    </div>
 	</div>
@@ -45,7 +44,7 @@ layout: default
 <div class="container well">
     <div class="row">
         <div class="span12">
-            <h1 class="pull-right"><a href="/">Resume</a> | <a href="/portfolio">Portfolio</a> <!-- | <a href="/posts">Blog</a> --></h1>
+            <h1 class="pull-right"><a href="/">Resume</a> | <a href="/portfolio">Portfolio</a> | <a href="/docs">Download resume</a> <!-- | <a href="/posts">Blog</a> --></h1>
         </div>
     </div>
 </div>
