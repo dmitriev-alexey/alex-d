@@ -33,14 +33,19 @@ layout: default
 	            </table>
 	        </div>
 	        <div id="social">
-	            <a href="https://www.facebook.com/tut.bandit" class="tooltip-test" data-original-title="Facebook"><img src="img/facebook.png"></a>
-	            <a href="https://plus.google.com/106480329302252336303/posts" class="tooltip-test" data-original-title="Google +"><img src="img/google.png"></a>
-	            <a href="https://twitter.com/dev_software" class="tooltip-test" data-original-title="Twitter"><img src="img/twitter.png"></a>
+	            <a href="https://www.facebook.com/tut.bandit" class="tooltip-test" data-original-title="Facebook"><img src="img/ic_facebook.png"></a>
+	            <a href="https://plus.google.com/106480329302252336303/posts" class="tooltip-test" data-original-title="Google +"><img src="img/ic_google_plus.png"></a>
+	            <a href="https://twitter.com/dev_software" class="tooltip-test" data-original-title="Twitter"><img src="img/ic_twitter.png"></a>
+	            <a href="http://www.linkedin.com/profile/view?id=105130139&locale=en_US&trk=tab_pro" class="tooltip-test" data-original-title="Linkedin"><img src="img/ic_linkedin.png"></a>
+	            <a href="http://tutdmitrievalexey.moikrug.ru/" class="tooltip-test" data-original-title="Moi krug"><img src="img/ic_yandex_moi_krug.png"></a>
 	      </div>
-		<div id="social2">
-	            <a href="https://www.facebook.com/tut.bandit" class="tooltip-test" data-original-title="Facebook"><img src="img/facebook.png"></a>
-	            <a href="https://plus.google.com/106480329302252336303/posts" class="tooltip-test" data-original-title="Google +"><img src="img/google.png"></a>
-	            <a href="https://twitter.com/dev_software" class="tooltip-test" data-original-title="Twitter"><img src="img/twitter.png"></a>
+		<br/><br/>
+	        <div id="social">
+	            <a href="https://www.facebook.com/tut.bandit" class="tooltip-test" data-original-title="Facebook"><img src="img/ic_facebook.png"></a>
+	            <a href="https://plus.google.com/106480329302252336303/posts" class="tooltip-test" data-original-title="Google +"><img src="img/ic_google_plus.png"></a>
+	            <a href="https://twitter.com/dev_software" class="tooltip-test" data-original-title="Twitter"><img src="img/ic_twitter.png"></a>
+	            <a href="http://www.linkedin.com/profile/view?id=105130139&locale=en_US&trk=tab_pro" class="tooltip-test" data-original-title="Linkedin"><img src="img/ic_linkedin.png"></a>
+	            <a href="http://tutdmitrievalexey.moikrug.ru/" class="tooltip-test" data-original-title="Moi krug"><img src="img/ic_yandex_moi_krug.png"></a>
 	      </div>
 	    </div>
 	</div>
