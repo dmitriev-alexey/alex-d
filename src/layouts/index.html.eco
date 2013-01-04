@@ -49,7 +49,19 @@ layout: default
 	            <a href="http://www.free-lance.ru/users/tut_bandit/" class="tooltip-test" data-original-title="free-lance.ru +"><img src="img/ic_freelance_ru.png"></a>
 	            <a href="http://freelance.ru/users/tut_bandit/" class="tooltip-test" data-original-title="freelance.ru"><img src="img/ic_free_lance_ru.png"></a>
 	            <a href="http://freelansim.ru/freelancers/tut_bandit" class="tooltip-test" data-original-title="Freelansim.ru"><img src="img/ic_habrahabr_freelansim.png"></a>
-	      </div>
+	      	</div>
+		
+		<br/><br/>
+
+		<br/><br/>		
+		
+		<div id="social">
+
+	
+			<div id="fb-root"></div>
+
+
+		</div>
 	    </div>
 	</div>
 </div>
