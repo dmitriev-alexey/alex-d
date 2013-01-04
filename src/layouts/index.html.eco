@@ -15,19 +15,19 @@ layout: default
 	              <tbody>
 	                <tr>
 	                  <td><h3>Birth</h3></td>
-	                  <td>17 August 1987</td>
+	                  <td sytle= "padding-top: 13px;">17 August 1987</td>
 	                </tr>
 	                <tr>
 	                  <td><h3>Address</h3></td>
-	                  <td>Minsk, BY</td>
+	                  <td sytle= "padding-top: 13px;">Minsk, BY</td>
 	                </tr>
 	                <tr>
 	                  <td><h3>Phone</h3></td>
-	                  <td>+375 25 740 58 93</td>
+	                  <td sytle= "padding-top: 13px;">+375 25 740 58 93</td>
 	                </tr>
 	                <tr>
 	                  <td><h3>Mail</h3></td>
-	                  <td>dmitriew.alexej@gmail.com</td>
+	                  <td sytle= "padding-top: 13px;">dmitriew.alexej@gmail.com</td>
 	                </tr>
 	              </tbody>
 	            </table>
@@ -56,7 +56,7 @@ layout: default
 		<br/><br/>	
 		
 		<div id="social">
-			<div class='pluso pluso-theme-light pluso-multiline' style="padding:5px 0px 0 5px;">
+			<div class='pluso pluso-theme-light pluso-multiline' style="padding:5px 0px 0 5px; margin-right: -10px;">
 				<a class='pluso-facebook'></a>
 				<a class='pluso-twitter'></a>
 				<a class='pluso-google'></a>
