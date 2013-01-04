@@ -15,19 +15,19 @@ layout: default
 	              <tbody>
 	                <tr>
 	                  <td><h3>Birth</h3></td>
-	                  <td sytle="line-height:28px;">17 August 1987</td>
+	                  <td>17 August 1987</td>
 	                </tr>
 	                <tr>
 	                  <td><h3>Address</h3></td>
-	                  <td sytle="line-height:28px;">Minsk, BY</td>
+	                  <td>Minsk, BY</td>
 	                </tr>
 	                <tr>
 	                  <td><h3>Phone</h3></td>
-	                  <td sytle="pline-height:28px;">+375 25 740 58 93</td>
+	                  <td>+375 25 740 58 93</td>
 	                </tr>
 	                <tr>
 	                  <td><h3>Mail</h3></td>
-	                  <td sytle="line-height:28px;">dmitriew.alexej@gmail.com</td>
+	                  <td>dmitriew.alexej@gmail.com</td>
 	                </tr>
 	              </tbody>
 	            </table>
