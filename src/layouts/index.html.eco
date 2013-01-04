@@ -53,7 +53,15 @@ layout: default
 		
 		<br/><br/>
 
-		<br/><br/>		
+		<br/><br/>	
+		
+		<div id="social">
+			<a onclick="Share.vkontakte('URL','TITLE','IMG_PATH','DESC')"> {шарь меня полностью}</a>
+			<a onclick="Share.facebook('URL','TITLE','IMG_PATH','DESC')"> {шарь меня полностью}</a>
+			<a onclick="Share.mailru('URL','TITLE','IMG_PATH','DESC')"> {шарь меня полностью}</a>
+			<a onclick="Share.odnoklassniki('URL','DESC')"> {шарь меня полностью}</a>
+			<a onclick="Share.twitter('URL','TITLE')"> {шарь меня полностью}</a>	
+		</div>
 
 	    </div>
 	</div>
