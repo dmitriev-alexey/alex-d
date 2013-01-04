@@ -57,9 +57,6 @@ layout: default
 		
 		<div id="social">
 			<div class='pluso pluso-theme-light pluso-multiline'>
-				<div class='pluso-more-container'>
-					<a class='pluso-more' href=''></a>
-				</div>
 				<a class='pluso-facebook'></a>
 				<a class='pluso-twitter'></a>
 				<a class='pluso-google'></a>
