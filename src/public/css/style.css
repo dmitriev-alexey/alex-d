@@ -78,7 +78,7 @@ a.facebook:hover {
 	position: relative;
 	width: 80%;
 	max-width: 960px;
-	margin: 20px auto;
+	/*margin: 20px auto;*/
 }
 
 .big, .s-block, .logo, .logo:before, .list, .m-top, .m-bottom, .w-image, .w-title, .m-image, .b-list, .ava, .t-block, .block{
@@ -91,7 +91,7 @@ a.facebook:hover {
 }
 
 .small {
-	width: 90%;
+	width: 123%;
 	margin: 40px auto;
 	overflow: hidden;
 }
