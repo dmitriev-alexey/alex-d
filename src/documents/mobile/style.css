@@ -33,5 +33,5 @@ ul {
 }
 
 .big, .s-block, .logo, .logo:before, .list, .m-top, .m-bottom, .w-image, .w-title, .m-image, .b-list, .ava, .t-block, .block{
-	background: #222;
+	background: #fff;
 }
