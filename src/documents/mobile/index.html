@@ -7,17 +7,14 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 
 
-<link rel="stylesheet" type="text/css" href="styles/icons.css" /> 
+<link rel="stylesheet" type="text/css" href="icons.css" /> 
 
-<link rel="stylesheet"  type="text/css" href="themes/jq.ui.css" title="default" />
+<link rel="stylesheet"  type="text/css" href="jq.ui.css" title="default" />
 
 
-<!-- uncomment for AppMobi apps
-<script type="text/javascript" charset="utf-8" src="http://localhost:58888/_appMobi/appmobi.js"></script> 
-<script type="text/javascript" charset="utf-8" src="http://localhost:58888/_appMobi/xhr.js"></script> 	
--->
 
-<script type="text/javascript" charset="utf-8" src="./js/jq.ui.min.js"></script> 
+
+<script type="text/javascript" charset="utf-8" src="jq.ui.min.js"></script> 
 
 
 <!-- include touch.js on desktop browsers only -->
@@ -26,7 +23,7 @@
 
 if(!((window.DocumentTouch&&document instanceof DocumentTouch)||'ontouchstart' in window)){
     var script=document.createElement("script");
-    script.src="js/jq.desktopBrowsers.js";
+    script.src="jq.desktopBrowsers.js";
     var tag=$("head").append(script);
 }
 
