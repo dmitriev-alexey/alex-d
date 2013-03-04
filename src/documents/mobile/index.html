@@ -214,6 +214,80 @@ $(document).ready(function(){
 
         </div>
 		
+		<!-- jqPlugins > jQ.carousel -->
+	<div title="Carousel" class="panel" id="webcarousel"  style="overflow:hidden;">
+		<style>
+		.carousel_paging2 {
+			border-radius: 10px;
+			
+			background: #ccc;
+			width: 10px;
+			height: 10px;
+			display:inline-block;
+		}
+
+		.carousel_paging2_selected {
+			border-radius: 10px;
+			
+			background: #000;
+			width: 10px;
+			height: 10px;
+			display:inline-block;
+		}
+
+		.spacer {
+			width: 10px;
+			float: left;
+		}
+
+		.carousel_content {
+			-webkit-transform: translate3d(0, 0, 0);
+		}
+		</style>
+		<script>
+		 var carousel;
+			function init_carousel() {
+				carousel=$("#carousel").carousel({
+					pagingDiv: "carousel_dots",
+					pagingCssName: "carousel_paging2",
+					pagingCssNameSelected: "carousel_paging2_selected",
+					preventDefaults:false
+				});
+				carousel=$("#carousel2").carousel({
+					pagingDiv: "carousel_dots2",
+					pagingCssName: "carousel_paging2",
+					pagingCssNameSelected: "carousel_paging2_selected",
+					vertical:true,
+					horizontal:false,
+					glue:5 //Needs to move 5% before it starts dragging
+				});
+			}
+			window.addEventListener("load", init_carousel, false);
+		
+		</script>
+			<div id="carousel_dots" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top: 40%; z-index: 200">
+			</div>
+			<div id="carousel" style="display:block;height:50%;width:100%;">
+					<div style="background: yellow;">
+						<a href="javascript:alert('test');">
+								I'm a horizontal carousel
+							</a>
+						</div>
+					<div style="background: green;"></div>
+					<div style="background: blue;"></div>
+					<div style="background: pink;"></div>
+				</div>
+			
+			<div id="carousel2" style="display:block;height:50%;width:100%;">
+					<div style="background: yellow;">
+						<span style='color:black'>I'm a vertical carousel.  I'm using the "glue" property, so you must move me atleast 5% before I start dragging</span>
+						</div>
+					<div style="background: green;"></div>
+					<div style="background: blue;"></div>
+					<div style="background: pink;"></div>
+				</div>
+			<div id="carousel_dots2" style="text-align: center; clear: both; position: relative; top: -30%; left: 98%; z-index: 200; width: 20px;"></div>
+	</div>
 		
 
         <!-- bottom navbar.  Add additional tabs here -->
@@ -234,11 +308,12 @@ $(document).ready(function(){
 			<div class='title'>Portfolio</div>
 			<ul>
 				<li><a href="#portfolio_list"  >List projects</a></li>
+				<li><a href="#webcarousel"  >List projects</a></li>
 			</ul>
 			<div class='title'>Resume</div>
 			<ul>
 				<li><a href="#resume_list"  >List docs resume</a></li>
-				<li><a href="/doc/pdf/Dmitriev Alexey.pdf" target="_blank" class="" title="Dmitriev Alexey.pdf">Dmitriev Alexey.pdf</a></li>
+				<li><a href="/doc/pdf/Dmitriev Alexey.pdf" target="_blank" class="" title="Dmitriev Alexey.pdf">Download resume</a></li>
 			</ul>
 		</nav>
     </div>
