@@ -1,0 +1,119 @@
+
+@import url('style.css');
+
+.top{
+	overflow: hidden;
+	padding: 10px 0px;
+	margin: 0 0 30px 0;
+}
+
+.logo {
+	position: relative;
+	display: inline-block;
+	width: 640px;
+	height: 248px;
+}
+
+
+.t-block{
+	position: relative;
+	float:right;
+	right: 0;
+	width: 60%;
+	height: 248px;
+}
+
+
+.block{
+	min-height: 50px;
+	margin: 0 0 30px 0;
+}
+
+
+.wrapper{
+	overflow: hidden;
+}
+
+
+.w-block{
+	float: left;
+	width: 30%;
+	margin: 0 0 0 4%;
+	font-size: 16px;
+	line-height: 1.5em;
+}
+
+.w-block:first-child{
+	margin: 0;
+}
+
+.w-block h1{
+	text-align: center;
+}
+
+.w-image{
+	width: 80%;
+	min-height: 160px;
+	margin: 0 auto;
+}
+
+
+
+@media screen and (max-width: 800px) {
+
+		.wrap{
+			padding: 0 0 100px 0;
+		}
+
+		.t-block{
+			width: 70%;
+			bottom: 30px;
+		}
+
+		.w-block{
+			float: none;
+			overflow: hidden;
+			width: 100%;
+			margin: 0 0 50px 0;
+		}
+
+		.w-block:first-child{
+			margin: 0 0 50px 0;
+		}
+
+		.w-block h1{
+			text-align: left;
+		}
+
+		.w-first .w-image, .w-third .w-image{
+			float: left;
+			width: 160px;
+			margin: 0;
+		}
+
+		.w-second .w-image{
+			float: right;
+			width: 160px;
+			margin: 0 2% 0 0;
+		}
+
+		.w-first .text, .w-third .text{
+			margin: 0 0 0 180px
+		}
+
+		.w-second .text{
+			margin: 0 180px 0 0;
+		}
+
+    }
+
+@media screen and (max-width: 600px) {
+
+		.w-first .w-image, .w-second .w-image, .w-third .w-image{
+			display: none;
+		}
+
+		.w-first .text, .w-second .text, .w-third .text{
+			margin: 0;
+		}
+    }    
