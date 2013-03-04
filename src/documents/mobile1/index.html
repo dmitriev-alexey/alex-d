@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html><!--HTML5 doctype-->
+<html>
+<head>
+<title>jqMobi Starter</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+
+<link rel="stylesheet" type="text/css" href="/css/icons.css" /> 
+
+<link rel="stylesheet"  type="text/css" href="/js/jq.ui.css" title="default" />
+
+
+
+
+<script type="text/javascript" charset="utf-8" src="/js/jq.ui.min.js"></script> 
+
+
+<!-- include touch.js on desktop browsers only -->
+<script>
+
+
+if(!((window.DocumentTouch&&document instanceof DocumentTouch)||'ontouchstart' in window)){
+    var script=document.createElement("script");
+    script.src="/js/jq.desktopBrowsers.js";
+    var tag=$("head").append(script);
+}
+
+$(document).ready(function(){
+
+});
+
+</script>
+
+
+
+
+<script type="text/javascript">
+    /* This function runs once the page is loaded, but appMobi is not yet active */
+	var webRoot="./";
+	$.ui.autoLaunch=false;
+    $.ui.resetScrollers=false;
+    var init = function(){
+	   $.ui.backButtonText="Back";  
+	   window.setTimeout(function(){$.ui.launch();},1500);
+       //$.ui.removeFooterMenu(); This would remove the bottom nav menu
+    };
+    document.addEventListener("DOMContentLoaded",init,false);  
+	$.ui.ready(function(){console.log('ready');});
+   
+    
+	
+    /* This code is used to run as soon as appMobi activates */
+    var onDeviceReady=function(){
+		AppMobi.device.setRotateOrientation("portrait");
+        AppMobi.device.setAutoRotate(false);
+		webRoot=AppMobi.webRoot+"/";
+	    //hide splash screen
+	    AppMobi.device.hideSplashScreen();	
+		
+    };
+    document.addEventListener("appMobi.device.ready",onDeviceReady,false);    
+	
+</script>
+
+</head>
+<body>
+    <div id="jQUi">
+        <!-- this is the header div -->
+        <div id="header">
+         <a id='menubadge' onclick='jq.ui.toggleSideMenu()' style='float:right;margin-top:4px' class='menuButton'></a>
+        </div>
+
+        
+        <div id="content">
+            <!-- here is where you can add your panels -->
+            <div title='Welcome' id="main" class="panel" selected="true" >
+            Personal profile
+            </div> 
+			
+			<div title='Professional profile' id="personal_professional_profile" class="panel" selected="true" >
+            Professional profile
+            </div> 
+			
+			<div title='Work experience' id="personal_work_experience" class="panel" selected="true" >
+            Work experience
+            </div> 
+			
+			<div title='Education' id="personal_education" class="panel" selected="true" >
+            Education
+            </div> 
+			
+			<div title='Trainings' id="personal_trainings" class="panel" selected="true" >
+            Trainings
+            </div> 
+			
+			<div title='List projects' id="portfolio_list" class="panel" selected="true" >
+            List projects
+            </div>
+
+			<div title='List docs resume' id="resume_list" class="panel" selected="true" >
+            List docs resume
+            </div>
+
+        </div>
+		
+		
+
+        <!-- bottom navbar.  Add additional tabs here -->
+        <div id="navbar">
+            <a href="#main" id='navbar_home' class='icon home' >home</a>
+        </div>
+        
+        <!-- this is the default left side nav menu -->
+        <nav>
+			<div class='title'>Home</div>
+			<div class='title'>Personal profile</div>
+			<ul>
+				<li><a href="#personal_professional_profile" >Professional profile</a></li>
+				<li><a href="#personal_work_experience" >Work experience</a></li>
+				<li><a href="#personal_education"  >Education</a></li>
+				<li><a href="#personal_trainings"  >Trainings</a></li>
+			</ul>
+			<div class='title'>Portfolio</div>
+			<ul>
+				<li><a href="#portfolio_list"  >List projects</a></li>
+			</ul>
+			<div class='title'>Resume</div>
+			<ul>
+				<li><a href="#resume_list"  >List docs resume</a></li>
+				<li><a href="#resume_download_pdf"  >Download resume</a></li>
+			</ul>
+			  
+		</nav>
+    </div>
+</body>
+</html>
