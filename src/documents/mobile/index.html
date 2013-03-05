@@ -207,13 +207,13 @@ $(document).ready(function(){
 					<h3>Promwad Mobile</h3>
 					<!--<a href="javascript:alert('test');">I'm a horizontal carousel</a>-->
 					<ul>
+						<li><a href="#modal_safe_backup">Safe Backup App for Android</a></li>
 						<li><a href="#modal_tallink">Tallink(Travel app)</a></li>
+						<li><a href="#modal_shturmann">Shturmann-POI(My.POI)</a></li>
 						<li><a href="#">Safe Hide</a></li>
 						<li><a href="#">Safe Store</a></li>
 						<li><a href="#">CloudPro File Manager</a></li>
 						<li><a href="#">Bubbles(Game)</a></li>
-						<li><a href="#">Shturmann-POI(My.POI)</a></li>
-						<li><a href="#modal_safe_backup">Safe Backup App for Android</a></li>
 						<li><a href="#">Dynamic UI App for Mobile Banking</a></li>
 					</ul>
 					
@@ -293,6 +293,12 @@ $(document).ready(function(){
 					pagingCssNameSelected: "carousel_paging2_selected",
 					preventDefaults:false
 				});
+				carousel=$("#carousel_shturmann").carousel({
+					pagingDiv: "carousel_dots_shturmann",
+					pagingCssName: "carousel_paging2",
+					pagingCssNameSelected: "carousel_paging2_selected",
+					preventDefaults:false
+				});
 			}
 			window.addEventListener("load", init_carousel, false);
 		
@@ -349,6 +355,40 @@ $(document).ready(function(){
 				<a href="https://play.google.com/store/apps/details?id=com.promwad.backup" onclick="javascript:openWindow(this.href);return false;" class="button">Read more</a>
 			</p>
 		</div>
+		
+		<div title="My.POI (Shturmann-POI)" id="modal_shturmann" class="panel" selected="true" >
+			<div id="carousel_dots_shturmann" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top: 10%; z-index: 200">
+			</div>
+			<div id="carousel_shturmann" style="display:block;height:50%;width:100%;">
+					<div>
+						<img src="/img/shturmann_main.jpeg" style="width:100%">
+					</div>
+					<div>	
+						<img src="/img/shturmann_0.png" style="width:100%">	
+					</div>
+					<div>
+						<img src="/img/shturmann_1.png" style="width:100%">
+					</div>
+					<div>
+						<img src="/img/shturmann_2.png" style="width:100%">
+					</div>
+				</div>
+			
+			<p>
+				<h3>My.POI (Shturmann-POI)</h3>
+				<br>
+				Application to determine the location of the user, searching and displaying information about its objects of interest (POI - point of interests).
+				<br>
+				<a href="https://play.google.com/store/apps/details?id=com.shturmann.pois" onclick="javascript:openWindow(this.href);return false;" class="button">Read more</a>
+			</p>
+		</div>
+		
+		<img src="img/shturmann_main.jpeg" >
+                </a>
+                <div class="caption">
+                    <h5>My.POI (Shturmann-POI)</h5>
+                    <p>Application to determine the location of the user, searching and displaying information about its objects of interest (POI - point of interests).</p>
+                    <p><a href="https://play.google.com/store/apps/details?id=com.shturmann.pois"> 
 
 		
 		
