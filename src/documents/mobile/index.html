@@ -24,6 +24,11 @@
 <!-- include touch.js on desktop browsers only -->
 <script>
 
+function openWindow( url )
+{
+  window.open(url, '_blank');
+  window.focus();
+}
 
 if(!((window.DocumentTouch&&document instanceof DocumentTouch)||'ontouchstart' in window)){
     var script=document.createElement("script");
@@ -293,10 +298,13 @@ $(document).ready(function(){
 						<img src="/img/tallink_main.png" style="width:100%">
 					</div>
 					<div>	
-						<img src="/img/tallink_main.png" style="width:100%">	
+						<img src="/img/tallink_0.png" style="width:100%">	
 					</div>
 					<div>
-						<img src="/img/tallink_main.png" style="width:100%">
+						<img src="/img/tallink_1.png" style="width:100%">
+					</div>
+					<div>
+						<img src="/img/tallink_2.png" style="width:100%">
 					</div>
 				</div>
 		
@@ -307,7 +315,7 @@ $(document).ready(function(){
 				<br>
 				Book a trip on ships of Tallink and Silja Line.
 				<br>
-				<a href="https://play.google.com/store/apps/details?id=com.tallink.nemo" target="_blank" class="">Read more</a>
+				<a href="https://play.google.com/store/apps/details?id=com.tallink.nemo" onclick="javascript:openWindow(this.href);return false;" class="button">Read more</a>
 			</p>
 		</div>
 		
