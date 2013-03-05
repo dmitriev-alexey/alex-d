@@ -245,118 +245,84 @@ $(document).ready(function(){
 		<!-- modal windows -->
 		<div title="Tallink" id="modal_tallink" class="panel splashscreen" data-modal="true" data-unload="unloadedPanel" >
 			<p>
-				<img src="/img/tallink_main.png" style="width:100%">
+				
+				
+				<!-- jqPlugins > jQ.carousel -->
+				<div class="content" id="webcarousel"  style="overflow:hidden;">
+					<style>
+					.carousel_paging2 {
+						border-radius: 10px;
+						
+						background: #ccc;
+						width: 10px;
+						height: 10px;
+						display:inline-block;
+					}
+
+					.carousel_paging2_selected {
+						border-radius: 10px;
+						
+						background: #fff;
+						width: 10px;
+						height: 10px;
+						display:inline-block;
+					}
+
+					.spacer {
+						width: 10px;
+						float: left;
+					}
+
+					.carousel_content {
+						-webkit-transform: translate3d(0, 0, 0);
+					}
+					</style>
+					<script>
+					 var carousel;
+						function init_carousel() {
+							carousel=$("#carousel").carousel({
+								pagingDiv: "carousel_dots",
+								pagingCssName: "carousel_paging2",
+								pagingCssNameSelected: "carousel_paging2_selected",
+								preventDefaults:false
+							});
+							carousel=$("#carousel2").carousel({
+								pagingDiv: "carousel_dots2",
+								pagingCssName: "carousel_paging2",
+								pagingCssNameSelected: "carousel_paging2_selected",
+								vertical:true,
+								horizontal:false,
+								glue:5 //Needs to move 5% before it starts dragging
+							});
+						}
+						window.addEventListener("load", init_carousel, false);
+					
+					</script>
+						<div id="carousel_dots" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top: 90%; z-index: 200">
+						</div>
+						<div id="carousel" style="display:block;height:100%;width:100%;">
+							<div>
+								<img src="/img/tallink_main.png" style="width:100%">
+							</div>
+						
+							<div>
+								<img src="/img/tallink_main.png" style="width:100%">
+							</div>
+							
+							<div>
+								<img src="/img/tallink_main.png" style="width:100%">
+							</div>
+						</div>
+				</div>
 				
 				<h3>Tallink & Silja Line - booking</h3>
 				<br>
 				Book a trip on ships of Tallink and Silja Line.
 				<br>
-				<a href="https://play.google.com/store/apps/details?id=com.tallink.nemo" class="button">Read more</a>
+				<a href="https://play.google.com/store/apps/details?id=com.tallink.nemo" target="_blank" class="button">Read more</a>
 			</p>
 		</div>
-		<!-- jqPlugins > jQ.carousel -->
-	<div title="Carousel" class="panel" id="webcarousel"  style="overflow:hidden;">
-		<style>
-		.carousel_paging2 {
-			border-radius: 10px;
-			
-			background: #ccc;
-			width: 10px;
-			height: 10px;
-			display:inline-block;
-		}
-
-		.carousel_paging2_selected {
-			border-radius: 10px;
-			
-			background: #fff;
-			width: 10px;
-			height: 10px;
-			display:inline-block;
-		}
-
-		.spacer {
-			width: 10px;
-			float: left;
-		}
-
-		.carousel_content {
-			-webkit-transform: translate3d(0, 0, 0);
-		}
-		</style>
-		<script>
-		 var carousel;
-			function init_carousel() {
-				carousel=$("#carousel").carousel({
-					pagingDiv: "carousel_dots",
-					pagingCssName: "carousel_paging2",
-					pagingCssNameSelected: "carousel_paging2_selected",
-					preventDefaults:false
-				});
-				carousel=$("#carousel2").carousel({
-					pagingDiv: "carousel_dots2",
-					pagingCssName: "carousel_paging2",
-					pagingCssNameSelected: "carousel_paging2_selected",
-					vertical:true,
-					horizontal:false,
-					glue:5 //Needs to move 5% before it starts dragging
-				});
-			}
-			window.addEventListener("load", init_carousel, false);
 		
-		</script>
-			<div id="carousel_dots" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top: 90%; z-index: 200">
-			</div>
-			<div id="carousel" style="display:block;height:100%;width:100%;">
-					<div class="content" >
-						<h3>Promwad Mobile</h3>
-						<a href="javascript:alert('test');">I'm a horizontal carousel</a>
-						
-							<ul>
-								<li><a href="#">Tallink(Travel app)</a></li>
-								<li><a href="#">Safe Hide</a></li>
-								<li><a href="#">Safe Store</a></li>
-								<li><a href="#">CloudPro File Manager</a></li>
-								<li><a href="#">Bubbles(Game)</a></li>
-								<li><a href="#">Shturmann-POI(My.POI)</a></li>
-								<li><a href="#">Safe Backup App for Android</a></li>
-								<li><a href="#">Dynamic UI App for Mobile Banking</a></li>
-							</ul>
-						
-						<!--
-						<ul>
-							<li>
-								<a href="/doc/pdf/Dmitriev Alexey.pdf" target="_blank" class="" title="Dmitriev Alexey.pdf">Dmitriev Alexey.pdf</a>
-							</li>
-							<li>
-								<a href="/doc/word/Dmitriev Alexey.docx" target="_blank" class="" title="Dmitriev Alexey.docx">Dmitriev Alexey.docx</a>
-							</li>
-						</ul>
-						-->
-						
-					</div>
-					<div class="content" >
-						<h3>Logic-Way</h3>
-						
-						<ul>
-							<li><a href="#">Webhunter (Android, J2EE)</a></li>
-							<li><a href="#">Flexite (J2EE)</a></li>
-							<li><a href="#">Documents-Archive (J2EE)</a></li>
-						</ul>
-					</div>
-					<div class="content" >
-						<h3>EPAM Systems</h3>
-						
-						<ul>
-							<li><a href="#">Automatic system of testing (J2EE)</a></li>
-						</ul>
-					</div>
-					<!--
-					<div style="background: blue;"></div>
-					<div style="background: pink;"></div>
-					-->
-				</div>
-	</div>
 		
 
         <!-- bottom navbar.  Add additional tabs here -->
