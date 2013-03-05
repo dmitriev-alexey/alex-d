@@ -35,6 +35,12 @@ $(document).ready(function(){
 
 });
 
+function open_in_new_tab(url )
+{
+  var win=window.open(url, '_blank');
+  win.focus();
+}
+
 </script>
 
 
@@ -200,7 +206,7 @@ $(document).ready(function(){
 				
 				<p>
 					<h3>Promwad Mobile</h3>
-					<a href="javascript:alert('test');">I'm a horizontal carousel</a>
+					<!--<a href="javascript:alert('test');">I'm a horizontal carousel</a>-->
 					<ul>
 						<li><a href="#modal_tallink">Tallink(Travel app)</a></li>
 						<li><a href="#">Safe Hide</a></li>
@@ -243,7 +249,7 @@ $(document).ready(function(){
         </div>
 		
 		<!-- modal windows -->
-		<div title="Tallink" id="modal_tallink" class="panel splashscreen" data-modal="true" data-unload="unloadedPanel" >
+		<div title="Tallink" id="modal_tallink" class="panel" selected="true" >
 		
 			<style>
 		.carousel_paging2 {
@@ -295,17 +301,22 @@ $(document).ready(function(){
 							</a>
 						</div>
 					<div style="background: green;"></div>
-					<div style="background: blue;"></div>
+					<div style="background: blue;">
+					<img src="/img/tallink_main.png" style="width:100%">
+					</div>
 					<div style="background: pink;"></div>
 				</div>
 		
-			<img src="/img/tallink_main.png" style="width:100%">
+			
 			<p>
+				<!-- <img src="/img/tallink_main.png" style="width:100%"> -->
 				<h3>Tallink & Silja Line - booking</h3>
 				<br>
 				Book a trip on ships of Tallink and Silja Line.
 				<br>
-				<a href="https://play.google.com/store/apps/details?id=com.tallink.nemo" target="_blank" class="button">Read more</a>
+				<a href="javascript:open_in_new_tab('https://play.google.com/store/apps/details?id=com.tallink.nemo')" target="_blank" class="button">
+					Read more
+				</a>
 			</p>
 		</div>
 		
@@ -332,7 +343,6 @@ $(document).ready(function(){
 			<div class='title'>Portfolio</div>
 			<ul>
 				<li><a href="#portfolio_list"  >List projects</a></li>
-				<li><a href="#webcarousel"  >List projects</a></li>
 			</ul>
 			<div class='title'>Resume</div>
 			<ul>
