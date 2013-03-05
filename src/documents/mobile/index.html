@@ -245,74 +245,61 @@ $(document).ready(function(){
 		<!-- modal windows -->
 		<div title="Tallink" id="modal_tallink" class="panel splashscreen" data-modal="true" data-unload="unloadedPanel" >
 		
-			<!-- jqPlugins > jQ.carousel -->
-			<div>
-				<style>
-				.carousel_paging2 {
-					border-radius: 10px;
-					
-					background: #ccc;
-					width: 10px;
-					height: 10px;
-					display:inline-block;
-				}
+			<style>
+		.carousel_paging2 {
+			border-radius: 10px;
+			
+			background: #ccc;
+			width: 10px;
+			height: 10px;
+			display:inline-block;
+		}
 
-				.carousel_paging2_selected {
-					border-radius: 10px;
-					
-					background: #fff;
-					width: 10px;
-					height: 10px;
-					display:inline-block;
-				}
+		.carousel_paging2_selected {
+			border-radius: 10px;
+			
+			background: #fff;
+			width: 10px;
+			height: 10px;
+			display:inline-block;
+		}
 
-				.spacer {
-					width: 10px;
-					float: left;
-				}
+		.spacer {
+			width: 10px;
+			float: left;
+		}
 
-				.carousel_content {
-					-webkit-transform: translate3d(0, 0, 0);
-				}
-				</style>
-				<script>
-				 var carousel;
-					function init_carousel() {
-						carousel=$("#carousel").carousel({
-							pagingDiv: "carousel_dots",
-							pagingCssName: "carousel_paging2",
-							pagingCssNameSelected: "carousel_paging2_selected",
-							preventDefaults:false
-						});
-						carousel=$("#carousel2").carousel({
-							pagingDiv: "carousel_dots2",
-							pagingCssName: "carousel_paging2",
-							pagingCssNameSelected: "carousel_paging2_selected",
-							vertical:true,
-							horizontal:false,
-							glue:5 //Needs to move 5% before it starts dragging
-						});
-					}
-					window.addEventListener("load", init_carousel, false);
-				
-				</script>
-					<div id="carousel_dots" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top: 90%; z-index: 200">
-					</div>
-					<div id="carousel" style="display:block;height:100%;width:100%;">
-						<div>
-							<img src="/img/tallink_main.png" style="width:100%">
-						</div>
-					
-						<div>
-							<img src="/img/tallink_main.png" style="width:100%">
-						</div>
-						
-						<div>
-							<img src="/img/tallink_main.png" style="width:100%">
-						</div>
-					</div>
-			</div>
+		.carousel_content {
+			-webkit-transform: translate3d(0, 0, 0);
+		}
+		</style>
+		<script>
+		 var carousel;
+			function init_carousel() {
+				carousel=$("#carousel").carousel({
+					pagingDiv: "carousel_dots",
+					pagingCssName: "carousel_paging2",
+					pagingCssNameSelected: "carousel_paging2_selected",
+					preventDefaults:false
+				});
+			}
+			window.addEventListener("load", init_carousel, false);
 		
+		</script>
+			<div id="carousel_dots" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top: 40%; z-index: 200">
+			</div>
+			<div id="carousel" style="display:block;height:50%;width:100%;">
+					<div style="background: yellow;">
+						<a href="javascript:alert('test');">
+								I'm a horizontal carousel
+							</a>
+						</div>
+					<div style="background: green;"></div>
+					<div style="background: blue;"></div>
+					<div style="background: pink;"></div>
+				</div>
+		
+			<img src="/img/tallink_main.png" style="width:100%">
 			<p>
 				<h3>Tallink & Silja Line - booking</h3>
 				<br>
