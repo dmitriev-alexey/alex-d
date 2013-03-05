@@ -213,7 +213,7 @@ $(document).ready(function(){
 						<li><a href="#">CloudPro File Manager</a></li>
 						<li><a href="#">Bubbles(Game)</a></li>
 						<li><a href="#">Shturmann-POI(My.POI)</a></li>
-						<li><a href="#">Safe Backup App for Android</a></li>
+						<li><a href="#modal_safe_backup">Safe Backup App for Android</a></li>
 						<li><a href="#">Dynamic UI App for Mobile Banking</a></li>
 					</ul>
 					
@@ -247,7 +247,7 @@ $(document).ready(function(){
 
         </div>
 		
-		<!-- modal windows -->
+		<!-- modal blocks windows -->
 		<div title="Tallink" id="modal_tallink" class="panel" selected="true" >
 		
 			<style>
@@ -281,7 +281,13 @@ $(document).ready(function(){
 		<script>
 		 var carousel;
 			function init_carousel() {
-				carousel=$("#carousel").carousel({
+				carousel=$("#carousel_tallink").carousel({
+					pagingDiv: "carousel_dots",
+					pagingCssName: "carousel_paging2",
+					pagingCssNameSelected: "carousel_paging2_selected",
+					preventDefaults:false
+				});
+				carousel=$("#carousel_safe_backup").carousel({
 					pagingDiv: "carousel_dots",
 					pagingCssName: "carousel_paging2",
 					pagingCssNameSelected: "carousel_paging2_selected",
@@ -293,7 +299,7 @@ $(document).ready(function(){
 		</script>
 			<div id="carousel_dots" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top: 10%; z-index: 200">
 			</div>
-			<div id="carousel" style="display:block;height:50%;width:100%;">
+			<div id="carousel_tallink" style="display:block;height:50%;width:100%;">
 					<div>
 						<img src="/img/tallink_main.png" style="width:100%">
 					</div>
@@ -307,10 +313,8 @@ $(document).ready(function(){
 						<img src="/img/tallink_2.png" style="width:100%">
 					</div>
 				</div>
-		
 			
 			<p>
-				<!-- <img src="/img/tallink_main.png" style="width:100%"> -->
 				<h3>Tallink & Silja Line - booking</h3>
 				<br>
 				Book a trip on ships of Tallink and Silja Line.
@@ -319,8 +323,35 @@ $(document).ready(function(){
 			</p>
 		</div>
 		
-		
+		<div title="Safe Backup" id="modal_safe_backup" class="panel" selected="true" >
+			<div id="carousel_dots" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top: 10%; z-index: 200">
+			</div>
+			<div id="carousel_safe_backup" style="display:block;height:50%;width:100%;">
+					<div>
+						<img src="/img/safe_backup_main.jpeg" style="width:100%">
+					</div>
+					<div>	
+						<img src="/img/safe_backup_0.png" style="width:100%">	
+					</div>
+					<div>
+						<img src="/img/safe_backup_1.png" style="width:100%">
+					</div>
+					<div>
+						<img src="/img/safe_backup_2.png" style="width:100%">
+					</div>
+				</div>
+			
+			<p>
+				<h3>Safe Backup App for Android</h3>
+				<br>
+				Safe Backup for Android is an easy and friendly tool for backing up of contacts, text messages, calendars, pictures, application settings and more.
+				<br>
+				<a href="https://play.google.com/store/apps/details?id=com.promwad.backup" onclick="javascript:openWindow(this.href);return false;" class="button">Read more</a>
+			</p>
+		</div>
 
+		
+		
         <!-- bottom navbar.  Add additional tabs here -->
         <div id="navbar">
             <a href="#main" id='navbar_home' class='icon home' >Home</a>
