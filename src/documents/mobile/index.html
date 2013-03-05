@@ -207,16 +207,20 @@ $(document).ready(function(){
 					<h3>Promwad Mobile</h3>
 					<!--<a href="javascript:alert('test');">I'm a horizontal carousel</a>-->
 					<ul>
-						<li><a href="#modal_safe_backup">Safe Backup App for Android</a></li>
 						<li><a href="#modal_tallink">Tallink(Travel app)</a></li>
+						<li><a href="#modal_safe_backup">Safe Backup App</a></li>
 						<li><a href="#modal_shturmann">Shturmann-POI(My.POI)</a></li>
 						<li><a href="#modal_file_manager">CloudPro File Manager</a></li>
 						<li><a href="#modal_gim">GIM Android</a></li>
-						<li><a href="#">Safe Hide</a></li>
-						<li><a href="#">Safe Store</a></li>
+						<li><a href="#modal_safe_hide">Safe Hide</a></li>
+						<li><a href="#modal_safe_store">Safe Store</a></li>
+						<li><a href="#modal_cloudlet">CloudLet</a></li>
+						<li><a href="#modal_fortune_telling">Fortune Telling</a></li>
 						
 						<li><a href="#">Bubbles(Game)</a></li>
 						<li><a href="#">Dynamic UI App for Mobile Banking</a></li>
+						
+						
 					</ul>
 					
 					<h3>Logic-Way</h3>
@@ -313,6 +317,33 @@ $(document).ready(function(){
 					pagingCssNameSelected: "carousel_paging2_selected",
 					preventDefaults:false
 				});
+				carousel=$("#carousel_safe_hide").carousel({
+					pagingDiv: "carousel_dots_safe_hide",
+					pagingCssName: "carousel_paging2",
+					pagingCssNameSelected: "carousel_paging2_selected",
+					preventDefaults:false
+				});
+				carousel=$("#carousel_cloudlet").carousel({
+					pagingDiv: "carousel_dots_cloudlet",
+					pagingCssName: "carousel_paging2",
+					pagingCssNameSelected: "carousel_paging2_selected",
+					preventDefaults:false
+				});
+				carousel=$("#carousel_fortune_telling").carousel({
+					pagingDiv: "carousel_dots_fortune_telling",
+					pagingCssName: "carousel_paging2",
+					pagingCssNameSelected: "carousel_paging2_selected",
+					preventDefaults:false
+				});
+				carousel=$("#carousel_safe_store").carousel({
+					pagingDiv: "carousel_dots_safe_store",
+					pagingCssName: "carousel_paging2",
+					pagingCssNameSelected: "carousel_paging2_selected",
+					preventDefaults:false
+				});
+				
+				
+				
 			}
 			window.addEventListener("load", init_carousel, false);
 		
@@ -320,19 +351,19 @@ $(document).ready(function(){
 			<div id="carousel_dots_tallink" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top: 10%; z-index: 200">
 			</div>
 			<div id="carousel_tallink" style="display:block;height:50%;width:100%;">
-					<div>
-						<img src="/img/tallink_main.png" style="width:100%">
-					</div>
-					<div>	
-						<img src="/img/tallink_0.png" style="width:100%">	
-					</div>
-					<div>
-						<img src="/img/tallink_1.png" style="width:100%">
-					</div>
-					<div>
-						<img src="/img/tallink_2.png" style="width:100%">
-					</div>
+				<div>
+					<img src="/img/tallink_main.png" style="width:100%">
 				</div>
+				<div>	
+					<img src="/img/tallink_0.png" style="width:100%">	
+				</div>
+				<div>
+					<img src="/img/tallink_1.png" style="width:100%">
+				</div>
+				<div>
+					<img src="/img/tallink_2.png" style="width:100%">
+				</div>
+			</div>
 			
 			<p>
 				<h3>Tallink & Silja Line - booking</h3>
@@ -347,19 +378,19 @@ $(document).ready(function(){
 			<div id="carousel_dots_safe_backup" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top: 10%; z-index: 200">
 			</div>
 			<div id="carousel_safe_backup" style="display:block;height:50%;width:100%;">
-					<div>
-						<img src="/img/safe_backup_main.jpeg" style="width:100%">
-					</div>
-					<div>	
-						<img src="/img/safe_backup_0.png" style="width:100%">	
-					</div>
-					<div>
-						<img src="/img/safe_backup_1.png" style="width:100%">
-					</div>
-					<div>
-						<img src="/img/safe_backup_2.png" style="width:100%">
-					</div>
+				<div>
+					<img src="/img/safe_backup_main.jpeg" style="width:100%">
 				</div>
+				<div>	
+					<img src="/img/safe_backup_0.png" style="width:100%">	
+				</div>
+				<div>
+					<img src="/img/safe_backup_1.png" style="width:100%">
+				</div>
+				<div>
+					<img src="/img/safe_backup_2.png" style="width:100%">
+				</div>
+			</div>
 			
 			<p>
 				<h3>Safe Backup App for Android</h3>
@@ -374,19 +405,19 @@ $(document).ready(function(){
 			<div id="carousel_dots_shturmann" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top: 10%; z-index: 200">
 			</div>
 			<div id="carousel_shturmann" style="display:block;height:50%;width:100%;">
-					<div>
-						<img src="/img/shturmann_main.jpeg" style="width:100%">
-					</div>
-					<div>	
-						<img src="/img/shturmann_0.png" style="width:100%">	
-					</div>
-					<div>
-						<img src="/img/shturmann_1.png" style="width:100%">
-					</div>
-					<div>
-						<img src="/img/shturmann_2.png" style="width:100%">
-					</div>
+				<div>
+					<img src="/img/shturmann_main.jpeg" style="width:100%">
 				</div>
+				<div>	
+					<img src="/img/shturmann_0.png" style="width:100%">	
+				</div>
+				<div>
+					<img src="/img/shturmann_1.png" style="width:100%">
+				</div>
+				<div>
+					<img src="/img/shturmann_2.png" style="width:100%">
+				</div>
+			</div>
 			
 			<p>
 				<h3>My.POI (Shturmann-POI)</h3>
@@ -401,19 +432,19 @@ $(document).ready(function(){
 			<div id="carousel_dots_file_manager" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top: 10%; z-index: 200">
 			</div>
 			<div id="carousel_file_manager" style="display:block;height:50%;width:100%;">
-					<div>
-						<img src="/img/file_manager_main.jpeg" style="width:100%">
-					</div>
-					<div>	
-						<img src="/img/file_manager_0.jpeg" style="width:100%">	
-					</div>
-					<div>
-						<img src="/img/file_manager_1.jpeg" style="width:100%">
-					</div>
-					<div>
-						<img src="/img/file_manager_2.jpeg" style="width:100%">
-					</div>
+				<div>
+					<img src="/img/file_manager_main.jpeg" style="width:100%">
 				</div>
+				<div>	
+					<img src="/img/file_manager_0.jpeg" style="width:100%">	
+				</div>
+				<div>
+					<img src="/img/file_manager_1.jpeg" style="width:100%">
+				</div>
+				<div>
+					<img src="/img/file_manager_2.jpeg" style="width:100%">
+				</div>
+			</div>
 			
 			<p>
 				<h3>CloudPro File Manager</h3>
@@ -428,19 +459,19 @@ $(document).ready(function(){
 			<div id="carousel_dots_gim" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top: 10%; z-index: 200">
 			</div>
 			<div id="carousel_gim" style="display:block;height:50%;width:100%;">
-					<div>
-						<img src="/img/gim_main.png" style="width:100%">
-					</div>
-					<div>	
-						<img src="/img/gim_0.png" style="width:100%">	
-					</div>
-					<div>
-						<img src="/img/gim_1.png" style="width:100%">
-					</div>
-					<div>
-						<img src="/img/gim_4.png" style="width:100%">
-					</div>
+				<div>
+					<img src="/img/gim_main.png" style="width:100%">
 				</div>
+				<div>	
+					<img src="/img/gim_0.png" style="width:100%">	
+				</div>
+				<div>
+					<img src="/img/gim_1.png" style="width:100%">
+				</div>
+				<div>
+					<img src="/img/gim_4.png" style="width:100%">
+				</div>
+			</div>
 			
 			<p>
 				<h3>GIM Android</h3>
@@ -451,42 +482,97 @@ $(document).ready(function(){
 			</p>
 		</div>
 		
-		<!--
+		<div title="Safe Hide" id="modal_safe_hide" class="panel" selected="true" >
+			<div id="carousel_dots_safe_hide" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top: 10%; z-index: 200">
+			</div>
+			<div id="carousel_safe_hide" style="display:block;height:50%;width:100%;">
+				<div>
+					<img src="/img/safe_hide_main.jpeg" style="width:100%">
+				</div>
+				<div>	
+					<img src="/img/safe_hide_0.png" style="width:100%">	
+				</div>
+				<div>
+					<img src="/img/safe_hide_1.png" style="width:100%">
+				</div>
+				<div>
+					<img src="/img/safe_hide_3.png" style="width:100%">
+				</div>
+			</div>
+			
+			<p>
+				<h3>Safe Hide (Hide Data)</h3>
+				<br>
+				Application for hide private data (photos, videos, contacts, SMS, call logs).
+				<br>
+				<a href="http://www.promwadmobile.com" onclick="javascript:openWindow(this.href);return false;" class="button">Read more</a>
+			</p>
+		</div>
 		
-		<img src="img/safe_hide_main.jpeg" >
-                </a>
-                <div class="caption">
-                    <h5>Safe Hide (Hide Data)</h5>
-                    <p>Application for hide private data (photos, videos, contacts, SMS, call logs).</p>
-			<br/> <br/> <br/> <br/> <br/>
-                    <p><a href="http://www.promwadmobile.com"> 
-			<button class="btn btn-primary btn-mini">Read more</button></a></p>
+		<div title="Cloudlet" id="modal_cloudlet" class="panel" selected="true" >
+			<div id="carousel_dots_cloudlet" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top: 10%; z-index: 200">
+			</div>
+			<div id="carousel_cloudlet" style="display:block;height:50%;width:100%;">
+				<div>
+					<img src="/img/cloudlet_main.jpeg" style="width:100%">
+				</div>
+			</div>
 			
-		<img src="img/cloudlet_main.png" >
-                </a>
-                <div class="caption">
-                    <h5>Cloudlet</h5>
-                    <p>Cloudlet-online and synchronize all the links on all your devices!</p>
-                    <p><a href="https://play.google.com/store/apps/details?id=com.cloudletonline.soaplinks"> 
-			<button class="btn btn-primary btn-mini">Read more</button></a></p>
+			<p>
+				<h3>Cloudlet</h3>
+				<br>
+				Cloudlet-online and synchronize all the links on all your devices!
+				<br>
+				<a href="https://play.google.com/store/apps/details?id=com.cloudletonline.soaplinks" onclick="javascript:openWindow(this.href);return false;" class="button">Read more</a>
+			</p>
+		</div>
+		
+		<div title="Fortune Telling" id="modal_fortune_telling" class="panel" selected="true" >
+			<div id="carousel_dots_fortune_telling" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top: 10%; z-index: 200">
+			</div>
+			<div id="carousel_fortune_telling" style="display:block;height:50%;width:100%;">
+				<div>
+					<img src="/img/fortune_telling_main.png" style="width:100%">
+				</div>
+			</div>
 			
-		<img src="img/fortune_telling_main.png" >
-                </a>
-                <div class="caption">
-                    <h5>Fortune Telling</h5>
-                    <p>Twitter fortune teller - show new tweets.</p>
-			<br/>
-                    <p><a href="https://play.google.com/store/apps/details?id=by.mafiband.twittertwitsearch"> 
-			<button class="btn btn-primary btn-mini">Read more</button></a></p>
+			<p>
+				<h3>Fortune Telling</h3>
+				<br>
+				Twitter fortune teller - show new tweets.
+				<br>
+				<a href="https://play.google.com/store/apps/details?id=by.mafiband.twittertwitsearch" onclick="javascript:openWindow(this.href);return false;" class="button">Read more</a>
+			</p>
+		</div>
+		
+		<div title="Safe Store" id="modal_safe_store" class="panel" selected="true" >
+			<div id="carousel_dots_safe_store" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top: 10%; z-index: 200">
+			</div>
+			<div id="carousel_safe_store" style="display:block;height:50%;width:100%;">
+				<div>
+					<img src="/img/safe_store_main.png" style="width:100%">
+				</div>
+				<div>	
+					<img src="/img/safe_store_0.png" style="width:100%">	
+				</div>
+				<div>
+					<img src="/img/safe_store_1.png" style="width:100%">
+				</div>
+				<div>
+					<img src="/img/safe_store_2.png" style="width:100%">
+				</div>
+			</div>
 			
-		<img src="img/safe_store_main.png" >
-                </a>
-                <div class="caption">
-                    <h5>Safe Store</h5>
-                    <p>Application for hide private documents.</p>
-			<br/>
-                    <p><a href="http://www.promwadmobile.com"> 
-			<button class="btn btn-primary btn-mini">Read more</button></a></p>
+			<p>
+				<h3>Safe Store</h3>
+				<br>
+				Application for hide private documents.
+				<br>
+				<a href="http://www.promwadmobile.com" onclick="javascript:openWindow(this.href);return false;" class="button">Read more</a>
+			</p>
+		</div>
+		
+		<!--
 			
 		<img src="img/dynamic_ui_main.png" >
                 </a>
