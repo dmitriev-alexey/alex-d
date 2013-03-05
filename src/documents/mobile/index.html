@@ -210,9 +210,11 @@ $(document).ready(function(){
 						<li><a href="#modal_safe_backup">Safe Backup App for Android</a></li>
 						<li><a href="#modal_tallink">Tallink(Travel app)</a></li>
 						<li><a href="#modal_shturmann">Shturmann-POI(My.POI)</a></li>
+						<li><a href="#modal_file_manager">CloudPro File Manager</a></li>
+						<li><a href="#modal_gim">GIM Android</a></li>
 						<li><a href="#">Safe Hide</a></li>
 						<li><a href="#">Safe Store</a></li>
-						<li><a href="#">CloudPro File Manager</a></li>
+						
 						<li><a href="#">Bubbles(Game)</a></li>
 						<li><a href="#">Dynamic UI App for Mobile Banking</a></li>
 					</ul>
@@ -299,6 +301,18 @@ $(document).ready(function(){
 					pagingCssNameSelected: "carousel_paging2_selected",
 					preventDefaults:false
 				});
+				carousel=$("#carousel_file_manager").carousel({
+					pagingDiv: "carousel_dots_file_manager",
+					pagingCssName: "carousel_paging2",
+					pagingCssNameSelected: "carousel_paging2_selected",
+					preventDefaults:false
+				});
+				carousel=$("#carousel_gim").carousel({
+					pagingDiv: "carousel_dots_gim",
+					pagingCssName: "carousel_paging2",
+					pagingCssNameSelected: "carousel_paging2_selected",
+					preventDefaults:false
+				});
 			}
 			window.addEventListener("load", init_carousel, false);
 		
@@ -356,7 +370,7 @@ $(document).ready(function(){
 			</p>
 		</div>
 		
-		<div title="My.POI (Shturmann-POI)" id="modal_shturmann" class="panel" selected="true" >
+		<div title="My.POI" id="modal_shturmann" class="panel" selected="true" >
 			<div id="carousel_dots_shturmann" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top: 10%; z-index: 200">
 			</div>
 			<div id="carousel_shturmann" style="display:block;height:50%;width:100%;">
@@ -383,14 +397,114 @@ $(document).ready(function(){
 			</p>
 		</div>
 		
-		<img src="img/shturmann_main.jpeg" >
+		<div title="File Manager" id="modal_file_manager" class="panel" selected="true" >
+			<div id="carousel_dots_file_manager" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top: 10%; z-index: 200">
+			</div>
+			<div id="carousel_file_manager" style="display:block;height:50%;width:100%;">
+					<div>
+						<img src="/img/file_manager_main.jpeg" style="width:100%">
+					</div>
+					<div>	
+						<img src="/img/file_manager_0.jpeg" style="width:100%">	
+					</div>
+					<div>
+						<img src="/img/file_manager_1.jpeg" style="width:100%">
+					</div>
+					<div>
+						<img src="/img/file_manager_2.jpeg" style="width:100%">
+					</div>
+				</div>
+			
+			<p>
+				<h3>CloudPro File Manager</h3>
+				<br>
+				CloudPro File Manager - a must-have app for those who keep their stuff in the cloud. We have the key options covered: local storage, Dropbox, FTP and Windows-all for free. This is your all-in-one app for file management. Easily move files between local storage and cloud services, manage folders, sort lists and share.
+				<br>
+				<a href="https://play.google.com/store/apps/details?id=com.promwad.filemanager" onclick="javascript:openWindow(this.href);return false;" class="button">Read more</a>
+			</p>
+		</div>
+		
+		<div title="GIM Android" id="modal_gim" class="panel" selected="true" >
+			<div id="carousel_dots_gim" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top: 10%; z-index: 200">
+			</div>
+			<div id="carousel_gim" style="display:block;height:50%;width:100%;">
+					<div>
+						<img src="/img/gim_main.png" style="width:100%">
+					</div>
+					<div>	
+						<img src="/img/gim_0.png" style="width:100%">	
+					</div>
+					<div>
+						<img src="/img/gim_1.png" style="width:100%">
+					</div>
+					<div>
+						<img src="/img/gim_4.png" style="width:100%">
+					</div>
+				</div>
+			
+			<p>
+				<h3>GIM Android</h3>
+				<br>
+				The application is used for the audit of retail space. Functions create images and sound  with the description of retail space. Synchronization with dropboks and FTP.
+				<br>
+				<a href="/img/gim_all.png" onclick="javascript:openWindow(this.href);return false;" class="button">Read more</a>
+			</p>
+		</div>
+		
+		<!--
+		
+		<img src="img/safe_hide_main.jpeg" >
                 </a>
                 <div class="caption">
-                    <h5>My.POI (Shturmann-POI)</h5>
-                    <p>Application to determine the location of the user, searching and displaying information about its objects of interest (POI - point of interests).</p>
-                    <p><a href="https://play.google.com/store/apps/details?id=com.shturmann.pois"> 
-
-		
+                    <h5>Safe Hide (Hide Data)</h5>
+                    <p>Application for hide private data (photos, videos, contacts, SMS, call logs).</p>
+			<br/> <br/> <br/> <br/> <br/>
+                    <p><a href="http://www.promwadmobile.com"> 
+			<button class="btn btn-primary btn-mini">Read more</button></a></p>
+			
+		<img src="img/cloudlet_main.png" >
+                </a>
+                <div class="caption">
+                    <h5>Cloudlet</h5>
+                    <p>Cloudlet-online and synchronize all the links on all your devices!</p>
+                    <p><a href="https://play.google.com/store/apps/details?id=com.cloudletonline.soaplinks"> 
+			<button class="btn btn-primary btn-mini">Read more</button></a></p>
+			
+		<img src="img/fortune_telling_main.png" >
+                </a>
+                <div class="caption">
+                    <h5>Fortune Telling</h5>
+                    <p>Twitter fortune teller - show new tweets.</p>
+			<br/>
+                    <p><a href="https://play.google.com/store/apps/details?id=by.mafiband.twittertwitsearch"> 
+			<button class="btn btn-primary btn-mini">Read more</button></a></p>
+			
+		<img src="img/safe_store_main.png" >
+                </a>
+                <div class="caption">
+                    <h5>Safe Store</h5>
+                    <p>Application for hide private documents.</p>
+			<br/>
+                    <p><a href="http://www.promwadmobile.com"> 
+			<button class="btn btn-primary btn-mini">Read more</button></a></p>
+			
+		<img src="img/dynamic_ui_main.png" >
+                </a>
+                <div class="caption">
+                    <h5>Dynamic UI App for Mobile Banking</h5>
+                    <p>To create mobile application for mobile banking: safe and easy update of user interface for bank operations (addition of new questions in user profile, data for calculations, etc.).
+			The  team has designed a universal XML, which is displayed correctly at different mobile platforms (Android, Windows Mobile 7, iOS).</p>
+                    <p><a href="http://promwadmobile.com/portfolio/dynamic-ui-mobile-application-development-internet-banking.html"> 
+			<button class="btn btn-primary btn-mini">Read more</button></a></p>
+			
+		<img src="img/flexite_bpms.png" >
+                </a>
+                <div class="caption">
+                    <h5>Flexite</h5>
+                    <p>Optimizing and automating their business processes</p>
+                    <p><a href="http://flexite.com/produkter/produkter_eng.asp"> 
+			<button class="btn btn-primary btn-mini">Read more</button></a></p>
+		-->
 		
         <!-- bottom navbar.  Add additional tabs here -->
         <div id="navbar">
