@@ -218,15 +218,13 @@ $(document).ready(function(){
 						<li><a href="#modal_fortune_telling">Fortune Telling</a></li>
 						
 						<li><a href="#">Bubbles(Game)</a></li>
-						<li><a href="#">Dynamic UI App for Mobile Banking</a></li>
-						
-						
+						<li><a href="#modal_dynamic_ui">Dynamic UI App for Mobile Banking</a></li>
 					</ul>
 					
 					<h3>Logic-Way</h3>
 					<ul>
 						<li><a href="#">Webhunter (Android, J2EE)</a></li>
-						<li><a href="#">Flexite (J2EE)</a></li>
+						<li><a href="#modal_flexite_bpms">Flexite (J2EE)</a></li>
 						<li><a href="#">Documents-Archive (J2EE)</a></li>
 					</ul>
 					
@@ -341,8 +339,12 @@ $(document).ready(function(){
 					pagingCssNameSelected: "carousel_paging2_selected",
 					preventDefaults:false
 				});
-				
-				
+				carousel=$("#carousel_dynamic_ui").carousel({
+					pagingDiv: "carousel_dots_dynamic_ui",
+					pagingCssName: "carousel_paging2",
+					pagingCssNameSelected: "carousel_paging2_selected",
+					preventDefaults:false
+				});
 				
 			}
 			window.addEventListener("load", init_carousel, false);
@@ -514,7 +516,7 @@ $(document).ready(function(){
 			</div>
 			<div id="carousel_cloudlet" style="display:block;height:50%;width:100%;">
 				<div>
-					<img src="/img/cloudlet_main.jpeg" style="width:100%">
+					<img src="/img/cloudlet_main.png" style="width:100%">
 				</div>
 			</div>
 			
@@ -572,25 +574,41 @@ $(document).ready(function(){
 			</p>
 		</div>
 		
-		<!--
+		<div title="Dynamic UI" id="modal_dynamic_ui" class="panel" selected="true" >
+			<div id="carousel_dots_dynamic_ui" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top: 10%; z-index: 200">
+			</div>
+			<div id="carousel_dynamic_ui" style="display:block;height:50%;width:100%;">
+				<div>
+					<img src="/img/dynamic_ui_main.png" style="width:100%">
+				</div>
+				<div>	
+					<img src="/img/dynamic_ui_all.png" style="width:100%">	
+				</div>
+			</div>
 			
-		<img src="img/dynamic_ui_main.png" >
-                </a>
-                <div class="caption">
-                    <h5>Dynamic UI App for Mobile Banking</h5>
-                    <p>To create mobile application for mobile banking: safe and easy update of user interface for bank operations (addition of new questions in user profile, data for calculations, etc.).
-			The  team has designed a universal XML, which is displayed correctly at different mobile platforms (Android, Windows Mobile 7, iOS).</p>
-                    <p><a href="http://promwadmobile.com/portfolio/dynamic-ui-mobile-application-development-internet-banking.html"> 
-			<button class="btn btn-primary btn-mini">Read more</button></a></p>
+			<p>
+				<h3>Dynamic UI App for Mobile Banking</h3>
+				<br>
+				To create mobile application for mobile banking: safe and easy update of user interface for bank operations (addition of new questions in user profile, data for calculations, etc.).
+				The  team has designed a universal XML, which is displayed correctly at different mobile platforms (Android, Windows Mobile 7, iOS).
+				<br>
+				<a href="http://promwadmobile.com/portfolio/dynamic-ui-mobile-application-development-internet-banking.html" onclick="javascript:openWindow(this.href);return false;" class="button">Read more</a>
+			</p>
+		</div>
+		
+		<div title="Dynamic UI" id="modal_flexite_bpms" class="panel" selected="true" >
 			
-		<img src="img/flexite_bpms.png" >
-                </a>
-                <div class="caption">
-                    <h5>Flexite</h5>
-                    <p>Optimizing and automating their business processes</p>
-                    <p><a href="http://flexite.com/produkter/produkter_eng.asp"> 
-			<button class="btn btn-primary btn-mini">Read more</button></a></p>
-		-->
+			<img src="/img/flexite_bpms.png" style="width:100%">
+			
+			<p>
+				<h3>Dynamic UI App for Mobile Banking</h3>
+				<br>
+				Optimizing and automating their business processes.
+				<br>
+				<a href="http://flexite.com/produkter/produkter_eng.asp" onclick="javascript:openWindow(this.href);return false;" class="button">Read more</a>
+			</p>
+		</div>
+
 		
         <!-- bottom navbar.  Add additional tabs here -->
         <div id="navbar">
