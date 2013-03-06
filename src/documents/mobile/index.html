@@ -254,99 +254,9 @@ $(document).ready(function(){
 		
 		<!-- modal blocks windows -->
 		<div title="Tallink" id="modal_tallink" class="panel" selected="true" >
-		
-			<style>
-		.carousel_paging2 {
-			border-radius: 10px;
-			
-			background: #ccc;
-			width: 10px;
-			height: 10px;
-			display:inline-block;
-		}
-
-		.carousel_paging2_selected {
-			border-radius: 10px;
-			
-			background: #fff;
-			width: 10px;
-			height: 10px;
-			display:inline-block;
-		}
-
-		.spacer {
-			width: 10px;
-			float: left;
-		}
-
-		.carousel_content {
-			-webkit-transform: translate3d(0, 0, 0);
-		}
-		</style>
-		<script>
-		 var carousel;
-			function init_carousel() {
-				
-				carousel=$("#carousel_safe_backup").carousel({
-					pagingDiv: "carousel_dots_safe_backup",
-					pagingCssName: "carousel_paging2",
-					pagingCssNameSelected: "carousel_paging2_selected",
-					preventDefaults:false
-				});
-				carousel=$("#carousel_shturmann").carousel({
-					pagingDiv: "carousel_dots_shturmann",
-					pagingCssName: "carousel_paging2",
-					pagingCssNameSelected: "carousel_paging2_selected",
-					preventDefaults:false
-				});
-				carousel=$("#carousel_file_manager").carousel({
-					pagingDiv: "carousel_dots_file_manager",
-					pagingCssName: "carousel_paging2",
-					pagingCssNameSelected: "carousel_paging2_selected",
-					preventDefaults:false
-				});
-				carousel=$("#carousel_gim").carousel({
-					pagingDiv: "carousel_dots_gim",
-					pagingCssName: "carousel_paging2",
-					pagingCssNameSelected: "carousel_paging2_selected",
-					preventDefaults:false
-				});
-				carousel=$("#carousel_safe_hide").carousel({
-					pagingDiv: "carousel_dots_safe_hide",
-					pagingCssName: "carousel_paging2",
-					pagingCssNameSelected: "carousel_paging2_selected",
-					preventDefaults:false
-				});
-				carousel=$("#carousel_cloudlet").carousel({
-					pagingDiv: "carousel_dots_cloudlet",
-					pagingCssName: "carousel_paging2",
-					pagingCssNameSelected: "carousel_paging2_selected",
-					preventDefaults:false
-				});
-				carousel=$("#carousel_fortune_telling").carousel({
-					pagingDiv: "carousel_dots_fortune_telling",
-					pagingCssName: "carousel_paging2",
-					pagingCssNameSelected: "carousel_paging2_selected",
-					preventDefaults:false
-				});
-				carousel=$("#carousel_safe_store").carousel({
-					pagingDiv: "carousel_dots_safe_store",
-					pagingCssName: "carousel_paging2",
-					pagingCssNameSelected: "carousel_paging2_selected",
-					preventDefaults:false
-				});
-				carousel=$("#carousel_dynamic_ui").carousel({
-					pagingDiv: "carousel_dots_dynamic_ui",
-					pagingCssName: "carousel_paging2",
-					pagingCssNameSelected: "carousel_paging2_selected",
-					preventDefaults:false
-				});
-				
-			}
-			window.addEventListener("load", init_carousel, false);
-		
-		</script>
-			<img src="/img/tallink_main.png" style="width:290px; height: 609px;">
+			<a href="/img/tallink_all.png" target="_blank" class="" >
+                <img src="/img/tallink_main.png" style="width:290px; height: 490px;">
+			</a>
 			
 			<p>
 				<h3>Tallink & Silja Line - booking</h3>
@@ -358,22 +268,9 @@ $(document).ready(function(){
 		</div>
 		
 		<div title="Safe Backup" id="modal_safe_backup" class="panel" selected="true" >
-			<div id="carousel_dots_safe_backup" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top: 10%; z-index: 200">
-			</div>
-			<div id="carousel_safe_backup" style="display:block;height:50%;width:100%;">
-				<div>
-					<img src="/img/safe_backup_main.jpeg" style="width:100%">
-				</div>
-				<div>	
-					<img src="/img/safe_backup_0.png" style="width:100%">	
-				</div>
-				<div>
-					<img src="/img/safe_backup_1.png" style="width:100%">
-				</div>
-				<div>
-					<img src="/img/safe_backup_2.png" style="width:100%">
-				</div>
-			</div>
+			<a href="/img/safe_backup_all.png" target="_blank" class="">
+                <img src="/img/safe_backup_main.jpeg" style="width:290px; height: 490px;">
+			</a>
 			
 			<p>
 				<h3>Safe Backup App for Android</h3>
@@ -385,22 +282,9 @@ $(document).ready(function(){
 		</div>
 		
 		<div title="My.POI" id="modal_shturmann" class="panel" selected="true" >
-			<div id="carousel_dots_shturmann" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top: 10%; z-index: 200">
-			</div>
-			<div id="carousel_shturmann" style="display:block;height:50%;width:100%;">
-				<div>
-					<img src="/img/shturmann_main.jpeg" style="width:100%">
-				</div>
-				<div>	
-					<img src="/img/shturmann_0.png" style="width:100%">	
-				</div>
-				<div>
-					<img src="/img/shturmann_1.png" style="width:100%">
-				</div>
-				<div>
-					<img src="/img/shturmann_2.png" style="width:100%">
-				</div>
-			</div>
+			<a href="/img/shturmann_all.png" target="_blank" class="">
+                <img src="/img/shturmann_main.jpeg" style="width:290px; height: 490px;">
+			</a>
 			
 			<p>
 				<h3>My.POI (Shturmann-POI)</h3>
@@ -411,6 +295,7 @@ $(document).ready(function(){
 			</p>
 		</div>
 		
+		<!--
 		<div title="File Manager" id="modal_file_manager" class="panel" selected="true" >
 			<div id="carousel_dots_file_manager" style="text-align: center; margin:auto;  display : table; clear: both; position: relative; top: 10%; z-index: 200">
 			</div>
@@ -577,19 +462,19 @@ $(document).ready(function(){
 			</p>
 		</div>
 		
-		<div title="Dynamic UI" id="modal_flexite_bpms" class="panel" selected="true" >
+		<div title="Flexite" id="modal_flexite_bpms" class="panel" selected="true" >
 			
 			<img src="/img/flexite_bpms.png" style="width:100%">
 			
 			<p>
-				<h3>Dynamic UI App for Mobile Banking</h3>
+				<h3>Flexite</h3>
 				<br>
 				Optimizing and automating their business processes.
 				<br>
 				<a href="http://flexite.com/produkter/produkter_eng.asp" onclick="javascript:openWindow(this.href);return false;" class="button">Read more</a>
 			</p>
 		</div>
-
+	-->
 		
         <!-- bottom navbar.  Add additional tabs here -->
         <div id="navbar">
