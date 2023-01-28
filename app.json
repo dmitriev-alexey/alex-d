@@ -1,0 +1,7 @@
+{
+  "name": "Node.js Alexey Dmitriev Resume",
+  "description": "Alexey Dmitriev Resume",
+  "repository": "https://github.com/heroku/node-js-getting-started",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node", "express", "static"]
+}

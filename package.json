@@ -1,16 +1,30 @@
 {
-     "name": "daeq.ru",
-     "author": "Danial Bratchenko",
-     "version": "0.0.1",
-     "engines": {
-        "node": "0.8.x",
-        "npm": "1.1.x"
-     },
-     "dependencies": {
-        "docpad": "6.11.1",
-        "docpad-plugin-eco": "2.0.1",
-        "docpad-plugin-cleanurls": "2.2.5",
-        "docpad-plugin-marked": "2.1.0"
-     },
-     "main": "app.js"
+  "name": "node-js-getting-started",
+  "version": "2.2.2022",
+  "description": "My Node.js app site",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "compression": "^1.7.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-minify": "^1.0.0",
+    "express-robots-txt": "^0.4.1",
+    "serve-static": "^1.14.1"
+  },
+  "engines": {
+    "node": "12.13.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heroku/node-js-getting-started"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
 }

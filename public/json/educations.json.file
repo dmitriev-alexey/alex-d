@@ -1,0 +1,30 @@
+[
+  {
+    "name": "BSUIR",
+    "period": "2005 - 2010",
+    "logo": "images/education/education_BSUIR.jpg",
+    "position0": "MATHEMATICIAN.",
+    "position1": "SYSTEM PROGRAMMER.",
+    "desc0": "Belarusian State University of Informatics and Radio Electronics.",
+    "desc1": "Faculty of computer networks and systems /computer science."
+  },
+
+  {
+    "name": "EPAM Systems",
+    "period": "2008",
+    "logo": "images/education/education_java.jpg",
+    "position0": "Certificate",
+    "position1": "J2SE/J2EE Java Developer",
+    "desc0": "2008 - Java Developer, EPAM System, Certificate of Completion of courses and their graduation."
+  },
+
+  {
+    "name": "EPAM Systems",
+    "period": "2007",
+    "logo": "images/education/education_java.jpg",
+    "position0": "Certificate",
+    "position1": "(java programming, java technologies)",
+    "desc0": "2007 - EPAM Systems Certificate (java programming, java technologies)."
+  }
+
+]

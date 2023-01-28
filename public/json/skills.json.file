@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Android",
+    "level": "90%"
+  },
+  {
+    "name": "IOS",
+    "level": "30%"
+  },
+  {
+    "name": "J2EE",
+    "level": "40%"
+  },
+  {
+    "name": "Java",
+    "level": "75%"
+  },
+  {
+    "name": "Kotlin",
+    "level": "85%"
+  },
+  {
+    "name": "JavaScript",
+    "level": "50%"
+  },
+  {
+    "name": "Node.JS",
+    "level": "40%"
+  },
+  {
+    "name": "Wordpress",
+    "level": "25%"
+  },
+  {
+    "name": "HTML",
+    "level": "50%"
+  },
+  {
+    "name": "CSS",
+    "level": "35%"
+  },
+  {
+    "name": "Xamarin",
+    "level": "30%"
+  },
+  {
+    "name": "LibGDX",
+    "level": "25%"
+  },
+  {
+    "name": "Swift",
+    "level": "40%"
+  },
+  {
+    "name": "C/C++",
+    "level": "30%"
+  }
+
+]

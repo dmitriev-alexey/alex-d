@@ -1,0 +1,4 @@
+﻿User-agent: *
+Allow: /
+Sitemap: http://alex-d.herokuapp.com/sitemap.xml
+Host : alex-d.herokuapp.com

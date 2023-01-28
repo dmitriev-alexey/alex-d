@@ -1,0 +1,67 @@
+[
+  {
+    "name": "All",
+    "data_target": "*",
+    "active" : true
+  },
+  {
+    "name": "Hardware",
+    "data_target": ".category-1",
+    "active" : false
+  },
+  {
+    "name": "Clients",
+    "data_target": ".category-2",
+    "active" : false
+  },
+  {
+    "name": "Utils",
+    "data_target": ".category-3",
+    "active" : false
+  },
+  {
+    "name": "Multimedia",
+    "data_target": ".category-4",
+    "active" : false
+  },
+  {
+    "name": "Medical",
+    "data_target": ".category-5",
+    "active" : false
+  },
+  {
+    "name": "Games",
+    "data_target": ".category-6",
+    "active" : false
+  },
+  {
+    "name": "Education",
+    "data_target": ".category-8",
+    "active" : false
+  },
+  {
+    "name": "Others",
+    "data_target": ".category-7",
+    "active" : false
+  },
+  {
+    "name": "Android",
+    "data_target": ".category-20",
+    "active" : false
+  },
+  {
+    "name": "iOS",
+    "data_target": ".category-30",
+    "active" : false
+  },
+  {
+    "name": "Web",
+    "data_target": ".category-40",
+    "active" : false
+  },
+  {
+    "name": "Bots",
+    "data_target": ".category-50",
+    "active" : false
+  }
+]

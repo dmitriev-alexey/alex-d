@@ -1,0 +1,43 @@
+#!/bin/bash
+
+echo start my script!
+
+# get current directory
+curDir=$(pwd)
+# divider
+IFS=$'\n'
+
+echo $curDir
+
+for FILE in $curDir/*
+do
+
+if [ -d "$FILE" ]
+then
+
+echo "$FILE is a directory"
+
+elif [ -f "$FILE" ]
+then
+
+echo "$FILE is a file"
+#convert files in webp like cwebp -q 75 -alpha_q 1 sochi_all.jpg -o sochi_all.web
+
+
+NAME=$(echo "$FILE" | sed 's/\.[^.]*$//')
+EXTENSION=$(echo "$FILE" | sed 's/^.*\.//')
+
+echo $NAME
+echo $EXTENSION
+
+basename $NAME
+echo ${NAME##*/}
+
+cwebp -q 75 -alpha_q 1 $FILE -o ${curDir}/web/${NAME##*/}.web
+
+fi
+done
+
+echo end my script!
+
+

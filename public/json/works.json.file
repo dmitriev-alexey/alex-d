@@ -1,0 +1,769 @@
+[
+  {
+    "name": "AIBY",
+    "type": "FULL-TIME",
+    "period": "03.2021 - Present day",
+    "position": "Senior Software Engineer",
+    "logo": "images/work_logo/work_logo_aiby_inc.jpg",
+    "main_specialization": "The main specialization and focus: Android.",
+    "primary_functions": "Primary functions: Design and implementation of it-products.",
+    "projects": [
+      {
+        "enable": true,
+        "name": "• NatureID - Plant Identification",
+        "title": "NatureID - Plant Identification",
+        "content": "Plant Identification.",
+        "image_main": "images/projects/nature_id_main.jpg",
+        "demo_link": "https://play.google.com/store/apps/details?id=plant.identification.flower.tree.leaf.identifier.identify.cat.dog.breed.nature",
+        "image_all": "images/projects/nature_id_all.jpg",
+        "category": [
+          "category-3",
+          "category-8",
+          "category-20"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "VERAXEN",
+    "type": "FULL-TIME",
+    "period": "02.2020 - 02.2021",
+    "position": "Senior Software Engineer",
+    "logo": "images/work_logo/work_logo_veraxen.jpg",
+    "main_specialization": "The main specialization and focus: Android.",
+    "primary_functions": "Primary functions: Design and implementation of it-products.",
+    "projects": [
+      {
+        "enable": true,
+        "name": "• Jigsaw Puzzles Collection HD",
+        "title": "Jigsaw Puzzles Collection HD",
+        "content": "Popular anti-stress puzzles game.",
+        "image_main": "images/projects/jigssaw_puzzles_main.jpg",
+        "demo_link": "https://play.google.com/store/apps/details?id=com.veraxen.jigsawpuzzlescollectionhd",
+        "image_all": "images/projects/jigssaw_puzzles_all.jpg",
+        "category": [
+          "category-6",
+          "category-20"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Color by Number Oil Painting",
+        "title": "Color by Number Oil Painting",
+        "content": "Popular anti-stress art activity game.",
+        "image_main": "images/projects/oil_painting_main.jpg",
+        "demo_link": "https://play.google.com/store/apps/details?id=com.veraxen.colorbynumber.oilpainting",
+        "image_all": "images/projects/oil_painting_all.jpg",
+        "category": [
+          "category-6",
+          "category-20"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "SYNESIS",
+    "type": "FULL-TIME",
+    "period": "01.2017 - 02.2020",
+    "position": "Lead Software Engineer",
+    "logo": "images/work_logo/work_logo_synesis.jpg",
+    "main_specialization": "The main specialization and focus: Android, iOS. Designing and building web-services.",
+    "primary_functions": "Primary functions: Communication with the customer, design and implementation of it-products, the management team of developers.",
+    "projects": [
+      {
+        "enable": true,
+        "name": "• Talk to You / Teletype / Frisbee",
+        "title": "Talk to You / Teletype / Frisbee",
+        "content": "State-of-the-art instant messaging - secure, fast, and available on any device.",
+        "image_main": "images/projects/teletype_main.jpg",
+        "demo_link": "https://play.google.com/store/apps/details?id=com.synesis.sport.msg.public",
+        "image_all": "images/projects/teletype_all.jpg",
+        "category": [
+          "category-2",
+          "category-20"
+        ],
+        "other_links": [
+          "https://play.google.com/store/apps/details?id=com.synesis.sport.msg.public",
+          "https://play.google.com/store/apps/details?id=com.synesis.frisbee"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• ChatEG / Synesis IM",
+        "title": "ChatEG / Synesis IM (Synesis)",
+        "content": "ChatEG is a platform for instant messaging. State-of-the-art messenger in your private cloud featuring private and public channels, media and file messages, rich widgets, and built-in chatbots. All Slack-chat features.",
+        "image_main": "images/projects/chat_eg_main.jpg",
+        "demo_link": "https://play.google.com/store/apps/details?id=com.synesis.group.im",
+        "image_all": "images/projects/chat_eg_all.jpg",
+        "category": [
+          "category-2",
+          "category-20"
+        ],
+        "other_links": [
+          "https://play.google.com/store/apps/details?id=com.synesis.group.im",
+          "https://www.youtube.com/watch?v=YVYQ3muaFug&list=PLvByCTTz1YEt4ni1y7uEaaz9mLqmmUSjk&index=10"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Xe - 136 Logistic",
+        "title": "Xe-136 Logistics (Synesis)",
+        "content": "Cloud platform for online ordering and logistics management via portable devices based on chat bots.",
+        "demo_link": "https://apkpure.com/136xe/com.synesis.android.logistic",
+        "image_main": "images/projects/136Xe_main.jpg",
+        "image_all": "images/projects/136Xe_all.jpg",
+        "category": [
+          "category-2",
+          "category-20"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• National Messenger gem4me.com",
+        "title": "National Messenger gem4me.com (Synesis)",
+        "content": "National Messenger http://gem4me.com (Synesis)",
+        "demo_link": "https://play.google.com/store/apps/details?id=com.gemtechnologies.gem4me",
+        "image_main": "images/projects/gem4me_main.jpg",
+        "image_all": "images/projects/gem4me_all.jpg",
+        "category": [
+          "category-2",
+          "category-20"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "VIALYX",
+    "type": "PART-TIME-HOBBY",
+    "period": "11.2017 - Present day",
+    "position": "Lead Software Engineer",
+    "logo": "images/work_logo/work_logo_vialyx.jpg",
+    "main_specialization": "The main specialization and focus: Designing and building Android apps and web-services.",
+    "primary_functions": "Primary functions: Implementation of it-products, the management team of developers.",
+    "projects": [
+      {
+        "enable": true,
+        "name": "• Belarus Customs Status (App, Webservices, Bots)",
+        "title": "Queues Belarus Customs (Vialyx)",
+        "content": "Application for tracking the status of the queues of the border of the Republic of Belarus. http://vialyx.com",
+        "demo_link": "https://play.google.com/store/apps/details?id=com.vialyx.queuesatborders",
+        "image_main": "images/projects/bel_customs_main.jpg",
+        "image_all": "images/projects/bel_customs_all.jpg",
+        "category": [
+          "category-2",
+          "category-20"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Belarus Customs Status (Bots)",
+        "title": "BelCustomsBot",
+        "content": "Telegram Bot BelCustomsBot (Vialyx)",
+        "demo_link": "https://web.telegram.org/#/im?p=@BelCustomsBot",
+        "image_main": "images/projects/bot_bel_customs_telegram_main.jpg",
+        "image_all": "images/projects/bot_bel_customs_telegram_0.png",
+        "category": [
+          "category-40",
+          " category-50"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Speeding violation Detector-Pay.",
+        "title": "Violation Detector-Pay (Vialyx)",
+        "content": "Application for tracking the violations by car. Pay in one click. http://vialyx.com",
+        "demo_link": "https://play.google.com/store/apps/details?id=com.vialyx.mvd",
+        "image_main": "images/projects/mvd_violation_detector_main.jpg",
+        "image_all": "images/projects/mvd_violation_detector_all.jpg",
+        "category": [
+          "category-2",
+          "category-20"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "PROMWAD-MOBILE",
+    "type": "FULL-TIME",
+    "period": "03.2011 -12.2016",
+    "position": "Lead Software Engineer",
+    "logo": "images/work_logo/work_logo_promwad.jpg",
+    "main_specialization": "The main specialization and focus: Designing and building Android , iOS apps and web-services.",
+    "primary_functions": "Primary functions: Communication with the customer, design and implementation of it-products, the management team of developers.",
+    "projects": [
+      {
+        "enable": true,
+        "name": "• WatchScanner(USA personal customer)",
+        "title": "WatchScanner (USA personal customer)",
+        "content": "Application-concept for personal customer. Functional: scan barQr codes, inserting tag-information in NFC module.",
+        "demo_link": "https://youtu.be/HYoCNTBDDgs",
+        "image_main": "images/projects/watch_bar_code_nfc_scanner_main.jpg",
+        "image_all": "images/projects/watch_bar_code_nfc_scanner_all.jpg",
+        "category": [
+          "category-1",
+          "category-20"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Rekena(Deutsche Telekom)",
+        "title": "Rekena (Deutsche Telekom)",
+        "content": "This application for the German operator DT(Deutsche Telekom). Application-concept for Smart Home devices.",
+        "demo_link": "https://youtu.be/-N3RJFyF5Ag",
+        "image_main": "images/projects/rekena_main.jpg",
+        "image_all": "images/projects/rekena_all.jpg",
+        "category": [
+          "category-2",
+          "category-4",
+          "category-20"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• FSP-2016(Neklo)",
+        "title": "FSP-2016 (Neklo)",
+        "content": "This application for Art-picnic Freaky Summer Party 2016",
+        "demo_link": "https://play.google.com/store/apps/details?id=com.neklo.fsp",
+        "image_main": "images/projects/fsp_2016_main.jpg",
+        "image_all": "images/projects/fsp_2016_all.jpg",
+        "category": [
+          "category-2",
+          "category-4",
+          "category-20"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• TvGarant Launch STB(TvGarant)",
+        "title": "TvGarant Launch STB (TvGarant)",
+        "content": "TvGarant Launch STB -  IP-TV  application television. European, Russia, Belarus.",
+        "demo_link": "https://tvgarant.by/",
+        "image_main": "images/projects/tv_grant_main.jpg",
+        "image_all": "images/projects/tv_grant_all.jpg",
+        "category": [
+          "category-2",
+          "category-4",
+          "category-20"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• WarInform(TvZvezda)",
+        "title": "WarInform (Tv Zvezda)",
+        "content": "The application used by create news by Russian army. Function add video and photos with task from commander.",
+        "demo_link": "https://tvzvezda.ru",
+        "image_main": "images/projects/voeninform_main.jpg",
+        "image_all": "images/projects/voeninform_all.jpg",
+        "category": [
+          "category-2",
+          "category-20"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Praktik(Rusonar)",
+        "title": "Praktik - application for communication with sonar (RuSonar)",
+        "content": "Application to check the bottom and fish finder of radiation and search fish. Works only in combination with the device.",
+        "demo_link": "https://play.google.com/store/apps/details?id=ru.rusonar.praktik",
+        "demo_link1": "https://itunes.apple.com/ru/app/praktik-maak/id1133097450?l=en&mt=8",
+        "image_main": "images/projects/praktik_main.jpg",
+        "image_all": "images/projects/praktik_all.jpg",
+        "category": [
+          "category-1",
+          "category-20",
+          "category-30"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Kinopoisk & YandexStick(Yandex)",
+        "title": "Kinopoisk & YandexStick(Yandex)",
+        "content": "This Application for Russian website about cinematography. The site provides information about movies, TV shows, actors, directors, producers, screenwriters, composers, editors etc.",
+        "demo_link": "https://play.google.com/store/apps/details?id=ru.kinopoisk",
+        "image_main": "images/projects/kinopoisk_main.jpg",
+        "image_all": "images/projects/kinopoisk_all.jpg",
+        "category": [
+          "category-2",
+          "category-4",
+          "category-20"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Zive(R-nox)",
+        "title": "Zive - application for communication with radiation monitor (R-Nox)",
+        "content": "Application to check the level of radiation. Works only in combination with the device.",
+        "demo_link": "http://r-nox.com/products/zive",
+        "image_main": "images/projects/zive_main.jpg",
+        "image_all": "images/projects/zive_all_.jpg",
+        "category": [
+          "category-1",
+          "category-20"
+        ],
+        "other_links": [
+          "http://r-nox.com/products/zive",
+          "https://play.google.com/store/apps/details?id=com.zive.dd"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Moyo.TV, CaucasusOnline, LIME (Smartlabs)",
+        "title": "Moyo.TV and LIME (Smartlabs)",
+        "content": "Moyo.TV, CaucasusOnline, LIME - interactive television. IP-TV application in Russia.",
+        "demo_link": "http://www.smartlabs.tv/en/",
+        "image_main": "images/projects/lime_main.jpg",
+        "image_all": "images/projects/lime_all.jpg",
+        "category": [
+          "category-2",
+          "category-4",
+          "category-20"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• ZALA Tv-STB by AndroidTV (Beltelecom)",
+        "title": "ZALA Tv-STB by AndroidTV (Beltelecom)",
+        "content": "ZALA - interactive television. IP-TV application in Belarus.",
+        "demo_link": "https://play.google.com/store/apps/details?id=by.beltelecom.zala.debdis",
+        "image_main": "images/projects/zala_tv_main.jpg",
+        "image_all": "images/projects/zala_tv_all.jpg",
+        "category": [
+          "category-2",
+          "category-4",
+          "category-20"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• ZALA by tablet (Smartlabs/Beltelecom)",
+        "title": "ZALA by tablet (Smartlabs/Beltelecom)",
+        "content": "ZALA - interactive television. IP-TV application in Belarus.",
+        "demo_link": "https://play.google.com/store/apps/details?id=by.beltelecom.zala.debdis",
+        "image_main": "images/projects/zala_main.jpg",
+        "image_all": "images/projects/zala_all.jpg",
+        "category": [
+          "category-2",
+          "category-4",
+          "category-20"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• ZALA by mobile (Smartlabs/Beltelecom)",
+        "title": "ZALA by mobile (Smartlabs/Beltelecom)",
+        "content": "ZALA - interactive television. IP-TV application in Belarus.",
+        "demo_link": "https://play.google.com/store/apps/details?id=by.beltelecom.zala.debdis",
+        "image_main": "images/projects/zala_mob_main.jpg",
+        "image_all": "images/projects/zala_mob_all.jpg",
+        "category": [
+          "category-2",
+          "category-4",
+          "category-20"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Zabava(Smartlabs/Rostelecom)",
+        "title": "Zabava (Rostelecom)",
+        "content": "Zabava - interactive television. IP-TV application in  Russia.",
+        "demo_link": "http://www.smartlabs.tv/en/",
+        "image_main": "images/projects/zabava_main.jpg",
+        "image_all": "images/projects/zabava_all.jpg",
+        "category": [
+          "category-2",
+          "category-4",
+          "category-20"
+        ],
+        "other_links": [
+          "https://play.google.com/store/apps/details?id=com.rostelecom.zabava"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• EnergyPhone",
+        "title": "EnergyPhone",
+        "content": "Application to automating utility service.",
+        "demo_link": "https://energy.kit-media.com/",
+        "image_main": "images/projects/energyphone_main.jpg",
+        "image_all": "images/projects/energyphone_all.jpg",
+        "category": [
+          "category-2",
+          "category-20"
+        ],
+        "other_links": [
+          "https://play.google.com/store/apps/details?id=com.eep.energyphone",
+          "https://energy.kit-media.com/"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Inferum(Rofes­E01C)",
+        "title": "Inferum(Rofes-E01C)",
+        "content": "Application to test the state of the human body. Only works in combination with the device Rofes-E01S.",
+        "demo_link": "https://youtu.be/AAAQQNiIUj4?t=363",
+        "image_main": "images/projects/rofes_main.jpg",
+        "image_all": "images/projects/rofes_all.jpg",
+        "category": [
+          "category-1",
+          "category-2",
+          "category-5",
+          "category-20"
+        ],
+        "other_links": [
+          "https://play.google.com/store/apps/details?id=com.rofes.eu"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Wialon(Traktor/VeeTech/Std59 Tracking)",
+        "title": "Wialon (Traktor/VeeTech/Std59 Tracking)",
+        "content": "Application for tracking the location of vehicles moving company.",
+        "demo_link": "https://play.google.com/store/apps/details?id=eu.veetech.traktor.android",
+        "image_main": "images/projects/wialon_main.jpg",
+        "image_all": "images/projects/wialon_all.jpg",
+        "category": [
+          "category-2",
+          "category-20"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Elta glukometer",
+        "title": "Elta glukometr",
+        "content": "Application to check the level of glucose in the blood. Works only in combination with the device.",
+        "demo_link": "http://www.eltaltd.ru/en/",
+        "image_main": "images/projects/elta_main.jpg",
+        "image_all": "images/projects/elta_all.jpg",
+        "category": [
+          "category-1",
+          "category-5",
+          "category-20"
+        ],
+        "other_links": [
+          "https://docplayer.ru/56438525-Razrabotka-mobilnogo-glyukometra-dlya-smartfonov-ios-i-android.html"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Sochi 2014 - Results",
+        "title": "Sochi 2014  - Results (Olympic and Paralympic)",
+        "content": "The official Sochi 2014 Results application provides full details of the sports program of the XXII Olympic Winter Games and XI Paralympic Winter Games.",
+        "demo_link": "https://www.youtube.com/watch?v=oABG0zSP2rg&index=5&t=62s&list=PLvByCTTz1YEt4ni1y7uEaaz9mLqmmUSjk",
+        "image_main": "images/projects/sochi_phone_main.jpg",
+        "image_all": "images/projects/sochi_all.jpg",
+        "category": [
+          "category-2",
+          "category-4",
+          "category-20"
+        ],
+        "other_links": [
+          "https://play.google.com/store/apps/details?id=com.sochi2014.results"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Radiostation(Altonika)",
+        "title": "Radiostation Manager(Altonika)",
+        "content": "Application for managing analog and digital radio station.",
+        "demo_link": "http://en.altonika-sb.ru/",
+        "image_main": "images/projects/radiostation_main.jpg",
+        "image_all": "images/projects/radiostation_all.jpg",
+        "category": [
+          "category-1",
+          "category-20"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Lapka",
+        "title": "Lapka(Android)",
+        "content": "App for detect radiation ions, molecules and waves.",
+        "demo_link": "http://mylapka.com/pem/",
+        "image_main": "images/projects/lapka_main.jpg",
+        "image_all": "images/projects/lapka_all.jpg",
+        "category": [
+          "category-1",
+          "category-20"
+        ],
+        "other_links": [
+          "https://youtu.be/RRMvcNrjmD4"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Formulae Helper",
+        "title": "Formulae Helper",
+        "content": "Formulae Helper - A Handbook of Mathematical Formulas in Math, Algebra, Trigonometry, Geometry, etc.",
+        "demo_link": "https://www.youtube.com/watch?v=KYBzg7Gr1Ww",
+        "image_main": "images/projects/formulae_helper_main.jpg",
+        "image_all": "images/projects/formulae_helper_all.jpg",
+        "category": [
+          "category-7",
+          "category-8",
+          "category-20"
+        ],
+        "other_links": [
+          "https://play.google.com/store/apps/details?id=com.doubleddev.formulaehelper.free"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Google / Samsung Styles Contacts Widget",
+        "title": "Google / Samsung Styles Contacts Widget",
+        "content": "Beautiful and simple photo contacts widget, which will allow you to call chosen contact immediately. The Widget is specially designed in Google Android Holo Launcher Style and Samsung",
+        "demo_link": "https://www.apkmonk.com/app/com.gmail.yuyang226.contactswidget/",
+        "image_main": "images/projects/contacts_widget_main.jpg",
+        "image_all": "images/projects/contacts_widget_all.jpg",
+        "category": [
+          "category-7",
+          "category-20"
+        ],
+        "other_links": [
+          "https://play.google.com/store/apps/details?id=com.gmail.yuyang226.contactswidget"
+        ]
+      },
+      {
+        "enable": false,
+        "name": "• GIM Android",
+        "title": "GIM Android",
+        "content": "The application is used for the audit of retail space. Functions create images and sound with the description of retail space. Synchronization with Dropbox and FTP.",
+        "demo_link": "#",
+        "image_main": "images/projects/gim_main.jpg",
+        "image_all": "images/projects/gim_all.jpg",
+        "category": [
+          "category-2",
+          "category-20"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Tallink &amp; Silja Line 2",
+        "title": "Tallink &amp; Silja Line 2",
+        "content": "Book a trip on ships of Tallink and Silja Line.",
+        "demo_link": "https://play.google.com/store/apps/details?id=com.tallink.mikiandroid",
+        "image_main": "images/projects/tallink_new_main.jpg",
+        "image_all": "images/projects/tallink_new_all.jpg",
+        "category": [
+          "category-2",
+          "category-20"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Tallink &amp; Silja Line",
+        "title": "Tallink &amp; Silja Line - booking ",
+        "content": "Book a trip on ships of Tallink and Silja Line.",
+        "demo_link": "https://play.google.com/store/apps/details?id=com.tallink.mikiandroid",
+        "image_main": "images/projects/tallink_main.jpg",
+        "image_all": "images/projects/tallink_old_new_all.jpg",
+        "category": [
+          "category-2",
+          "category-20"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Safe Hide",
+        "title": "Safe Hide (Hide Data)",
+        "content": "Application for hide private data (photos, videos, contacts, SMS, call logs).",
+        "demo_link": "http://promwadmobile.com",
+        "image_main": "images/projects/safe_hide_main.jpg",
+        "image_all": "images/projects/safe_hide_all.jpg",
+        "category": [
+          "category-3",
+          "category-20"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Safe Store",
+        "title": "Safe Store",
+        "content": "Application for hide private documents and information.",
+        "demo_link": "http://promwadmobile.com",
+        "image_main": "images/projects/safe_store_main.jpg",
+        "image_all": "images/projects/safe_store_all.jpg",
+        "category": [
+          "category-3",
+          "category-20"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• CloudPro File Manager",
+        "title": "CloudPro File Manager",
+        "content": "CloudPro File Manager - a must-have app for those who keep their stuff in the cloud. We have the key options covered: local storage, Dropbox, FTP and Windows-all for free. This is your all-in-one app for file management. Easily move files between local storage and cloud services, manage folders, sort lists and share.",
+        "demo_link": "https://www.apkmonk.com/app/com.promwad.filemanager/",
+        "image_main": "images/projects/file_manager_main.jpg",
+        "image_all": "images/projects/file_manager_all.jpg",
+        "category": [
+          "category-2",
+          "category-3",
+          "category-20"
+        ],
+        "other_links": [
+          "https://play.google.com/store/apps/details?id=com.promwad.filemanager"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Cloudlet",
+        "title": "Cloudlet",
+        "content": "Cloudlet-online and synchronize all the links on all your devices.",
+        "demo_link": "https://play.google.com/store/apps/details?id=com.cloudletonline.soaplinks",
+        "image_main": "images/projects/cloudlet_main.jpg",
+        "image_all": "images/projects/cloudlet_all.jpg",
+        "category": [
+          "category-2",
+          "category-20"
+        ],
+        "other_links": [
+          "https://play.google.com/store/apps/details?id=com.cloudletonline.soaplinks"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Shturmann-POI(My.POI)",
+        "title": "My.POI (Shturmann-POI)",
+        "content": "Application to determine the location of the user, searching and displaying information about its objects of interest (POI - point of interests).",
+        "demo_link": "https://youtu.be/9tc88GgNTsA",
+        "image_main": "images/projects/shturmann_main.jpg",
+        "image_all": "images/projects/shturmann_all.jpg",
+        "category": [
+          "category-2",
+          "category-20"
+        ],
+        "other_links": [
+          "https://play.google.com/store/apps/details?id=com.shturmann.pois"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Safe Backup App for Android",
+        "title": "Safe Backup App for Android",
+        "content": "Safe Backup for Android is an easy and friendly tool for backing up of contacts, text messages, calendars, pictures, application settings and more.",
+        "demo_link": "https://www.apkmonk.com/app/com.promwad.backup/",
+        "image_main": "images/projects/safe_backup_main.jpg",
+        "image_all": "images/projects/safe_backup_all.jpg",
+        "category": [
+          "category-3",
+          "category-20"
+        ],
+        "other_links": [
+          "https://play.google.com/store/apps/details?id=com.promwad.backup"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Fortune Telling",
+        "title": "Fortune Telling",
+        "content": "Twitter fortune teller - show new tweets.",
+        "demo_link": "https://www.apkmonk.com/app/by.mafiband.twittertwitsearch/",
+        "image_main": "images/projects/fortune_telling_main.jpg",
+        "image_all": "images/projects/fortune_telling_all.jpg",
+        "category": [
+          "category-2",
+          "category-20"
+        ],
+        "other_links": [
+          "https://play.google.com/store/apps/details?id=by.mafiband.twittertwitsearch"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Dynamic UI App for Mobile Banking",
+        "title": "Dynamic UI App for Mobile Banking",
+        "content": "To create mobile application for mobile banking: safe and easy update of user interface for bank operations (addition of new questions in user profile, data for calculations, etc.). The team has designed a universal XML, which is displayed correctly at different mobile platforms (Android, Windows Mobile 7, iOS).",
+        "demo_link": "http://promwadmobile.com/portfolio/dynamic-ui-mobile-application-development-internet-banking.html",
+        "image_main": "images/projects/dynamic_ui_main.jpg",
+        "image_all": "images/projects/dynamic_ui_all.jpg",
+        "category": [
+          "category-2",
+          "category-7",
+          "category-20",
+          "category-30"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "LOGIC-WAY",
+    "type": "FULL-TIME",
+    "period": " 02.2009 -02.2011",
+    "position": "Senior Java Developer",
+    "logo": "images/work_logo/work_logo_logic_way.jpg",
+    "main_specialization": "The main specialization and focus: Android. Designing and building web-services and sites.",
+    "primary_functions": "Primary functions: Implementation of it-products.",
+    "projects": [
+      {
+        "enable": true,
+        "name": "• Webhunter (Android, J2EE)",
+        "title": "Webhunter",
+        "content": "Is an online picture and image browser, which gives you direct access to more than 400 000 categorized pictures and images in galleries.",
+        "demo_link": "http://uk.androlib.com/android.developer.logicway-nDpz.aspx",
+        "image_main": "images/projects/webhunter_main.jpg",
+        "image_all": "images/projects/webhunter_all.jpg",
+        "category": [
+          "category-2",
+          "category-20"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Flexite BPMS (J2EE)",
+        "title": "Flexite BPMS (J2EE)",
+        "content": "Optimizing and automating their business processes. FlexiteBPMS is the most flexible platform for deviationhandling within Business Process Management (BPM) on the market. The system has over 150000 licensed users and is created with guidance of  words like simplicity, flexibility, integratable, comprehensive, self instructive and cost effective. FlexiteBPMS is made to completely automate those of a companies processes which includes gathering and management of information.",
+        "demo_link": "http://flexite.com/en",
+        "image_main": "images/projects/flexite_bpms.jpg",
+        "image_all": "images/projects/flexite_bpms.jpg",
+        "category": [
+          "category-40"
+        ]
+      },
+      {
+        "enable": true,
+        "name": "• Flexite DMS (J2EE)",
+        "title": "Flexite DMS (J2EE)",
+        "content": "Optimizing and automating their business processes. FlexiteDMS has been designed to act as the platform for any organizations complete document handling system whether integrated with flexite or not. FlexiteDMS will provide you with complete informational control in terms of structure, distribution and gathering of information.",
+        "demo_link": "http://flexite.com/en",
+        "image_main": "images/projects/flexite_dms.jpg",
+        "image_all": "images/projects/flexite_dms.jpg",
+        "category": [
+          "category-40"
+        ]
+      },
+      {
+        "enable": false,
+        "name": "• Documents-Archive (J2EE)",
+        "title": "",
+        "content": "",
+        "demo_link": "",
+        "image_main": "images/projects/",
+        "image_all": "images/projects/",
+        "category": [
+          "category-40"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "EPAM SYSTEMS",
+    "type": "FULL-TIME",
+    "period": "01.2008 - 01.2009",
+    "position": "Java Developer",
+    "logo": "images/work_logo/work_logo_epam_systems.jpg",
+    "main_specialization": "The main specialization and focus: Designing and building web-services and sites.",
+    "primary_functions": "Primary functions: Implementation of it-products.",
+    "projects": [
+      {
+        "enable": false,
+        "name": "• Automatic system of testing (J2EE)",
+        "title": "",
+        "content": "",
+        "demo_link": "",
+        "image_main": "images/projects/",
+        "image_all": "images/projects/",
+        "category": []
+      }
+    ]
+  }
+]

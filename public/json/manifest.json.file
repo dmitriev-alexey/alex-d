@@ -1,0 +1,15 @@
+{
+    "name": "The Page App Alexey Dmitriev",
+    "short_name": "Alex-D",
+    "icons": [
+        {
+            "src": "/images/favicon.png",
+            "sizes": "64x64",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}

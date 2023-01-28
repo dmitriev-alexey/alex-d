@@ -1,0 +1,16 @@
+{
+  "avatar": "images/i_2018.jpg",
+  "name": "Alexey Dmitriev",
+  "phone": "+375 25 740 58 93",
+  "email": "dmitriew.alexej@gmail.com",
+  "age": "34 Years",
+  "address": "Minsk, Belarus",
+  "site": "https://alex-d.herokuapp.com",
+  "pdf": "docs/DmitrievAlexeyAboutProjects.pdf",
+  "pdf_cv": "docs/DmitrievAlexeyCV.pdf",
+  "social": {
+    "facebook": "https://www.facebook.com/tut.bandit",
+    "twitter": "https://twitter.com/dev_software",
+    "linkedin": "https://www.linkedin.com/in/dmitriewalexey/"
+  }
+}
