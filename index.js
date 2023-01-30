@@ -14,6 +14,7 @@ var fs = require('fs');
 
 var authorFile = fs.readFileSync("public/json/author.json.file");
 var authorJson = JSON.parse(authorFile);
+authorJson.age = getYearDiffWithMonth(new Date(authorJson.age), new Date())
 
 var skillsFile = fs.readFileSync("public/json/skills.json.file");
 var skillsJson = JSON.parse(skillsFile);
@@ -111,3 +112,11 @@ function setCustomCacheControl (res, path) {
         res.setHeader('Cache-Control', 'public, max-age=3600'); // text/html кэшируем на один час
     }
 }
+
+function getYearDiffWithMonth(startDate, endDate) {
+    const ms = endDate.getTime() - startDate.getTime();
+  
+    const date = new Date(ms);
+  
+    return Math.abs(date.getUTCFullYear() - 1970);
+  }
