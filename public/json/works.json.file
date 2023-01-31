@@ -15,7 +15,7 @@
         "content": "Plant Identification.",
         "image_main": "images/projects/nature_id_main.jpg",
         "demo_link": "https://play.google.com/store/apps/details?id=plant.identification.flower.tree.leaf.identifier.identify.cat.dog.breed.nature",
-        "image_all": "images/projects/nature_id_all.jpg",
+        "image_all": "images/projects/aiby_nature_id_all.jpg",
         "category": [
           "category-3",
           "category-8",
@@ -161,7 +161,7 @@
         "content": "Telegram Bot BelCustomsBot (Vialyx)",
         "demo_link": "https://web.telegram.org/#/im?p=@BelCustomsBot",
         "image_main": "images/projects/bot_bel_customs_telegram_main.jpg",
-        "image_all": "images/projects/bot_bel_customs_telegram_0.png",
+        "image_all": "images/projects/bot_bel_customs_telegram_all.jpg",
         "category": [
           "category-40",
           " category-50"
