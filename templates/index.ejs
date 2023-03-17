@@ -118,16 +118,16 @@
                     <div class="nav-inner">
                         <nav class="primary-nav">
                             <div class="clearfix nav-wrapper">
-                                <a href="#home" class="left brand-logo menu-smooth-scroll" data-section="#home">
+                                <a href="#home" class="left brand-logo menu-smooth-scroll" data-section="#home" aria-label="home">
                                     <img src="images/logo_new.png" loading="lazy" alt="MafiBand">
                                 </a>
-                                <a href="#" data-activates="mobile-demo" class="button-collapse"><i
-                                        class="mdi-navigation-menu"></i></a>
+                                <a href="#" data-activates="mobile-demo" class="button-collapse" aria-label="home link">
+                                    <i class="mdi-navigation-menu"></i>
+                                </a>
 
                                 <ul class="right static-menu">
                                     <li>
-                                        <a class="dropdown-button blog-submenu-init" href="#!"
-                                           data-activates="dropdown1">
+                                        <a class="dropdown-button blog-submenu-init" href="#!" data-activates="dropdown1" aria-label="dropdown">
                                             <i class="mdi-navigation-more-vert right"></i>
                                         </a>
                                     </li>
@@ -146,31 +146,46 @@
                                     </li><!-- mini profile end-->
 
 
-                                    <li><a href="#about" data-section="#about" class="menu-smooth-scroll"><i
-                                            class="fa fa-user fa-fw"></i>About Me</a>
+                                    <li>
+                                        <a href="#about" data-section="#about" class="menu-smooth-scroll" aria-label="about">
+                                        <i class="fa fa-user fa-fw"></i>
+                                        About Me
+                                    </a>
                                     </li>
-                                    <li><a href="#resume" data-section="#resume" class="menu-smooth-scroll"><i
-                                            class="fa fa-file-text fa-fw"></i>Resume</a>
+                                    <li>
+                                        <a href="#resume" data-section="#resume" class="menu-smooth-scroll" aria-label="resume">
+                                            <i class="fa fa-file-text fa-fw"></i>
+                                            Resume
+                                        </a>
                                     </li>
-                                    <li><a href="#portfolio" data-section="#portfolio" class="menu-smooth-scroll"><i
-                                            class="fa fa-briefcase fa-fw"></i>Portfolio</a>
+                                    <li>
+                                        <a href="#portfolio" data-section="#portfolio" class="menu-smooth-scroll" aria-label="portfolio">
+                                            <i class="fa fa-briefcase fa-fw"></i>
+                                            Portfolio
+                                        </a>
                                     </li>
                                     <!--                    <li><a href="#team" data-section="#team" class="menu-smooth-scroll"><i class="fa fa-users fa-fw"></i>Team</a>-->
                                     <!--                    </li>-->
-                                    <li><a href="#testimonial" data-section="#testimonial" class="menu-smooth-scroll"><i
-                                            class="fa fa-comments fa-fw"></i>Testimonial</a>
+                                    <li>
+                                        <a href="#testimonial" data-section="#testimonial" class="menu-smooth-scroll" aria-label="testimonial">
+                                            <i class="fa fa-comments fa-fw"></i>
+                                            Testimonial
+                                        </a>
                                     </li>
                                     <!--                    <li><a href="#blog" data-section="#blog" class="menu-smooth-scroll"><i class="fa fa-pencil fa-fw"></i>Blog</a>-->
                                     <!--                    </li>-->
-                                    <li><a href="#contact" data-section="#contact" class="menu-smooth-scroll"><i
-                                            class="fa fa-paper-plane fa-fw"></i>Contact</a>
+                                    <li>
+                                        <a href="#contact" data-section="#contact" class="menu-smooth-scroll" aria-label="contact">
+                                            <i class="fa fa-paper-plane fa-fw"></i>
+                                            Contact
+                                        </a>
                                     </li>
                                 </ul>
                                 <ul id="dropdown1" class="inline-menu submenu-ul dropdown-content">
                                     <!--                    <li>Home</li>-->
-                                    <li><a href="<%-author.pdf_cv%>" target="_blank">PDF CV</a>
+                                    <li><a href="<%-author.pdf_cv%>" target="_blank" aria-label="PDF CV">PDF CV</a>
                                     </li>
-                                    <li><a href="<%-author.pdf%>" target="_blank">PDF Resume</a>
+                                    <li><a href="<%-author.pdf%>" target="_blank" aria-label="PDF Resume">PDF Resume</a>
                                     </li>
                                 </ul>
 
@@ -194,9 +209,8 @@
                             <div class="center-align home-content">
                                 <h1 class="home-title">Hello! I'm <%-author.name%> <!-- <span><%-author.name%></span>--></h1>
                                 <h2 class="home-subtitle">Mobile and Web Application developer from Minsk, Belarus</h2>
-                                <a href="#contact"
-                                   class="hire-me-btn btn waves-effect waves-light btn-large cyan white-text regular-text">Hire
-                                    Me <i class="mdi-content-send left"></i>
+                                <a href="#contact"class="hire-me-btn btn waves-effect waves-light btn-large cyan white-text regular-text" aria-label="Contact">
+                                   Hire Me <i class="mdi-content-send left"></i>
                                 </a>
                             </div>
                         </div>
@@ -209,7 +223,8 @@
                     <div class="row">
                         <a href="#about"
                            class="btn-floating btn-large button-middle section-call-to-btn animated btn-up btn-hidden"
-                           data-section="#about">
+                           data-section="#about"
+                           aria-label="about">
                             <i class="mdi-navigation-expand-more"></i>
                         </a>
                     </div>
@@ -260,7 +275,9 @@
 
 
                             <a href="<%-author.pdf%>" class="waves-effect waves-light btn-large cyan white-text"
-                               target="_blank"><i class="mdi-content-archive left"></i> Download Resume</a>
+                               target="_blank" aria-label="Download Resume">
+                               <i class="mdi-content-archive left"></i> Download Resume
+                            </a>
                         </div>
                     </div>
                     <!-- about me description -->
@@ -295,18 +312,19 @@
                         <div class="about-social">
                             <ul>
                                 <li>
-                                    <a href="<%-author.social.facebook%>"
-                                       class="btn-floating waves-effect waves-light white"><i
-                                            class="fa fa-facebook"></i></a>
+                                    <a href="<%-author.social.facebook%>" class="btn-floating waves-effect waves-light white" aria-label="Facebook">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="<%-author.social.twitter%>"
-                                       class="btn-floating waves-effect waves-light white"><i class="fa fa-twitter"></i></a>
+                                    <a href="<%-author.social.twitter%>" class="btn-floating waves-effect waves-light white" aria-label="Twitter">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="<%-author.social.linkedin%>"
-                                       class="btn-floating waves-effect waves-light white"><i
-                                            class="fa fa-linkedin"></i></a>
+                                    <a href="<%-author.social.linkedin%>" class="btn-floating waves-effect waves-light white" aria-label="Linkedin">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -553,13 +571,13 @@
                                 <% categories.forEach(function(category){ %>
                                 <% if (category.active) { %>
                                 <li class="active">
-                                    <a href="#" data-target="<%-category.data_target%>">
+                                    <a href="#" data-target="<%-category.data_target%>" aria-label="<%-category.name%>">
                                         <%-category.name%>
                                     </a>
                                 </li>
                                 <% } else { %>
                                 <li>
-                                    <a href="#" data-target="<%-category.data_target%>">
+                                    <a href="#" data-target="<%-category.data_target%>" aria-label="<%-category.name%>">
                                         <%-category.name%>
                                     </a>
                                 </li>
@@ -581,9 +599,9 @@
             </div>
 
             <div class="modal-footer">
-                <a href="#" target="_blank" class="waves-effect btn-flat cyan-text modal-action">Live Demo</a>
-                <a href="#" target="_blank" class="waves-effect btn-flat cyan-text modal-action-second">Live Demo</a>
-                <a href="#" class="waves-effect btn-flat cyan-text modal-action modal-close">cancel</a>
+                <a href="#" target="_blank" class="waves-effect btn-flat cyan-text modal-action" aria-label="Live Demo">Live Demo</a>
+                <a href="#" target="_blank" class="waves-effect btn-flat cyan-text modal-action-second" aria-label="Live Demo Second">Live Demo</a>
+                <a href="#" class="waves-effect btn-flat cyan-text modal-action modal-close" aria-label="cancel">cancel</a>
             </div>
         </div>
 
@@ -604,7 +622,8 @@
                                    data-image-source="<%-projectItem.image_all%>"
                                    data-title="<%-projectItem.title%>"
                                    data-content="<%-projectItem.content%>"
-                                   data-demo-link="<%-projectItem.demo_link%>">
+                                   data-demo-link="<%-projectItem.demo_link%>"
+                                   aria-label="Open Modal Portfolio">
 
                                     <!-- Portfolio pop-up content-->
                                     <div class="protfolio-image">
@@ -669,7 +688,8 @@
                                                     </div>
                                                     <div class="card-content">
                                                         <span class="card-title activator cyan-text">Slava Rosin -</span>
-                                                        <a href="https://www.linkedin.com/profile/view?id=6923450&authType=name&authToken=JIVJ">Product Architect</a>
+                                                        <a href="https://www.linkedin.com/profile/view?id=6923450&authType=name&authToken=JIVJ"
+                                                        aria-label=">Slava Rosin">Product Architect</a>
                                                     </div>
                                                 </div>
                                             </div> <!-- ./single testimonial box -->
@@ -687,7 +707,8 @@
                                                     </div>
                                                     <div class="card-content">
                                                         <span class="card-title activator cyan-text">Maksim Vjalykh -</span>
-                                                        <a href="https://www.linkedin.com/profile/view?id=294678771&authType=name&authToken=GRZT">Lead of iOS team</a>
+                                                        <a href="https://www.linkedin.com/profile/view?id=294678771&authType=name&authToken=GRZT"
+                                                        aria-label=">Maksim Vjalykh">Lead of iOS team</a>
                                                     </div>
                                                 </div>
                                             </div> <!-- ./single testimonial box -->
@@ -774,11 +795,11 @@
                                     <h2 class="title">Contact</h2>
                                     <p class="regular-text"><%-author.address%></p>
                                     <ul class="clearfix contact-info">
-                                        <li><a href=""><%-author.phone%></a>
+                                        <li><a href="" aria-label="Phone"><%-author.phone%></a>
                                         </li>
-                                        <li><a href=""><%-author.email%></a>
+                                        <li><a href="" aria-label="Email"><%-author.email%></a>
                                         </li>
-                                        <li><a href="<%-author.site%>"><%-author.site%></a>
+                                        <li><a href="<%-author.site%>" aria-label="Site"><%-author.site%></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -804,7 +825,8 @@
                 <div class="row">
                     <a href="#home"
                        class="btn-floating btn-large button-middle section-call-to-btn animated btn-up btn-hidden"
-                       data-section="#home">
+                       data-section="#home"
+                       aria-label="Go Home">
                         <i class="mdi-navigation-expand-less"></i>
                     </a>
                 </div>
@@ -820,17 +842,35 @@
                 <div class="col-sm-12">
                     <div class="clearfix footer-inner">
                         <ul class="left social-icons">
-                            <li><a href="<%-author.social.facebook%>" class="tooltips tooltipped"
-                                   data-position="top" data-delay="50" data-tooltip="Facebook"><i
-                                    class="fa fa-facebook"></i></a>
+                            <li>
+                                <a href="<%-author.social.facebook%>" 
+                                    class="tooltips tooltipped"
+                                    data-position="top" 
+                                    data-delay="50" 
+                                    data-tooltip="Facebook"
+                                    aria-label="Facebook">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
                             </li>
-                            <li><a href="<%-author.social.linkedin%>"
-                                   class="tooltips tooltipped" data-position="top" data-delay="50"
-                                   data-tooltip="Linkedin"><i class="fa fa-linkedin"></i></a>
+                            <li>
+                                <a href="<%-author.social.linkedin%>"
+                                   class="tooltips tooltipped" 
+                                   data-position="top" 
+                                   data-delay="50"
+                                   data-tooltip="Linkedin"
+                                   aria-label="Linkedin">
+                                   <i class="fa fa-linkedin"></i>
+                                </a>
                             </li>
-                            <li><a href="<%-author.social.twitter%>" class="tooltips tooltipped"
-                                   data-position="top" data-delay="50" data-tooltip="Twitter"><i
-                                    class="fa fa-twitter"></i></a>
+                            <li>
+                                <a href="<%-author.social.twitter%>" 
+                                    class="tooltips tooltipped"
+                                    data-position="top" 
+                                    data-delay="50" 
+                                    data-tooltip="Twitter"
+                                    aria-label="Twitter">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
                             </li>
                         </ul> <!-- ./social icons end -->
                         <div class="right copyright">
