@@ -3,20 +3,36 @@
     "name": "AIBY",
     "type": "FULL-TIME",
     "period": "03.2021 - Present day",
-    "position": "Senior Software Engineer",
+    "position": "Lead Software Engineer / Senior Software Engineer",
     "logo": "images/work_logo/work_logo_aiby_inc.jpg",
     "main_specialization": "The main specialization and focus: Android.",
     "primary_functions": "Primary functions: Design and implementation of it-products.",
     "projects": [
       {
         "enable": true,
+        "name": "• ARTA - AI Art & Avatar Generator",
+        "title": "ARTA - AI Art & Avatar Generator",
+        "content": "ARTA generates unique images based on text prompts and helps visualize your ideas.",
+        "image_main": "images/projects/aiby_aiart_main.jpg",
+        "demo_link": "https://play.google.com/store/apps/details?id=ai.generated.art.maker.image.picture.photo.generator.painting",
+        "image_all": "images/projects/aiby_aiart_all.jpg",
+        "category": [
+          "category-2",
+          "category-4",
+          "category-8",
+          "category-20"
+        ]
+      },
+      {
+        "enable": true,
         "name": "• NatureID - Plant Identification",
         "title": "NatureID - Plant Identification",
-        "content": "Plant Identification.",
+        "content": "An AI tool that helps identify indoor and garden plants and take proper care of them.",
         "image_main": "images/projects/nature_id_main.jpg",
         "demo_link": "https://play.google.com/store/apps/details?id=plant.identification.flower.tree.leaf.identifier.identify.cat.dog.breed.nature",
         "image_all": "images/projects/aiby_nature_id_all.jpg",
         "category": [
+          "category-2",
           "category-3",
           "category-8",
           "category-20"
