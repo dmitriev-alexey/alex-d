@@ -1,4 +1,4 @@
 ﻿User-agent: *
 Allow: /
-Sitemap: https://alex-d.cyclic.app/sitemap.xml
+Sitemap: https://alex-d.onrender.com/sitemap.xml
 Host : alex-d.cyclic.app
