@@ -7,7 +7,21 @@
     "logo": "images/work_logo/work_logo_aiby_inc.jpg",
     "main_specialization": "The main specialization and focus: Android.",
     "primary_functions": "Primary functions: Design and implementation of it-products.",
-    "projects": [
+    "projects": [{
+        "enable": true,
+        "name": "• Inscope - AI Search & Browser",
+        "title": "Inscope - AI Search & Browser",
+        "content": "Inscope - fast search with AI models!",
+        "image_main": "images/projects/aiby_inscope_main.jpg",
+        "demo_link": "https://play.google.com/store/apps/details?id=ai.search.engine.browser",
+        "image_all": "images/projects/aiby_inscope_all.jpg",
+        "category": [
+          "category-2",
+          "category-4",
+          "category-8",
+          "category-20"
+        ]
+      },
       {
         "enable": true,
         "name": "• Shoom - AI Music Generator",
