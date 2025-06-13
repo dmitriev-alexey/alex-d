@@ -10,6 +10,21 @@
     "projects": [
       {
         "enable": true,
+        "name": "• Shoom - AI Music Generator",
+        "title": "Shoom - AI Music Generator",
+        "content": "Shoom generates unique sounds based on text prompts.",
+        "image_main": "images/projects/aiby_shoom_main.jpg",
+        "demo_link": "https://play.google.com/store/apps/details?id=ai.music.generator.song.maker",
+        "image_all": "images/projects/aiby_shoom_all.jpg",
+        "category": [
+          "category-2",
+          "category-4",
+          "category-8",
+          "category-20"
+        ]
+      },
+      {
+        "enable": true,
         "name": "• ARTA - AI Art & Avatar Generator",
         "title": "ARTA - AI Art & Avatar Generator",
         "content": "ARTA generates unique images based on text prompts and helps visualize your ideas.",
