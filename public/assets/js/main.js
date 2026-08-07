@@ -547,7 +547,7 @@ $(document).ready(function($){
 
 var callToSectionBtn = $('.section-call-to-btn');
 
-$(window).load(function(){
+$(document).ready(function(){
 
 	// portfolio Mesonary
 	if ( $('#protfolio-msnry').length > 0 ) {
@@ -556,6 +556,16 @@ $(window).load(function(){
 		var portfolioMsnry = $('#protfolio-msnry').isotope({
 			itemSelector: '.single-port-item',
 			layoutMode: 'fitRows'
+		});
+
+		// Lazy images arrive after init; re-layout the grid (debounced) as each
+		// one finishes loading so masonry stays correct.
+		var relayoutTimer;
+		document.addEventListener('lazyImageLoaded', function () {
+			clearTimeout(relayoutTimer);
+			relayoutTimer = setTimeout(function () {
+				portfolioMsnry.isotope('layout');
+			}, 100);
 		});
 
 

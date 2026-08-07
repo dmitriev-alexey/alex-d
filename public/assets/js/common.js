@@ -1,5 +1,32 @@
 var $ = jQuery;
 
+// Hide the preloader as soon as the hero background image is ready, instead of
+// waiting for every image on the page (the old $(window).load behaviour).
+$(document).ready(function () {
+    var HERO_BG = 'assets/css/bg/home-bg.jpg';
+    var hidden = false;
+
+    function hidePreloader() {
+        if (hidden) {
+            return;
+        }
+        hidden = true;
+        $('.loader').fadeOut();
+        $('#preloader').fadeOut('slow');
+    }
+
+    var heroImg = new Image();
+    heroImg.onload = hidePreloader;
+    heroImg.onerror = hidePreloader;        // never trap the user on a bad/missing bg
+    heroImg.src = HERO_BG;
+    if (heroImg.complete) {                 // already cached
+        hidePreloader();
+    }
+
+    // Safety net: never let the preloader hang if the background stalls.
+    setTimeout(hidePreloader, 4000);
+});
+
 // for aspect ratio
 (function(){
 	var ratio = "16:9";
@@ -99,10 +126,8 @@ $(document).ready(function(){
 // callback after loading the window
 $(window).load(function(){
 
-    // Preloader
-    $('.loader').fadeOut();
-    $('#preloader').delay(100).fadeOut('slow');
-    $('body').delay(100);
+    // Preloader is now hidden from the $(document).ready gate below
+    // (it waits only for the hero background image, not for every image).
 
 	// blog post slider
 	(function(){
