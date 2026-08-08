@@ -14,9 +14,12 @@ var app = express();
 
 var fs = require('fs');
 
+var EXPERIENCE_START_DATE = "2008-01-01";
+
 var authorFile = fs.readFileSync("public/json/author.json.file");
 var authorJson = JSON.parse(authorFile);
 authorJson.age = getYearDiffWithMonth(new Date(authorJson.age), new Date())
+authorJson.experienceYears = getYearDiffWithMonth(new Date(EXPERIENCE_START_DATE), new Date())
 
 var skillsFile = fs.readFileSync("public/json/skills.json.file");
 var skillsJson = JSON.parse(skillsFile);
