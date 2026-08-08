@@ -33,19 +33,6 @@ var categoryJson = JSON.parse(categoryFile);
 var manifestFile = fs.readFileSync("public/json/manifest.json.file");
 var manifestJson = JSON.parse(manifestFile);
 
-// Resume PDF is generated once from the in-memory data (see lib/resumePdf.js)
-// and cached for the lifetime of the process instead of being rebuilt on
-// every request.
-var resumePdfBufferPromise = resumePdf.generateResumePdfBuffer({
-    author: authorJson,
-    skills: skillsJson,
-    works: workJson,
-    educations: educationsJson
-}).catch(function (err) {
-    console.log("Failed to generate resume.pdf: " + err.message);
-    return null;
-});
-
 // workJson.forEach(function (item) {       https://tinypng.com/
 //     console.log(item.projects.length);
 // });
@@ -94,16 +81,21 @@ app.get('/manifest*/', function (req, res) {
 });
 
 app.get('/resume.pdf', function (request, response) {
-    resumePdfBufferPromise.then(function (buffer) {
-        if (!buffer) {
-            response.status(500).send('Resume PDF is temporarily unavailable.');
-            return;
-        }
+    // Generated fresh on every request - no caching.
+    resumePdf.generateResumePdfBuffer({
+        author: authorJson,
+        skills: skillsJson,
+        works: workJson,
+        educations: educationsJson
+    }).then(function (buffer) {
         response.set({
             'Content-Type': 'application/pdf',
             'Content-Disposition': 'inline; filename="' + authorJson.name.replace(/\s+/g, '') + 'Resume.pdf"'
         });
         response.send(buffer);
+    }).catch(function (err) {
+        console.log("Failed to generate resume.pdf: " + err.message);
+        response.status(500).send('Resume PDF is temporarily unavailable.');
     });
 });
 
