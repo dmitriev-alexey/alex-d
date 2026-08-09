@@ -8,6 +8,13 @@
   "site": "https://alex-d.onrender.com",
   "pdf": "docs/DmitrievAlexeyAboutProjects.pdf",
   "pdf_cv": "docs/DmitrievAlexeyCV.pdf",
+  "experienceStartDate": "2008-01-01",
+  "myStory": [
+    "I'm a Mobile and Web Application developer. My experience is {{years}} years of creating web-based applications and applications for mobile devices.",
+    "Deep knowledge in the most of common technology:\n• Android (1.6 - 16 SDK, NDK 11r - JNI) Android Tv, Android Wear\n• iOS (8-9)\n• Web Service (J2EE and Node.Js)\n     J2EE - Struts, Facelets, Spring, Hibernate.\n     Node.Js - Express and others frameworks.\n     JavaScript - jQuery and others frameworks.\n• Experience in work with cloud platforms: Google App Engine, Parse, Heroku, DigitalOcean.\n• Experience in work with databases: SQLite, MS SQL, Oracle, MySQL, NeDB, GreenDao, ObjectBox, Realm, Room.\n• Experience in work with analytics: Google Analytics, Fabric, other.\n• Experience in work with Social API: FB, Instagram, Vk, Twitter and other.\n• Experience in work with game-frameworks AndEngine and LibGDX.",
+    "Experience in design and development large-scale distributed systems, as well as experience in management a small team (up to 5 people).",
+    "• Manager tools: Atlassian Jira, Trello, Redmine.\n• Methodologies: Agile, SCRUM."
+  ],
   "social": {
     "facebook": "https://www.facebook.com/tut.bandit",
     "twitter": "https://twitter.com/dev_software",
