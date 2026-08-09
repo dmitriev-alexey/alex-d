@@ -18,7 +18,8 @@ Render at https://alex-d.onrender.com (auto-deploys from `master`).
 - `compression` (gzip) + `express-minify` (css/js minify), `serve-static`,
   `express-robots-txt`
 - Front-end: a purchased theme (jQuery / Materialize / owl-carousel /
-  jwplayer / Yandex Maps) under `public/assets/`
+  sweetalert / Yandex Maps) under `public/assets/`. Yandex Maps is
+  lazy-loaded; jwplayer was removed (unused).
 
 ## Layout
 
@@ -27,12 +28,16 @@ index.js                 thin routing layer + middleware only
 lib/data.js              loads & enriches all content from data/ (once, at startup)
 lib/contacts.js          phone/email masking + obfuscation helpers
 lib/resumePdf.js         builds the résumé PDF (pdfmake) from the data
+lib/llmsTxt.js           builds the /llms.txt body from the data
 data/*.json.file         site content (NON-public — see gotchas)
 templates/index.ejs      the single rendered page
 templates/error404.ejs   404 page
 public/                  static assets, images, docs, favicon (served as-is)
 ai-docs/                 detailed docs + navigation index
 ```
+
+Routes (all in `index.js`): `GET /` (page), `/resume.pdf` (generated PDF,
+no-cache), `/manifest*`, `/llms.txt`, `/sitemap*`, 404 fallthrough.
 
 ## How to run / verify
 
@@ -52,17 +57,30 @@ Smoke test: `GET /` → 200, `GET /resume.pdf` → 200 (application/pdf),
   contact protection. **Never move them back under `public/`.**
 - **`.json.file` extension** is an existing convention for the content
   files — keep it; loaders in `lib/data.js` expect those names.
-- **Contacts are never printed raw in the HTML.** `lib/contacts.js` masks
-  them (`+375 25 *** ** 93`) and ships a reversed-base64 blob that
-  `public/assets/js/contact-protect.js` decodes only on click. The PDF
-  keeps plaintext contacts on purpose (fetched on request, not crawled).
+- **Contacts are never printed raw in the HTML *or in bot-facing files*.**
+  `lib/contacts.js` masks them (`+375 25 *** ** 93`) and ships a
+  reversed-base64 blob that `public/assets/js/contact-protect.js` decodes
+  only on click (and on reveal it swaps `role="button"`→ real `tel:`/
+  `mailto:` link). `/llms.txt` and the schema.org JSON-LD also omit
+  contacts on purpose. The **PDF keeps plaintext contacts** (fetched on
+  request, not crawled).
 - **The user asked NOT to edit the résumé data files casually.** `data/`
   edits happen only on explicit request. (Structural additions like
   `experienceStartDate` / `myStory` were done with explicit approval.)
 - **Dynamic fields** (computed in `lib/data.js`, don't hardcode): `age`
   and `experienceYears` from birth/`experienceStartDate` dates; the
   `{{years}}` token in `author.myStory` is resolved once and shared by
-  both the page and the PDF.
+  both the page and the PDF; `author.structuredData` (schema.org Person
+  JSON-LD, no contacts) for the page head.
+- **Do NOT edit the theme CSS** (`public/assets/css/*`, `libs/*`) — a
+  standing user constraint. Site-specific styles live in the small
+  `contact-protect.css` / `a11y.css`. Editing the theme's markup via ARIA
+  attributes is fine; the theme keys off classes/`data-*`, not `role`/`aria`.
+- **Images:** the served `.jpg` under `public/images` were optimized
+  in place (mozjpeg + ≤1600px). The `public/images/projects/_png` folder
+  is **source masters — keep it, don't serve/delete it** (nothing links to
+  it). Re-optimize by re-compressing served files in place (no path
+  changes), never by touching `_png`.
 - **`node_modules` is gitignored and untracked** — rely on
   `package-lock.json` + install-on-build. Don't commit it.
 - **Known dead code (left intentionally, not yet cleaned):** unused
@@ -78,10 +96,21 @@ Smoke test: `GET /` → 200, `GET /resume.pdf` → 200 (application/pdf),
 - After a merge, `node_modules` may get pruned from the working tree
   (it was historically tracked); run `npm install` locally before testing.
 
+## Done so far (high level; details in ai-docs/features.md)
+
+Dynamic `/resume.pdf`; content externalized to `data/` with dynamic
+`age`/`experienceYears`; contact anti-scraping (+ moved data out of
+`public/`); `/llms.txt`, canonical, JSON-LD, robots/sitemap fixes;
+accessibility pass; security (`npm audit fix`, untracked `node_modules`),
+Heroku cleanup; `index.js` refactor; page-load perf (removed `ga.js` /
+jwplayer / `roboto-bak`, lazy Yandex Maps, JPEGs optimized ~30%).
+
 ## Open follow-ups (not done)
 
-- **Page-load speed** — the biggest real win: ~5.6 MB of theme `libs`,
-  duplicate analytics (legacy `ga.js` + `gtag.js`), image optimization.
+- **Biggest remaining perf win: PurgeCSS** for `materialize.min.css`
+  (172 KB) + `animate.min.css` (53 KB) — blocked by the "don't edit CSS"
+  constraint; needs the user to lift it. Also font subsetting (unused
+  Roboto weights, big SVG icon-font fallbacks).
 - Dead-code cleanup (`var ejs`, `ensureSecure`), unused static HTML in
   `public/` (`blog.html`, `single.html`, …).
 - No tests / no config layer yet; `engines.node` pinned at 18.x (EOL-ish).
