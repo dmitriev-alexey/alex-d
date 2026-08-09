@@ -66,6 +66,7 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/contact-protect.css">
+    <link rel="stylesheet" href="assets/css/a11y.css">
 
     <!--[if lt IE 9]>
     <script src="assets/js/html5shiv.js"></script>
@@ -103,8 +104,11 @@
 
 <body>
 
+<!-- Skip link: visually hidden until keyboard-focused (a11y / agent nav) -->
+<a href="#app" class="skip-link">Skip to main content</a>
+
 <!-- Preloader -->
-<div id="preloader">
+<div id="preloader" aria-hidden="true">
     <div class="loader">
         <svg class="circle-loader" height="50" width="50">
             <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="6" stroke-miterlimit="10"/>
@@ -113,7 +117,7 @@
 </div><!--preloader end-->
 
 <!-- Main Container -->
-<main id="app" class="main-section">
+<main id="app" class="main-section" tabindex="-1">
     <!-- header navigation start -->
     <header id="navigation" class="root-sec white nav">
         <div class="container">
@@ -125,14 +129,14 @@
                                 <a href="#home" class="left brand-logo menu-smooth-scroll" data-section="#home" aria-label="home">
                                     <img src="images/logo_new.png" loading="lazy" alt="MafiBand">
                                 </a>
-                                <a href="#" data-activates="mobile-demo" class="button-collapse" aria-label="home link">
-                                    <i class="mdi-navigation-menu"></i>
+                                <a href="#" data-activates="mobile-demo" class="button-collapse" role="button" aria-haspopup="true" aria-label="Open menu">
+                                    <i class="mdi-navigation-menu" aria-hidden="true"></i>
                                 </a>
 
                                 <ul class="right static-menu">
                                     <li>
-                                        <a class="dropdown-button blog-submenu-init" href="#!" data-activates="dropdown1" aria-label="dropdown">
-                                            <i class="mdi-navigation-more-vert right"></i>
+                                        <a class="dropdown-button blog-submenu-init" href="#!" data-activates="dropdown1" role="button" aria-haspopup="true" aria-label="More links">
+                                            <i class="mdi-navigation-more-vert right" aria-hidden="true"></i>
                                         </a>
                                     </li>
                                 </ul>
@@ -145,7 +149,7 @@
                                                 <img src="images/i_square.jpg" loading="lazy"  alt="It's me">
                                             </div>
                                             <h3><%-author.name%></h3>
-                                            <h5>Mobile and Web Application Developer</h5>
+                                            <h5 aria-level="4">Mobile and Web Application Developer</h5>
                                         </div>
                                     </li><!-- mini profile end-->
 
@@ -280,19 +284,19 @@
                     <div class="col-sm-6 col-md-4" itemscope itemtype="https://schema.org/Person">
                         <div class="person-info">
                             <h3 class="about-subtitle">Personal Information</h3>
-                            <h5>
+                            <h5 aria-level="4">
                                 <span>Name :</span>     <span itemprop="name" ><%-author.name%></span>
                             </h5>
-                            <h5>
+                            <h5 aria-level="4">
                                 <span>Age :</span>      <span> <%-author.age%> Years</span>
                             </h5>
-                            <h5>
-                                <span>Phone :</span>    <a href="#" class="contact-protect" data-contact="phone" data-value="<%-author.phoneObfuscated%>" aria-label="Show phone number"><%-author.phoneMasked%></a>
+                            <h5 aria-level="4">
+                                <span>Phone :</span>    <a href="#" class="contact-protect" data-contact="phone" data-value="<%-author.phoneObfuscated%>" role="button" aria-label="Show phone number"><%-author.phoneMasked%></a>
                             </h5>
-                            <h5>
-                                <span>Email :</span>    <a href="#" class="contact-protect" data-contact="email" data-value="<%-author.emailObfuscated%>" aria-label="Show email address"><%-author.emailMasked%></a>
+                            <h5 aria-level="4">
+                                <span>Email :</span>    <a href="#" class="contact-protect" data-contact="email" data-value="<%-author.emailObfuscated%>" role="button" aria-label="Show email address"><%-author.emailMasked%></a>
                             </h5>
-                            <h5>
+                            <h5 aria-level="4">
                                 <span>Address :</span>  <span itemprop="address" ><%-author.address%></span>
                             </h5>
                         </div>
@@ -559,13 +563,13 @@
                                 <% categories.forEach(function(category){ %>
                                 <% if (category.active) { %>
                                 <li class="active">
-                                    <a href="#" data-target="<%-category.data_target%>" aria-label="<%-category.name%>">
+                                    <a href="#" data-target="<%-category.data_target%>" role="button" aria-label="<%-category.name%>">
                                         <%-category.name%>
                                     </a>
                                 </li>
                                 <% } else { %>
                                 <li>
-                                    <a href="#" data-target="<%-category.data_target%>" aria-label="<%-category.name%>">
+                                    <a href="#" data-target="<%-category.data_target%>" role="button" aria-label="<%-category.name%>">
                                         <%-category.name%>
                                     </a>
                                 </li>
@@ -589,7 +593,7 @@
             <div class="modal-footer">
                 <a href="#" target="_blank" class="waves-effect btn-flat cyan-text modal-action" aria-label="Live Demo">Live Demo</a>
                 <a href="#" target="_blank" class="waves-effect btn-flat cyan-text modal-action-second" aria-label="Live Demo Second">Live Demo</a>
-                <a href="#" class="waves-effect btn-flat cyan-text modal-action modal-close" aria-label="cancel">cancel</a>
+                <a href="#" class="waves-effect btn-flat cyan-text modal-action modal-close" role="button" aria-label="Cancel">cancel</a>
             </div>
         </div>
 
@@ -783,9 +787,9 @@
                                     <h2 class="title">Contact</h2>
                                     <p class="regular-text"><%-author.address%></p>
                                     <ul class="clearfix contact-info">
-                                        <li><a href="#" class="contact-protect" data-contact="phone" data-value="<%-author.phoneObfuscated%>" aria-label="Show phone number"><%-author.phoneMasked%></a>
+                                        <li><a href="#" class="contact-protect" data-contact="phone" data-value="<%-author.phoneObfuscated%>" role="button" aria-label="Show phone number"><%-author.phoneMasked%></a>
                                         </li>
-                                        <li><a href="#" class="contact-protect" data-contact="email" data-value="<%-author.emailObfuscated%>" aria-label="Show email address"><%-author.emailMasked%></a>
+                                        <li><a href="#" class="contact-protect" data-contact="email" data-value="<%-author.emailObfuscated%>" role="button" aria-label="Show email address"><%-author.emailMasked%></a>
                                         </li>
                                         <li><a href="<%-author.site%>" aria-label="Site"><%-author.site%></a>
                                         </li>
