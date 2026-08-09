@@ -9,10 +9,14 @@ var compression = require('compression');
 var minify = require('express-minify');
 
 var resumePdf = require('./lib/resumePdf');
+var llmsTxt = require('./lib/llmsTxt');
 
 // All site content is loaded from data/ and enriched once at startup;
 // see lib/data.js (data-loading) and lib/contacts.js (contact masking).
 var data = require('./lib/data').load();
+
+// Built once from the data - it has no per-request or time-sensitive parts.
+var llmsTxtBody = llmsTxt.build(data);
 
 var app = express();
 
@@ -57,6 +61,11 @@ app.get('/sitemap*/', function (req, res) {
 app.get('/manifest*/', function (req, res) {
     res.contentType("application/json");
     res.send(data.manifest);
+});
+
+app.get('/llms.txt', function (req, res) {
+    res.type('text/plain; charset=utf-8');
+    res.send(llmsTxtBody);
 });
 
 app.get('/resume.pdf', function (request, response) {

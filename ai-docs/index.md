@@ -20,6 +20,7 @@ re-index the project quickly. Top-level memory is in the repo-root
 | `lib/data.js` | `load()` reads every `data/*.json.file` once at startup and returns `{ author, skills, works, educations, categories, manifest }`, with the author enriched. |
 | `lib/contacts.js` | `maskPhone`, `maskEmail`, `obfuscate` — used by `lib/data.js`; mirrored client-side by `public/assets/js/contact-protect.js`. |
 | `lib/resumePdf.js` | `generateResumePdfBuffer(data)` and `formatFilenameTimestamp(date)` — the pdfmake document. |
+| `lib/llmsTxt.js` | `build(data)` — the `/llms.txt` body (site summary for LLMs). |
 | `templates/index.ejs` | The single rendered page (about, skills, experience, education, portfolio, testimonials, contact). |
 | `templates/error404.ejs` | 404 page. |
 | `data/*.json.file` | Site content (non-public). See data-model.md. |
@@ -36,6 +37,7 @@ re-index the project quickly. Top-level memory is in the repo-root
 | `GET /` | Renders `templates/index.ejs` with all data. |
 | `GET /resume.pdf` | Freshly generated PDF (no cache), filename `<Name>_Resume_<UTC timestamp>.pdf`. |
 | `GET /manifest*` | The PWA manifest JSON (from `data/manifest.json.file`). |
+| `GET /llms.txt` | llms.txt site summary for LLMs (from `lib/llmsTxt.js`; no raw contacts). |
 | `GET /sitemap*` | `sitemap.xml`. |
 | `GET /json/*` | **404** by design — content is not publicly served. |
 

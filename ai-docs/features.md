@@ -66,7 +66,29 @@ now 404s. **Do not move content back under `public/`.**
   the same way age is computed from the birth date — via `yearsBetween`
   in `lib/data.js`. The `{{years}}` token in `myStory` is resolved once.
 
-## 4. Housekeeping
+## 4. Discoverability / SEO
+
+- **`GET /llms.txt`** (https://llmstxt.org): a site summary for LLMs, built
+  once at startup from data (`lib/llmsTxt.js`) — name, location, years of
+  experience, résumé/CV PDF links, top skills, social links. **No raw
+  contacts** (it's bot-facing, same stance as the page).
+- **Canonical**: `<link rel="canonical" href="{author.site}">` in the head
+  — consolidates www/non-www and duplicate URLs for Google.
+- **Structured data**: schema.org `Person` JSON-LD in the head, built in
+  `lib/data.js` as `author.structuredData` (name, jobTitle, url, image,
+  `sameAs` socials, city/country). No phone/email — this replaces the
+  `itemprop` microdata that was removed during contact protection.
+- **robots.txt**: removed a stale, malformed `Host : alex-d.cyclic.app`
+  line (old Cyclic domain; `Host` is a non-standard directive Google
+  ignores). Keeps `Allow: /` + the sitemap reference.
+- **sitemap.xml**: refreshed `lastmod` for the homepage and added the
+  `/resume.pdf` URL; the two manually-authored PDFs keep their real dates.
+
+www redirect: intentionally none at the app level — the site runs on the
+`alex-d.onrender.com` apex with no www/custom domain, and on Render such
+redirects belong at the platform/DNS layer, not in Express.
+
+## 5. Housekeeping
 
 - `npm audit fix` → 0 vulnerabilities (no breaking bumps needed).
 - `node_modules` untracked (was gitignored yet partially committed with
