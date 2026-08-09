@@ -142,7 +142,13 @@ app.get('/resume.pdf', function (request, response) {
 
         response.set({
             'Content-Type': 'application/pdf',
-            'Content-Disposition': 'inline; filename="' + filename + '"'
+            'Content-Disposition': 'inline; filename="' + filename + '"',
+            // Every request regenerates the PDF with a fresh timestamp - make
+            // sure the browser never serves a stale copy from its own cache
+            // instead of hitting this route again.
+            'Cache-Control': 'no-store, no-cache, must-revalidate, private',
+            'Pragma': 'no-cache',
+            'Expires': '0'
         });
         response.send(buffer);
     }).catch(function (err) {
