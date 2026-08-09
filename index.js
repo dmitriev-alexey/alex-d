@@ -10,76 +10,11 @@ var minify = require('express-minify');
 
 var resumePdf = require('./lib/resumePdf');
 
+// All site content is loaded from data/ and enriched once at startup;
+// see lib/data.js (data-loading) and lib/contacts.js (contact masking).
+var data = require('./lib/data').load();
+
 var app = express();
-
-var fs = require('fs');
-
-var authorFile = fs.readFileSync("data/author.json.file");
-var authorJson = JSON.parse(authorFile);
-authorJson.age = getYearDiffWithMonth(new Date(authorJson.age), new Date())
-authorJson.experienceYears = getYearDiffWithMonth(new Date(authorJson.experienceStartDate), new Date())
-
-// "My Story" paragraphs come from author.json.file with a {{years}} token
-// standing in for the experience figure - resolve it once here so both the
-// EJS page and the PDF (lib/resumePdf.js) render the same final text.
-authorJson.myStory = authorJson.myStory.map(function (paragraph) {
-    return paragraph.split('{{years}}').join(authorJson.experienceYears);
-});
-
-// Anti-scraping for phone/email on the HTML page (the PDF keeps the plain
-// values - see lib/resumePdf.js). The page never prints the real value in
-// the markup: it shows a masked version and ships a reversed-base64 blob
-// that assets/js/contact-protect.js decodes only once the visitor clicks.
-// This isn't real security (anyone can read the decode logic), but it
-// defeats the plain regex/HTML scrapers that make up most of the traffic
-// trying to harvest contact details, without hiding anything from a human.
-function obfuscateContactValue(value) {
-    return Buffer.from(String(value).split('').reverse().join('')).toString('base64');
-}
-
-function maskPhone(phone) {
-    var groups = String(phone).split(' ');
-    return groups.map(function (group, idx) {
-        if (idx < 2 || idx === groups.length - 1) {
-            return group;
-        }
-        return group.replace(/./g, '*');
-    }).join(' ');
-}
-
-function maskEmail(email) {
-    var atIndex = String(email).indexOf('@');
-    if (atIndex <= 1) {
-        return email;
-    }
-    var local = email.slice(0, atIndex);
-    var domain = email.slice(atIndex);
-    return local.slice(0, 1) + local.slice(1).replace(/./g, '*') + domain;
-}
-
-authorJson.phoneMasked = maskPhone(authorJson.phone);
-authorJson.emailMasked = maskEmail(authorJson.email);
-authorJson.phoneObfuscated = obfuscateContactValue(authorJson.phone);
-authorJson.emailObfuscated = obfuscateContactValue(authorJson.email);
-
-var skillsFile = fs.readFileSync("data/skills.json.file");
-var skillsJson = JSON.parse(skillsFile);
-
-var workFile = fs.readFileSync("data/works.json.file");
-var workJson = JSON.parse(workFile);
-
-var educationsFile = fs.readFileSync("data/educations.json.file");
-var educationsJson = JSON.parse(educationsFile);
-
-var categoryFile = fs.readFileSync("data/projects_category.json.file");
-var categoryJson = JSON.parse(categoryFile);
-
-var manifestFile = fs.readFileSync("data/manifest.json.file");
-var manifestJson = JSON.parse(manifestFile);
-
-// workJson.forEach(function (item) {       https://tinypng.com/
-//     console.log(item.projects.length);
-// });
 
 // process.env.NODE_ENV = 'dev';
 process.env.NODE_ENV = 'production';
@@ -121,7 +56,7 @@ app.get('/sitemap*/', function (req, res) {
 
 app.get('/manifest*/', function (req, res) {
     res.contentType("application/json");
-    res.send(manifestJson);
+    res.send(data.manifest);
 });
 
 app.get('/resume.pdf', function (request, response) {
@@ -131,13 +66,13 @@ app.get('/resume.pdf', function (request, response) {
     var generatedAt = new Date();
 
     resumePdf.generateResumePdfBuffer({
-        author: authorJson,
-        skills: skillsJson,
-        works: workJson,
-        educations: educationsJson,
+        author: data.author,
+        skills: data.skills,
+        works: data.works,
+        educations: data.educations,
         generatedAt: generatedAt
     }).then(function (buffer) {
-        var filename = authorJson.name.replace(/\s+/g, '') +
+        var filename = data.author.name.replace(/\s+/g, '') +
             '_Resume_' + resumePdf.formatFilenameTimestamp(generatedAt) + '.pdf';
 
         response.set({
@@ -159,11 +94,11 @@ app.get('/resume.pdf', function (request, response) {
 
 app.get('/', function (request, response) {
     response.render("index", {
-        author: authorJson,
-        skills: skillsJson,
-        works: workJson,
-        educations: educationsJson,
-        categories: categoryJson
+        author: data.author,
+        skills: data.skills,
+        works: data.works,
+        educations: data.educations,
+        categories: data.categories
     });
 });
 
@@ -191,11 +126,3 @@ function setCustomCacheControl (res, path) {
         res.setHeader('Cache-Control', 'public, max-age=3600'); // text/html кэшируем на один час
     }
 }
-
-function getYearDiffWithMonth(startDate, endDate) {
-    const ms = endDate.getTime() - startDate.getTime();
-  
-    const date = new Date(ms);
-  
-    return Math.abs(date.getUTCFullYear() - 1970);
-  }
