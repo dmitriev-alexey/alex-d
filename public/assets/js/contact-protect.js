@@ -19,12 +19,18 @@
 
         event.preventDefault();
 
+        var isPhone = el.getAttribute('data-contact') === 'phone';
         var real = decode(el.getAttribute('data-value'));
-        var scheme = el.getAttribute('data-contact') === 'phone' ? 'tel:' : 'mailto:';
+        var scheme = isPhone ? 'tel:' : 'mailto:';
 
         el.textContent = real;
         el.setAttribute('href', scheme + real);
         el.setAttribute('data-revealed', '1');
+
+        // It's now a real tel:/mailto: link, not a reveal button - keep the
+        // accessibility tree honest for screen readers and agents.
+        el.removeAttribute('role');
+        el.setAttribute('aria-label', (isPhone ? 'Call ' : 'Email ') + real);
     }
 
     var triggers = document.querySelectorAll('.contact-protect');

@@ -88,7 +88,40 @@ www redirect: intentionally none at the app level — the site runs on the
 `alex-d.onrender.com` apex with no www/custom domain, and on Render such
 redirects belong at the platform/DNS layer, not in Express.
 
-## 5. Housekeeping
+## 5. Accessibility / agent-navigability
+
+A pass to make the accessibility tree cleaner for screen readers AND for
+AI browser agents (which increasingly read the a11y tree instead of
+pixels). Constraint: **no visual change, no functional change** — so only
+ARIA/role attributes and an off-screen skip link were added; no theme tags
+were swapped and no theme CSS/JS selectors were touched (the theme keys off
+classes/`data-*`, never `role`/`aria-*`).
+
+- **Skip link** (`templates/index.ejs` + `public/assets/css/a11y.css`):
+  "Skip to main content" → `#app`; sits off-screen (`left:-9999px`) until
+  keyboard-focused, so normal rendering is unchanged. `<main id="app">` got
+  `tabindex="-1"` as the focus target; its focus outline is suppressed.
+- **`role="button"`** on JS-control anchors that don't navigate (the two
+  menu/dropdown toggles, the portfolio filters, the modal Cancel, and the
+  contact reveal links); `aria-haspopup="true"` on the two menu toggles.
+  The "Live Demo" modal links stay links (JS gives them real hrefs).
+- **`aria-level="4"`** on the `<h5>` items (personal-info fields + the mini
+  profile subtitle) so the heading hierarchy is contiguous (h3 → h4)
+  without changing the `<h5>` tag or its styling.
+- **`aria-hidden="true"`** on the decorative preloader and the icon `<i>`s
+  inside the menu toggles.
+- `public/assets/js/contact-protect.js`: on reveal it now also drops the
+  `role="button"` (the element becomes a real `tel:`/`mailto:` link) and
+  updates `aria-label` to the revealed value — keeping the tree honest in
+  both states.
+
+Verified in a headless Chromium (Playwright): screenshot unchanged, skip
+link off-screen until focus, portfolio filtering still works, contact
+reveal still works (mask → real number, `tel:` href, role removed), and no
+new JS errors. (A pre-existing `ymaps is not defined` from the external
+Yandex Maps script is unrelated.)
+
+## 6. Housekeeping
 
 - `npm audit fix` → 0 vulnerabilities (no breaking bumps needed).
 - `node_modules` untracked (was gitignored yet partially committed with
