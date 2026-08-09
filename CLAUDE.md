@@ -72,10 +72,15 @@ Smoke test: `GET /` → 200, `GET /resume.pdf` → 200 (application/pdf),
   `{{years}}` token in `author.myStory` is resolved once and shared by
   both the page and the PDF; `author.structuredData` (schema.org Person
   JSON-LD, no contacts) for the page head.
-- **Do NOT edit the theme CSS** (`public/assets/css/*`, `libs/*`) — a
-  standing user constraint. Site-specific styles live in the small
-  `contact-protect.css` / `a11y.css`. Editing the theme's markup via ARIA
-  attributes is fine; the theme keys off classes/`data-*`, not `role`/`aria`.
+- **Don't hand-edit the theme CSS** (`public/assets/css/*`, `libs/*`).
+  Site-specific styles/overrides live in the small `contact-protect.css` /
+  `a11y.css` (loaded last). The framework files (`materialize.min.css`,
+  `animate.min.css`, `bootstrap.css`, `font-awesome.min.css`) are now
+  **PurgeCSS-processed** (unused selectors stripped) — if the markup gains
+  new classes, re-run PurgeCSS (scan `templates/*.ejs` + all JS, safelist
+  owl/waves/modal/animate states) rather than editing by hand. Editing the
+  theme's markup via ARIA is fine; the theme keys off classes/`data-*`,
+  not `role`/`aria`.
 - **Images:** the served `.jpg` under `public/images` were optimized
   in place (mozjpeg + ≤1600px). The `public/images/projects/_png` folder
   is **source masters — keep it, don't serve/delete it** (nothing links to
@@ -104,14 +109,13 @@ Dynamic `/resume.pdf`; content externalized to `data/` with dynamic
 accessibility pass; security (`npm audit fix`, untracked `node_modules`,
 baseline security headers + HTML `Cache-Control`), Heroku cleanup;
 `index.js` refactor; page-load perf (removed `ga.js` / jwplayer /
-`roboto-bak`, lazy Yandex Maps, JPEGs optimized ~30%).
+`roboto-bak`, lazy Yandex Maps, JPEGs optimized ~30%); PurgeCSS on the
+framework CSS (~130 KB off render-blocking); Lighthouse a11y pass (zoom
+restored, aria-label + contrast fixes → Accessibility 92).
 
 ## Open follow-ups (not done)
 
-- **Biggest remaining perf win: PurgeCSS** for `materialize.min.css`
-  (172 KB) + `animate.min.css` (53 KB) — blocked by the "don't edit CSS"
-  constraint; needs the user to lift it. Also font subsetting (unused
-  Roboto weights, big SVG icon-font fallbacks).
+- Font subsetting (unused Roboto weights, big SVG icon-font fallbacks).
 - Dead-code cleanup (`var ejs`, `ensureSecure`), unused static HTML in
   `public/` (`blog.html`, `single.html`, …).
 - No tests / no config layer yet; `engines.node` pinned at 18.x (EOL-ish).

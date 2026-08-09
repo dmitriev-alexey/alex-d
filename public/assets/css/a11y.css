@@ -26,3 +26,21 @@
 #app:focus {
     outline: none;
 }
+
+/*
+ * Contrast fixes (WCAG AA) for links Lighthouse flagged as too light.
+ * Overrides live here, in our own CSS - the theme files are untouched.
+ * Scoped to the light-background contexts only; the Contact section's
+ * links are white on a dark panel and already pass, so they're left alone.
+ */
+#about .person-info .contact-protect {
+    color: #01639c; /* was #039be5 -> 2.95:1 on #fafafa; now ~6:1 */
+}
+
+#testimonial .card-content a {
+    color: #6f6f6f; /* was #777 -> 4.48:1 on #fff; now ~4.7:1 */
+}
+
+#footer .copyright p {
+    color: #6f6f6f; /* was #c4c4c4 -> 1.74:1 on #fff; now ~5:1 */
+}

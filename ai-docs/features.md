@@ -159,9 +159,6 @@ Served JPEGs were then optimized in place (mozjpeg q80, oversized images
 capped at 1600px on the long side), ~30% smaller, with no path/reference
 changes and the `_png` masters kept.
 
-Known remaining lever (not done): CSS purge for materialize/animate
-(deferred — CSS is off-limits for now) and font subsetting.
-
 ## 8. Security & caching headers
 
 From an external site audit (kept the useful findings, dropped its
@@ -185,3 +182,32 @@ Skipped from the audit: WebP/AVIF conversion (would need reference/CSS
 changes), sitemap priority tags (Google ignores them), and the
 "render-blocking head script" flag (not real — head has only async gtag +
 a tiny inline config; all heavy JS is at the end of `<body>`).
+
+## 9. Lighthouse / mobile pass (CSS purge + a11y)
+
+Driven by a real Lighthouse mobile run (Performance 56, Accessibility 82).
+The user lifted the "don't edit CSS" constraint for this round.
+
+- **PurgeCSS on the framework CSS** — strip unused selectors from
+  `materialize.min.css` (172→76 KB), `animate.min.css` (52→48 KB, keyframes
+  kept), `bootstrap.css` (14→4 KB), `font-awesome.min.css` (23→4 KB).
+  ~130 KB off the render-blocking CSS → LCP roughly halved in the run.
+  Method: PurgeCSS scans `templates/*.ejs` **and all JS** (theme libs
+  included, so runtime-added class names survive) plus a safelist for owl/
+  waves/modal/animate states; `@font-face`/`@keyframes` left intact. Files
+  overwritten in place (same paths — no template/reference changes).
+  Verified in headless Chromium: desktop pixel-identical, mobile layout
+  intact, all 4 owl carousels init, dropdown/side-nav/modal/portfolio
+  filter/contact reveal all work and are styled, fa + mdi icons render.
+- **Restored pinch-zoom** — dropped `maximum-scale=1.0, user-scalable=no`
+  from the viewport meta (WCAG). Responsive layout is unaffected (that's
+  `width=device-width`/media queries, untouched).
+- **Contrast fixes (WCAG AA)** via overrides in our own `a11y.css` (theme
+  files untouched): About phone/email links `#039be5`→`#01639c` (2.95→6.2),
+  testimonial links `#777`→`#6f6f6f` (4.48→5.0), footer copyright
+  `#c4c4c4`→`#6f6f6f` (1.74→5.0). color-contrast audit now passes.
+
+Result: Accessibility 82→92, color-contrast passes, render-blocking CSS
+~130 KB lighter. Remaining (not done): font subsetting, and the
+`crawlable-anchors`/`list` items that come from theme JS at runtime (not
+safely fixable without reworking the theme).
