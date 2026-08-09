@@ -125,16 +125,24 @@ app.get('/manifest*/', function (req, res) {
 });
 
 app.get('/resume.pdf', function (request, response) {
-    // Generated fresh on every request - no caching.
+    // Generated fresh on every request - no caching. The same generatedAt
+    // moment is used both inside the document (footer/metadata, see
+    // lib/resumePdf.js) and in the downloaded file name, so they agree.
+    var generatedAt = new Date();
+
     resumePdf.generateResumePdfBuffer({
         author: authorJson,
         skills: skillsJson,
         works: workJson,
-        educations: educationsJson
+        educations: educationsJson,
+        generatedAt: generatedAt
     }).then(function (buffer) {
+        var filename = authorJson.name.replace(/\s+/g, '') +
+            '_Resume_' + resumePdf.formatFilenameTimestamp(generatedAt) + '.pdf';
+
         response.set({
             'Content-Type': 'application/pdf',
-            'Content-Disposition': 'inline; filename="' + authorJson.name.replace(/\s+/g, '') + 'Resume.pdf"'
+            'Content-Disposition': 'inline; filename="' + filename + '"'
         });
         response.send(buffer);
     }).catch(function (err) {
