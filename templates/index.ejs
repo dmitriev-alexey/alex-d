@@ -244,32 +244,14 @@
                         <div class="person-about">
                             <h3 class="about-subtitle">My Story</h3>
                             <p>
-                                I'm a Mobile and Web Application developer. My experience is <%-author.experienceYears%> years of  creating
-                                web-based applications and applications for mobile devices.
-
-                                <br/>
-                                <br/>Deep knowledge in the most of common technology:
-
-                                <br/>• Android (1.6 - 16 SDK, NDK 11r - JNI) Android Tv, Android Wear
-                                <br/>• iOS (8-9)
-                                <br/>• Web Service (J2EE and Node.Js)
-                                <br/>&nbsp;&nbsp;&nbsp;J2EE - Struts, Facelets , Spring, Hibernate.
-                                <br/>&nbsp;&nbsp;&nbsp;Node.Js - Express and others frameworks.
-                                <br/>&nbsp;&nbsp;&nbsp;JavaScript - jQuery and others frameworks.
-                                <br/>• Experience in work with cloud platforms: Google App Engine, Parse, Heroku,
-                                DigitalOcean.
-                                <br/>• Experience in work with databases: SQLite, MS SQL, Oracle, MySQL, NeDB,
-                                GreenDao, ObjectBox, Realm, Room.
-                                <br/>• Experience in work with analytics: Google Analytics, Fabric, other.
-                                <br/>• Experience in work with Social API: FB, Instagram, Vk, Twitter and other.
-                                <br/>• Experience in work with game-frameworks AndEngine and LibGDX.
-
-                                <br/><br/>Experience in design and development large-scale distributed systems, as well
-                                as experience in management a small team (up to 5 people).
-                                
-                                
-                                <br/>• Manager tools: Atlassian Jira, Trello, Redmine.
-                                <br/>• Methodologies: Agile, SCRUM.
+                                <% author.myStory.forEach(function(paragraph, idx) { %>
+                                <%- paragraph.split('\n').map(function (line) {
+                                        return line.replace(/^ +/, function (spaces) {
+                                            return new Array(spaces.length + 1).join('&nbsp;');
+                                        });
+                                    }).join('<br/>') %>
+                                <% if (idx < author.myStory.length - 1) { %><br/><br/><% } %>
+                                <% }); %>
                             </p>
 
 

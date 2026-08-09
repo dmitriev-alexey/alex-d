@@ -14,12 +14,17 @@ var app = express();
 
 var fs = require('fs');
 
-var EXPERIENCE_START_DATE = "2008-01-01";
-
 var authorFile = fs.readFileSync("public/json/author.json.file");
 var authorJson = JSON.parse(authorFile);
 authorJson.age = getYearDiffWithMonth(new Date(authorJson.age), new Date())
-authorJson.experienceYears = getYearDiffWithMonth(new Date(EXPERIENCE_START_DATE), new Date())
+authorJson.experienceYears = getYearDiffWithMonth(new Date(authorJson.experienceStartDate), new Date())
+
+// "My Story" paragraphs come from author.json.file with a {{years}} token
+// standing in for the experience figure - resolve it once here so both the
+// EJS page and the PDF (lib/resumePdf.js) render the same final text.
+authorJson.myStory = authorJson.myStory.map(function (paragraph) {
+    return paragraph.split('{{years}}').join(authorJson.experienceYears);
+});
 
 var skillsFile = fs.readFileSync("public/json/skills.json.file");
 var skillsJson = JSON.parse(skillsFile);
