@@ -26,6 +26,42 @@ authorJson.myStory = authorJson.myStory.map(function (paragraph) {
     return paragraph.split('{{years}}').join(authorJson.experienceYears);
 });
 
+// Anti-scraping for phone/email on the HTML page (the PDF keeps the plain
+// values - see lib/resumePdf.js). The page never prints the real value in
+// the markup: it shows a masked version and ships a reversed-base64 blob
+// that assets/js/contact-protect.js decodes only once the visitor clicks.
+// This isn't real security (anyone can read the decode logic), but it
+// defeats the plain regex/HTML scrapers that make up most of the traffic
+// trying to harvest contact details, without hiding anything from a human.
+function obfuscateContactValue(value) {
+    return Buffer.from(String(value).split('').reverse().join('')).toString('base64');
+}
+
+function maskPhone(phone) {
+    var groups = String(phone).split(' ');
+    return groups.map(function (group, idx) {
+        if (idx < 2 || idx === groups.length - 1) {
+            return group;
+        }
+        return group.replace(/./g, '*');
+    }).join(' ');
+}
+
+function maskEmail(email) {
+    var atIndex = String(email).indexOf('@');
+    if (atIndex <= 1) {
+        return email;
+    }
+    var local = email.slice(0, atIndex);
+    var domain = email.slice(atIndex);
+    return local.slice(0, 1) + local.slice(1).replace(/./g, '*') + domain;
+}
+
+authorJson.phoneMasked = maskPhone(authorJson.phone);
+authorJson.emailMasked = maskEmail(authorJson.email);
+authorJson.phoneObfuscated = obfuscateContactValue(authorJson.phone);
+authorJson.emailObfuscated = obfuscateContactValue(authorJson.email);
+
 var skillsFile = fs.readFileSync("public/json/skills.json.file");
 var skillsJson = JSON.parse(skillsFile);
 

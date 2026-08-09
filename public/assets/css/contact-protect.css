@@ -1,0 +1,10 @@
+.contact-protect {
+    cursor: pointer;
+    text-decoration: none;
+    border-bottom: 1px dotted currentColor;
+}
+
+.contact-protect[data-revealed] {
+    border-bottom: none;
+    cursor: text;
+}
