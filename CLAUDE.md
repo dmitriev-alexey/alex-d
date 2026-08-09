@@ -41,7 +41,8 @@ npm install          # deps are NOT committed (node_modules is gitignored)
 npm start            # === node index.js, serves on PORT or 6000
 ```
 Smoke test: `GET /` → 200, `GET /resume.pdf` → 200 (application/pdf),
-`GET /manifest.json` → 200, `GET /json/*` → **404** (must stay 404).
+`GET /manifest.json` → 200, `GET /llms.txt` → 200 (text/plain),
+`GET /json/*` → **404** (must stay 404).
 
 ## Critical conventions & gotchas
 

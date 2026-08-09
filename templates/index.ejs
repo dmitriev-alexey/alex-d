@@ -31,6 +31,12 @@
     <meta name="description" content="Author: <%-author.name%> - Mobile and Web Application Developer (Android, iOS, javaScript)">
     <meta name="keywords" content="Android , Web, IOS, JavaScript, Developer, Application">
 
+    <!-- Canonical (consolidates www/non-www and any duplicate URLs) -->
+    <link rel="canonical" href="<%-author.site%>">
+
+    <!-- Structured data: schema.org Person (JSON-LD, no contacts) -->
+    <script type="application/ld+json"><%- author.structuredData %></script>
+
     <!-- Google robot -->
     <meta name="google-site-verification" content="GHpDGKceAzS6h0a2T9SDPewwxPl3xfIeCi82jLwlNW8"/>
     <meta name='wmail-verification' content='eb5ecede754b8834'/>
