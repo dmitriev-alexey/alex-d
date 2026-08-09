@@ -132,3 +132,30 @@ Yandex Maps script is unrelated.)
   word "Heroku" in the résumé text is real content and was left alone.
 - `index.js` refactored into a thin routing layer (logic moved to
   `lib/data.js` + `lib/contacts.js`).
+
+## 7. Page-load performance
+
+Constraints for this pass: **don't edit the theme CSS**, and **keep the
+`public/images/projects/_png` masters** (they're source art for future
+images).
+
+- **Removed dead Universal Analytics (`ga.js`)** from the page head. UA was
+  shut down by Google on 2023-07-01, so that inline injector + external
+  `google-analytics.com/ga.js` request did nothing. GA4 (`gtag.js`) stays.
+- **Removed jwplayer** (71 KB JS + a 196 KB `.swf`): its setup only runs on
+  `.player` elements, of which this page has none — it loaded and idled.
+  The script tag and the `public/assets/libs/jwplayer/` folder are gone.
+- **Removed `roboto-bak`** (~1.9 MB): a duplicate Roboto font folder that
+  nothing referenced.
+- **Lazy-loaded Yandex Maps**: the heavy external maps SDK + `my_poi.js`
+  (which needs `ymaps` to already exist) used to load on every page view.
+  They're now injected only when the Contact-section `#map` nears the
+  viewport (IntersectionObserver, `300px` rootMargin; immediate fallback if
+  IO is unavailable). Verified: 0 map requests on initial load, 1 after
+  scrolling to Contact — and the initial-load `ymaps is not defined` error
+  is gone.
+
+Known remaining levers (not done): image optimization (re-compress the
+served `.jpg` in place — no CSS/reference changes — keeping `_png`
+masters), CSS purge for materialize/animate (deferred: CSS is off-limits
+for now), font subsetting.
