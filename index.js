@@ -31,6 +31,19 @@ app.set('view engine', 'ejs');
 app.set('port', (process.env.PORT || 6000));
 
 
+// Baseline security headers on every response (set before anything else so
+// static assets, the rendered page and the PDF all get them). No CSP here -
+// the page relies on inline scripts, so a real CSP needs separate care.
+app.use(function (req, res, next) {
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+    res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+    res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+    // HSTS: honored only over HTTPS (Render terminates TLS). 180 days,
+    // conservative - no includeSubDomains / preload.
+    res.setHeader('Strict-Transport-Security', 'max-age=15552000');
+    next();
+});
+
 app.use(compression());     // gzip
 app.use(minify());          // минимизация css и js
 // app.use(compression({
@@ -102,6 +115,9 @@ app.get('/resume.pdf', function (request, response) {
 });
 
 app.get('/', function (request, response) {
+    // The rendered HTML (unlike static assets) had no Cache-Control; cache it
+    // for an hour, matching setCustomCacheControl's intent for text/html.
+    response.set('Cache-Control', 'public, max-age=3600');
     response.render("index", {
         author: data.author,
         skills: data.skills,

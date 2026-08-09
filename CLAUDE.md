@@ -101,9 +101,10 @@ Smoke test: `GET /` → 200, `GET /resume.pdf` → 200 (application/pdf),
 Dynamic `/resume.pdf`; content externalized to `data/` with dynamic
 `age`/`experienceYears`; contact anti-scraping (+ moved data out of
 `public/`); `/llms.txt`, canonical, JSON-LD, robots/sitemap fixes;
-accessibility pass; security (`npm audit fix`, untracked `node_modules`),
-Heroku cleanup; `index.js` refactor; page-load perf (removed `ga.js` /
-jwplayer / `roboto-bak`, lazy Yandex Maps, JPEGs optimized ~30%).
+accessibility pass; security (`npm audit fix`, untracked `node_modules`,
+baseline security headers + HTML `Cache-Control`), Heroku cleanup;
+`index.js` refactor; page-load perf (removed `ga.js` / jwplayer /
+`roboto-bak`, lazy Yandex Maps, JPEGs optimized ~30%).
 
 ## Open follow-ups (not done)
 
