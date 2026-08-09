@@ -1,5 +1,5 @@
 {
-  "name": "node-js-getting-started",
+  "name": "alex-d-resume",
   "version": "29.01.2023",
   "description": "My Node.js app site",
   "main": "index.js",
@@ -20,12 +20,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/dmitriev-alexey/alex-d"
   },
   "keywords": [
     "node",
-    "heroku",
-    "express"
+    "express",
+    "resume"
   ],
   "license": "MIT"
 }
