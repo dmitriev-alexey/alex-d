@@ -14,7 +14,7 @@ var app = express();
 
 var fs = require('fs');
 
-var authorFile = fs.readFileSync("public/json/author.json.file");
+var authorFile = fs.readFileSync("data/author.json.file");
 var authorJson = JSON.parse(authorFile);
 authorJson.age = getYearDiffWithMonth(new Date(authorJson.age), new Date())
 authorJson.experienceYears = getYearDiffWithMonth(new Date(authorJson.experienceStartDate), new Date())
@@ -62,19 +62,19 @@ authorJson.emailMasked = maskEmail(authorJson.email);
 authorJson.phoneObfuscated = obfuscateContactValue(authorJson.phone);
 authorJson.emailObfuscated = obfuscateContactValue(authorJson.email);
 
-var skillsFile = fs.readFileSync("public/json/skills.json.file");
+var skillsFile = fs.readFileSync("data/skills.json.file");
 var skillsJson = JSON.parse(skillsFile);
 
-var workFile = fs.readFileSync("public/json/works.json.file");
+var workFile = fs.readFileSync("data/works.json.file");
 var workJson = JSON.parse(workFile);
 
-var educationsFile = fs.readFileSync("public/json/educations.json.file");
+var educationsFile = fs.readFileSync("data/educations.json.file");
 var educationsJson = JSON.parse(educationsFile);
 
-var categoryFile = fs.readFileSync("public/json/projects_category.json.file");
+var categoryFile = fs.readFileSync("data/projects_category.json.file");
 var categoryJson = JSON.parse(categoryFile);
 
-var manifestFile = fs.readFileSync("public/json/manifest.json.file");
+var manifestFile = fs.readFileSync("data/manifest.json.file");
 var manifestJson = JSON.parse(manifestFile);
 
 // workJson.forEach(function (item) {       https://tinypng.com/
