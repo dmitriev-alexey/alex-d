@@ -9,18 +9,19 @@ the process memory at boot.
 
 ## Startup flow
 
-1. `index.js` requires `lib/resumePdf` and calls
+1. `index.js` requires `lib/resumePdf` + `lib/llmsTxt` and calls
    `require('./lib/data').load()` → returns the full content object.
 2. `lib/data.js`:
    - reads each `data/*.json.file` (paths resolved via
      `path.join(__dirname, '..', 'data')`, not the process cwd),
    - enriches the `author` object (see data-model.md → derived fields):
-     `age`, `experienceYears`, resolved `myStory`, and the masked/
-     obfuscated contact fields (via `lib/contacts.js`),
+     `age`, `experienceYears`, resolved `myStory`, the masked/obfuscated
+     contact fields (via `lib/contacts.js`), and `structuredData` (JSON-LD),
    - returns `{ author, skills, works, educations, categories, manifest }`.
-3. `index.js` wires middleware (`compression`, `express-minify`,
-   `serve-static` on `public/` with custom cache headers,
-   `express-robots-txt`) and registers routes.
+3. `index.js` builds the `/llms.txt` body once (`llmsTxt.build(data)`),
+   wires middleware (`compression`, `express-minify`, `serve-static` on
+   `public/` with custom cache headers, `express-robots-txt`) and registers
+   routes.
 4. Listens on `process.env.PORT || 6000`.
 
 All of this happens once. Requests never re-read the filesystem for
@@ -36,8 +37,13 @@ content (the only per-request file-ish work is building the PDF buffer).
   headers, and sends the buffer. Regenerated on every request (see
   features.md).
 - `GET /manifest*` → sends `data.manifest` as `application/json`.
+- `GET /llms.txt` → sends the prebuilt `llmsTxtBody` as `text/plain`.
 - `GET /sitemap*` → sends `sitemap.xml`.
 - Fallthrough middleware → logs the URL and renders `error404`.
+
+The rendered page also lazy-loads the Yandex Maps SDK: an inline
+IntersectionObserver injects the maps script + `my_poi.js` only when the
+Contact `#map` nears the viewport, keeping it off the initial load.
 
 ## Why the modules are split this way
 
@@ -50,7 +56,10 @@ is still loaded once and served from memory.
 
 ## Performance note
 
-Server-side rendering is cheap here; the perceived load time is dominated
-by the **front-end theme assets** (~5.6 MB under `public/assets/libs`) and
-duplicate analytics, not by the Node layer. Any real speed work belongs on
-the client/asset side, not in these modules. See CLAUDE.md → follow-ups.
+Server-side rendering is cheap here; load time is dominated by front-end
+assets, not the Node layer. A perf pass already removed dead analytics
+(`ga.js`) and jwplayer, lazy-loaded Yandex Maps, and optimized the served
+JPEGs (~30%). The **biggest remaining lever is the theme CSS**
+(`materialize.min.css` 172 KB + `animate.min.css` 53 KB via PurgeCSS) —
+currently blocked by the "don't edit CSS" constraint. See features.md §7
+and CLAUDE.md → follow-ups.

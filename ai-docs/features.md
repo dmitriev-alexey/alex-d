@@ -155,7 +155,33 @@ images).
   scrolling to Contact — and the initial-load `ymaps is not defined` error
   is gone.
 
-Known remaining levers (not done): image optimization (re-compress the
-served `.jpg` in place — no CSS/reference changes — keeping `_png`
-masters), CSS purge for materialize/animate (deferred: CSS is off-limits
-for now), font subsetting.
+Served JPEGs were then optimized in place (mozjpeg q80, oversized images
+capped at 1600px on the long side), ~30% smaller, with no path/reference
+changes and the `_png` masters kept.
+
+Known remaining lever (not done): CSS purge for materialize/animate
+(deferred — CSS is off-limits for now) and font subsetting.
+
+## 8. Security & caching headers
+
+From an external site audit (kept the useful findings, dropped its
+misdetections — it wrongly guessed Magento/Heroku/Google Maps):
+
+- **Baseline security headers** on every response, via a small middleware
+  in `index.js` set before all others: `X-Content-Type-Options: nosniff`,
+  `X-Frame-Options: SAMEORIGIN`, `Referrer-Policy:
+  strict-origin-when-cross-origin`, and `Strict-Transport-Security:
+  max-age=15552000` (180 days, no includeSubDomains/preload; honored only
+  over HTTPS, which Render provides). **No CSP** — the page uses inline
+  scripts, so a real CSP needs separate, careful work.
+- **Cache-Control on the rendered HTML**: `GET /` had none (the
+  `setCustomCacheControl` hook only covers static files, not `res.render`).
+  Added `public, max-age=3600`. `/resume.pdf` keeps its `no-store` (the
+  middleware only sets security headers, not Cache-Control).
+- **Meta description** lengthened from ~89 to ~157 chars (built from
+  `author` data) for a fuller search snippet. Title left as-is.
+
+Skipped from the audit: WebP/AVIF conversion (would need reference/CSS
+changes), sitemap priority tags (Google ignores them), and the
+"render-blocking head script" flag (not real — head has only async gtag +
+a tiny inline config; all heavy JS is at the end of `<body>`).

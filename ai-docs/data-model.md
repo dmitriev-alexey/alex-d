@@ -38,6 +38,7 @@ handed to the template and the PDF — never hardcode these):
 | `emailMasked` | e.g. `d**************@gmail.com` |
 | `phoneObfuscated` | reversed-then-base64 phone (decoded client-side on click) |
 | `emailObfuscated` | reversed-then-base64 email |
+| `structuredData` | schema.org `Person` JSON-LD string (name, jobTitle, url, image, `sameAs` socials, city/country) — **no phone/email** — emitted in the page `<head>` |
 
 ## skills.json.file (array)
 
