@@ -11,32 +11,17 @@ var minify = require('express-minify');
 var swaggerUi = require('swagger-ui-express');
 var openapiSpec = require('./openapi');
 
+var resumePdf = require('./lib/resumePdf');
+var llmsTxt = require('./lib/llmsTxt');
+
+// All site content is loaded from data/ and enriched once at startup;
+// see lib/data.js (data-loading) and lib/contacts.js (contact masking).
+var data = require('./lib/data').load();
+
+// Built once from the data - it has no per-request or time-sensitive parts.
+var llmsTxtBody = llmsTxt.build(data);
+
 var app = express();
-
-var fs = require('fs');
-
-var authorFile = fs.readFileSync("public/json/author.json.file");
-var authorJson = JSON.parse(authorFile);
-authorJson.age = getYearDiffWithMonth(new Date(authorJson.age), new Date())
-
-var skillsFile = fs.readFileSync("public/json/skills.json.file");
-var skillsJson = JSON.parse(skillsFile);
-
-var workFile = fs.readFileSync("public/json/works.json.file");
-var workJson = JSON.parse(workFile);
-
-var educationsFile = fs.readFileSync("public/json/educations.json.file");
-var educationsJson = JSON.parse(educationsFile);
-
-var categoryFile = fs.readFileSync("public/json/projects_category.json.file");
-var categoryJson = JSON.parse(categoryFile);
-
-var manifestFile = fs.readFileSync("public/json/manifest.json.file");
-var manifestJson = JSON.parse(manifestFile);
-
-// workJson.forEach(function (item) {       https://tinypng.com/
-//     console.log(item.projects.length);
-// });
 
 // process.env.NODE_ENV = 'dev';
 process.env.NODE_ENV = 'production';
@@ -48,8 +33,21 @@ app.set('view engine', 'ejs');
 
 app.set('port', (process.env.PORT || 6000));
 
-app.set('trust proxy', true);   // корректный req.protocol за прокси Render/Heroku (для абсолютных URL в /api)
+app.set('trust proxy', true);   // корректный req.protocol за прокси Render (для абсолютных URL в /api)
 
+
+// Baseline security headers on every response (set before anything else so
+// static assets, the rendered page and the PDF all get them). No CSP here -
+// the page relies on inline scripts, so a real CSP needs separate care.
+app.use(function (req, res, next) {
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+    res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+    res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+    // HSTS: honored only over HTTPS (Render terminates TLS). 180 days,
+    // conservative - no includeSubDomains / preload.
+    res.setHeader('Strict-Transport-Security', 'max-age=15552000');
+    next();
+});
 
 app.use(compression());     // gzip
 app.use(minify());          // минимизация css и js
@@ -80,16 +78,57 @@ app.get('/sitemap*/', function (req, res) {
 
 app.get('/manifest*/', function (req, res) {
     res.contentType("application/json");
-    res.send(manifestJson);
+    res.send(data.manifest);
+});
+
+app.get('/llms.txt', function (req, res) {
+    res.type('text/plain; charset=utf-8');
+    res.send(llmsTxtBody);
+});
+
+app.get('/resume.pdf', function (request, response) {
+    // Generated fresh on every request - no caching. The same generatedAt
+    // moment is used both inside the document (footer/metadata, see
+    // lib/resumePdf.js) and in the downloaded file name, so they agree.
+    var generatedAt = new Date();
+
+    resumePdf.generateResumePdfBuffer({
+        author: data.author,
+        skills: data.skills,
+        works: data.works,
+        educations: data.educations,
+        generatedAt: generatedAt
+    }).then(function (buffer) {
+        var filename = data.author.name.replace(/\s+/g, '') +
+            '_Resume_' + resumePdf.formatFilenameTimestamp(generatedAt) + '.pdf';
+
+        response.set({
+            'Content-Type': 'application/pdf',
+            'Content-Disposition': 'inline; filename="' + filename + '"',
+            // Every request regenerates the PDF with a fresh timestamp - make
+            // sure the browser never serves a stale copy from its own cache
+            // instead of hitting this route again.
+            'Cache-Control': 'no-store, no-cache, must-revalidate, private',
+            'Pragma': 'no-cache',
+            'Expires': '0'
+        });
+        response.send(buffer);
+    }).catch(function (err) {
+        console.log("Failed to generate resume.pdf: " + err.message);
+        response.status(500).send('Resume PDF is temporarily unavailable.');
+    });
 });
 
 app.get('/', function (request, response) {
+    // The rendered HTML (unlike static assets) had no Cache-Control; cache it
+    // for an hour, matching setCustomCacheControl's intent for text/html.
+    response.set('Cache-Control', 'public, max-age=3600');
     response.render("index", {
-        author: authorJson,
-        skills: skillsJson,
-        works: workJson,
-        educations: educationsJson,
-        categories: categoryJson
+        author: data.author,
+        skills: data.skills,
+        works: data.works,
+        educations: data.educations,
+        categories: data.categories
     });
 });
 
@@ -115,25 +154,38 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openapiSpec, {
 }));
 
 app.get('/api/author', function (req, res) {
-    var a = JSON.parse(JSON.stringify(authorJson));     // копия, чтобы не ломать относительные пути в EJS
-    a.avatar = absUrl(req, a.avatar);                   // age уже посчитан числом при старте
-    a.pdf = absUrl(req, a.pdf);
-    a.pdf_cv = absUrl(req, a.pdf_cv);
-    res.json(a);
+    var a = data.author;
+    // Отдаём только публичные поля. Сырые phone/email НЕ раскрываем - тот же
+    // анти-скрейпинг, что и на странице (см. lib/contacts.js); наружу идут
+    // только маскированные версии.
+    res.json({
+        avatar: absUrl(req, a.avatar),
+        name: a.name,
+        age: a.age,
+        experienceYears: a.experienceYears,
+        address: a.address,
+        site: a.site,
+        pdf: absUrl(req, a.pdf),
+        pdf_cv: absUrl(req, a.pdf_cv),
+        phoneMasked: a.phoneMasked,
+        emailMasked: a.emailMasked,
+        myStory: a.myStory,
+        social: a.social
+    });
 });
 
 app.get('/api/skills', function (req, res) {
-    res.json(skillsJson);
+    res.json(data.skills);
 });
 
 app.get('/api/educations', function (req, res) {
-    var list = JSON.parse(JSON.stringify(educationsJson));
+    var list = JSON.parse(JSON.stringify(data.educations));
     list.forEach(function (e) { e.logo = absUrl(req, e.logo); });
     res.json(list);
 });
 
 app.get('/api/categories', function (req, res) {
-    res.json(categoryJson);
+    res.json(data.categories);
 });
 
 app.get('/api/works', function (req, res) {
@@ -195,9 +247,9 @@ function absUrl(req, p) {
     return base + String(p).replace(/^\/+/, '');
 }
 
-// Копия works с абсолютными URL у логотипов и картинок проектов.
+// Копия data.works с абсолютными URL у логотипов и картинок проектов.
 function worksWithAbsUrls(req) {
-    var works = JSON.parse(JSON.stringify(workJson));
+    var works = JSON.parse(JSON.stringify(data.works));
     works.forEach(function (w) {
         w.logo = absUrl(req, w.logo);
         (w.projects || []).forEach(function (p) {
@@ -207,11 +259,3 @@ function worksWithAbsUrls(req) {
     });
     return works;
 }
-
-function getYearDiffWithMonth(startDate, endDate) {
-    const ms = endDate.getTime() - startDate.getTime();
-  
-    const date = new Date(ms);
-  
-    return Math.abs(date.getUTCFullYear() - 1970);
-  }

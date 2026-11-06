@@ -1,0 +1,46 @@
+/*
+ * Accessibility helpers. Nothing here changes the site's normal
+ * appearance: the skip link sits off-screen until it receives keyboard
+ * focus, and the main-content focus outline is suppressed so the skip
+ * target doesn't draw a box around the whole page.
+ */
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100000;
+    padding: 8px 16px;
+    background: #00bcd4;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0 0 3px 0;
+}
+
+.skip-link:focus {
+    left: 8px;
+    top: 8px;
+}
+
+/* #app is a skip-link target (tabindex=-1); don't outline the whole main. */
+#app:focus {
+    outline: none;
+}
+
+/*
+ * Contrast fixes (WCAG AA) for links Lighthouse flagged as too light.
+ * Overrides live here, in our own CSS - the theme files are untouched.
+ * Scoped to the light-background contexts only; the Contact section's
+ * links are white on a dark panel and already pass, so they're left alone.
+ */
+#about .person-info .contact-protect {
+    color: #01639c; /* was #039be5 -> 2.95:1 on #fafafa; now ~6:1 */
+}
+
+#testimonial .card-content a {
+    color: #6f6f6f; /* was #777 -> 4.48:1 on #fff; now ~4.7:1 */
+}
+
+#footer .copyright p {
+    color: #6f6f6f; /* was #c4c4c4 -> 1.74:1 on #fff; now ~5:1 */
+}

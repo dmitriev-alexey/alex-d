@@ -1,4 +1,4 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
+
 Sitemap: https://alex-d.onrender.com/sitemap.xml
-Host : alex-d.cyclic.app

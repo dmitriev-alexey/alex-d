@@ -25,11 +25,17 @@
     <!-- Open Graph -->
 
     <title><%-author.name%> - Mobile and Web Application Developer (Personal Page)</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#37474F">
     <meta name="author" content="<%-author.name%>">
-    <meta name="description" content="Author: <%-author.name%> - Mobile and Web Application Developer (Android, iOS, javaScript)">
+    <meta name="description" content="<%-author.name%> - Mobile and Web Application Developer from <%-author.address%>. <%-author.experienceYears%>+ years building Android, iOS and web apps in Java, Kotlin, JavaScript, Node.js.">
     <meta name="keywords" content="Android , Web, IOS, JavaScript, Developer, Application">
+
+    <!-- Canonical (consolidates www/non-www and any duplicate URLs) -->
+    <link rel="canonical" href="<%-author.site%>">
+
+    <!-- Structured data: schema.org Person (JSON-LD, no contacts) -->
+    <script type="application/ld+json"><%- author.structuredData %></script>
 
     <!-- Google robot -->
     <meta name="google-site-verification" content="GHpDGKceAzS6h0a2T9SDPewwxPl3xfIeCi82jLwlNW8"/>
@@ -59,28 +65,13 @@
 
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/contact-protect.css">
+    <link rel="stylesheet" href="assets/css/a11y.css">
 
     <!--[if lt IE 9]>
     <script src="assets/js/html5shiv.js"></script>
     <![endif]-->
 
-
-    <script type="text/javascript">
-
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-37383587-1']);
-        _gaq.push(['_trackPageview']);
-
-        (function () {
-            var ga = document.createElement('script');
-            ga.type = 'text/javascript';
-            ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(ga, s);
-        })();
-
-    </script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SPQZ66ZCBZ"></script>
@@ -96,8 +87,11 @@
 
 <body>
 
+<!-- Skip link: visually hidden until keyboard-focused (a11y / agent nav) -->
+<a href="#app" class="skip-link">Skip to main content</a>
+
 <!-- Preloader -->
-<div id="preloader">
+<div id="preloader" aria-hidden="true">
     <div class="loader">
         <svg class="circle-loader" height="50" width="50">
             <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="6" stroke-miterlimit="10"/>
@@ -106,7 +100,7 @@
 </div><!--preloader end-->
 
 <!-- Main Container -->
-<main id="app" class="main-section">
+<main id="app" class="main-section" tabindex="-1">
     <!-- header navigation start -->
     <header id="navigation" class="root-sec white nav">
         <div class="container">
@@ -118,14 +112,14 @@
                                 <a href="#home" class="left brand-logo menu-smooth-scroll" data-section="#home" aria-label="home">
                                     <img src="images/logo_new.png" loading="lazy" alt="MafiBand">
                                 </a>
-                                <a href="#" data-activates="mobile-demo" class="button-collapse" aria-label="home link">
-                                    <i class="mdi-navigation-menu"></i>
+                                <a href="#" data-activates="mobile-demo" class="button-collapse" role="button" aria-haspopup="true" aria-label="Open menu">
+                                    <i class="mdi-navigation-menu" aria-hidden="true"></i>
                                 </a>
 
                                 <ul class="right static-menu">
                                     <li>
-                                        <a class="dropdown-button blog-submenu-init" href="#!" data-activates="dropdown1" aria-label="dropdown">
-                                            <i class="mdi-navigation-more-vert right"></i>
+                                        <a class="dropdown-button blog-submenu-init" href="#!" data-activates="dropdown1" role="button" aria-haspopup="true" aria-label="More links">
+                                            <i class="mdi-navigation-more-vert right" aria-hidden="true"></i>
                                         </a>
                                     </li>
                                 </ul>
@@ -138,7 +132,7 @@
                                                 <img src="images/i_square.jpg" loading="lazy"  alt="It's me">
                                             </div>
                                             <h3><%-author.name%></h3>
-                                            <h5>Mobile and Web Application Developer</h5>
+                                            <h5 aria-level="4">Mobile and Web Application Developer</h5>
                                         </div>
                                     </li><!-- mini profile end-->
 
@@ -184,6 +178,8 @@
                                     </li>
                                     <li><a href="<%-author.pdf%>" target="_blank" aria-label="PDF Resume">PDF Resume</a>
                                     </li>
+                                    <li><a href="/resume.pdf" target="_blank" aria-label="Generate PDF">Generate PDF</a>
+                                    </li>
                                 </ul>
 
                             </div>
@@ -206,8 +202,8 @@
                             <div class="center-align home-content">
                                 <h1 class="home-title">Hello! I'm <%-author.name%> <!-- <span><%-author.name%></span>--></h1>
                                 <h2 class="home-subtitle">Mobile and Web Application developer from Minsk, Belarus</h2>
-                                <a href="#contact"class="hire-me-btn btn waves-effect waves-light btn-large cyan white-text regular-text" aria-label="Contact">
-                                   Hire Me <i class="mdi-content-send left"></i>
+                                <a href="#contact"class="hire-me-btn btn waves-effect waves-light btn-large cyan white-text regular-text" aria-label="Hire Me">
+                                   Hire Me <i class="mdi-content-send left" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
@@ -242,32 +238,14 @@
                         <div class="person-about">
                             <h3 class="about-subtitle">My Story</h3>
                             <p>
-                                I'm a Mobile and Web Application developer. My experience is 14 years of  creating
-                                web-based applications and applications for mobile devices.
-
-                                <br/>
-                                <br/>Deep knowledge in the most of common technology:
-
-                                <br/>• Android (1.6 - 16 SDK, NDK 11r - JNI) Android Tv, Android Wear
-                                <br/>• iOS (8-9)
-                                <br/>• Web Service (J2EE and Node.Js)
-                                <br/>&nbsp;&nbsp;&nbsp;J2EE - Struts, Facelets , Spring, Hibernate.
-                                <br/>&nbsp;&nbsp;&nbsp;Node.Js - Express and others frameworks.
-                                <br/>&nbsp;&nbsp;&nbsp;JavaScript - jQuery and others frameworks.
-                                <br/>• Experience in work with cloud platforms: Google App Engine, Parse, Heroku,
-                                DigitalOcean.
-                                <br/>• Experience in work with databases: SQLite, MS SQL, Oracle, MySQL, NeDB,
-                                GreenDao, ObjectBox, Realm, Room.
-                                <br/>• Experience in work with analytics: Google Analytics, Fabric, other.
-                                <br/>• Experience in work with Social API: FB, Instagram, Vk, Twitter and other.
-                                <br/>• Experience in work with game-frameworks AndEngine and LibGDX.
-
-                                <br/><br/>Experience in design and development large-scale distributed systems, as well
-                                as experience in management a small team (up to 5 people).
-                                
-                                
-                                <br/>• Manager tools: Atlassian Jira, Trello, Redmine.
-                                <br/>• Methodologies: Agile, SCRUM.
+                                <% author.myStory.forEach(function(paragraph, idx) { %>
+                                <%- paragraph.split('\n').map(function (line) {
+                                        return line.replace(/^ +/, function (spaces) {
+                                            return new Array(spaces.length + 1).join('&nbsp;');
+                                        });
+                                    }).join('<br/>') %>
+                                <% if (idx < author.myStory.length - 1) { %><br/><br/><% } %>
+                                <% }); %>
                             </p>
 
 
@@ -289,19 +267,19 @@
                     <div class="col-sm-6 col-md-4" itemscope itemtype="https://schema.org/Person">
                         <div class="person-info">
                             <h3 class="about-subtitle">Personal Information</h3>
-                            <h5>
+                            <h5 aria-level="4">
                                 <span>Name :</span>     <span itemprop="name" ><%-author.name%></span>
                             </h5>
-                            <h5>
+                            <h5 aria-level="4">
                                 <span>Age :</span>      <span> <%-author.age%> Years</span>
                             </h5>
-                            <h5>
-                                <span>Phone :</span>    <span itemprop="telephone" > <%-author.phone%></span>
+                            <h5 aria-level="4">
+                                <span>Phone :</span>    <a href="#" class="contact-protect" data-contact="phone" data-value="<%-author.phoneObfuscated%>" role="button" aria-label="Show phone number"><%-author.phoneMasked%></a>
                             </h5>
-                            <h5>
-                                <span>Email :</span>    <span itemprop="email" > <%-author.email%></span>
+                            <h5 aria-level="4">
+                                <span>Email :</span>    <a href="#" class="contact-protect" data-contact="email" data-value="<%-author.emailObfuscated%>" role="button" aria-label="Show email address"><%-author.emailMasked%></a>
                             </h5>
-                            <h5>
+                            <h5 aria-level="4">
                                 <span>Address :</span>  <span itemprop="address" ><%-author.address%></span>
                             </h5>
                         </div>
@@ -568,13 +546,13 @@
                                 <% categories.forEach(function(category){ %>
                                 <% if (category.active) { %>
                                 <li class="active">
-                                    <a href="#" data-target="<%-category.data_target%>" aria-label="<%-category.name%>">
+                                    <a href="#" data-target="<%-category.data_target%>" role="button" aria-label="<%-category.name%>">
                                         <%-category.name%>
                                     </a>
                                 </li>
                                 <% } else { %>
                                 <li>
-                                    <a href="#" data-target="<%-category.data_target%>" aria-label="<%-category.name%>">
+                                    <a href="#" data-target="<%-category.data_target%>" role="button" aria-label="<%-category.name%>">
                                         <%-category.name%>
                                     </a>
                                 </li>
@@ -598,7 +576,7 @@
             <div class="modal-footer">
                 <a href="#" target="_blank" class="waves-effect btn-flat cyan-text modal-action" aria-label="Live Demo">Live Demo</a>
                 <a href="#" target="_blank" class="waves-effect btn-flat cyan-text modal-action-second" aria-label="Live Demo Second">Live Demo</a>
-                <a href="#" class="waves-effect btn-flat cyan-text modal-action modal-close" aria-label="cancel">cancel</a>
+                <a href="#" class="waves-effect btn-flat cyan-text modal-action modal-close" role="button" aria-label="Cancel">cancel</a>
             </div>
         </div>
 
@@ -686,7 +664,7 @@
                                                     <div class="card-content">
                                                         <span class="card-title activator cyan-text">Slava Rosin -</span>
                                                         <a href="https://www.linkedin.com/profile/view?id=6923450&authType=name&authToken=JIVJ"
-                                                        aria-label=">Slava Rosin">Product Architect</a>
+                                                        aria-label="Product Architect — Slava Rosin on LinkedIn">Product Architect</a>
                                                     </div>
                                                 </div>
                                             </div> <!-- ./single testimonial box -->
@@ -705,7 +683,7 @@
                                                     <div class="card-content">
                                                         <span class="card-title activator cyan-text">Maksim Vjalykh -</span>
                                                         <a href="https://www.linkedin.com/profile/view?id=294678771&authType=name&authToken=GRZT"
-                                                        aria-label=">Maksim Vjalykh">Lead of iOS team</a>
+                                                        aria-label="Lead of iOS team — Maksim Vjalykh on LinkedIn">Lead of iOS team</a>
                                                     </div>
                                                 </div>
                                             </div> <!-- ./single testimonial box -->
@@ -792,9 +770,9 @@
                                     <h2 class="title">Contact</h2>
                                     <p class="regular-text"><%-author.address%></p>
                                     <ul class="clearfix contact-info">
-                                        <li><a href="" aria-label="Phone"><%-author.phone%></a>
+                                        <li><a href="#" class="contact-protect" data-contact="phone" data-value="<%-author.phoneObfuscated%>" role="button" aria-label="Show phone number"><%-author.phoneMasked%></a>
                                         </li>
-                                        <li><a href="" aria-label="Email"><%-author.email%></a>
+                                        <li><a href="#" class="contact-protect" data-contact="email" data-value="<%-author.emailObfuscated%>" role="button" aria-label="Show email address"><%-author.emailMasked%></a>
                                         </li>
                                         <li><a href="<%-author.site%>" aria-label="Site"><%-author.site%></a>
                                         </li>
@@ -897,16 +875,49 @@
 <!--<script src="assets/js/gmaps.js"></script>-->
 <script src="assets/libs/owl-carousel/owl.carousel.min.js"></script>
 <script src="assets/libs/materialize/js/materialize.min.js"></script>
-<script src="assets/libs/jwplayer/jwplayer.js"></script>
 <script src="assets/libs/sweetalert/sweet-alert.min.js"></script>
 <script src="assets/js/lazyload.js"></script>
 <script src="assets/js/common.js"></script>
 <script src="assets/js/main.js"></script>
 
 
-<script src="https://api-maps.yandex.ru/2.1/?lang=en&amp;apikey=532f6892-44da-4381-93e0-7d554e8994b9"
-        type="text/javascript"></script>
-<script src="assets/js/my_poi.js" type="text/javascript"></script>
+<!--
+  Yandex Maps is a heavy external SDK used only for the Contact-section map.
+  Load it (and my_poi.js, which needs `ymaps` to already exist) lazily, when
+  the map is about to enter the viewport, instead of on initial page load.
+-->
+<script type="text/javascript">
+    (function () {
+        var mapEl = document.getElementById('map');
+        if (!mapEl) { return; }
+
+        var loaded = false;
+        function loadMap() {
+            if (loaded) { return; }
+            loaded = true;
+            var api = document.createElement('script');
+            api.src = 'https://api-maps.yandex.ru/2.1/?lang=en&apikey=532f6892-44da-4381-93e0-7d554e8994b9';
+            api.onload = function () {
+                var poi = document.createElement('script');
+                poi.src = 'assets/js/my_poi.js';
+                document.body.appendChild(poi);
+            };
+            document.body.appendChild(api);
+        }
+
+        if ('IntersectionObserver' in window) {
+            var io = new IntersectionObserver(function (entries) {
+                for (var i = 0; i < entries.length; i++) {
+                    if (entries[i].isIntersecting) { loadMap(); io.disconnect(); break; }
+                }
+            }, { rootMargin: '300px' });
+            io.observe(mapEl);
+        } else {
+            loadMap(); // no IO support: just load it
+        }
+    })();
+</script>
+<script src="assets/js/contact-protect.js" type="text/javascript"></script>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 {
-  "name": "node-js-getting-started",
+  "name": "alex-d-resume",
   "version": "29.01.2023",
   "description": "My Node.js app site",
   "main": "index.js",
@@ -12,20 +12,21 @@
     "express": "^4.16.4",
     "express-minify": "^1.0.0",
     "express-robots-txt": "^0.4.1",
+    "pdfmake": "^0.2.20",
     "serve-static": "^1.14.1",
     "swagger-ui-express": "^5.0.1"
   },
   "engines": {
-    "node": "12.13.x"
+    "node": "18.x"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/dmitriev-alexey/alex-d"
   },
   "keywords": [
     "node",
-    "heroku",
-    "express"
+    "express",
+    "resume"
   ],
   "license": "MIT"
 }
