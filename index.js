@@ -149,7 +149,13 @@ app.use('/api', function (req, res, next) {
 app.get('/api/openapi.json', function (req, res) {
     res.json(openapiSpec);
 });
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openapiSpec, {
+// Ассеты Swagger UI уже минифицированы; повторная обработка через
+// express-minify (app.use(minify)) на слабой CPU Render вешает отдачу
+// swagger-ui-bundle.js. Отключаем minify для всех /api-docs ответов.
+app.use('/api-docs', function (req, res, next) {
+    res.minifyOptions = { enabled: false };
+    next();
+}, swaggerUi.serve, swaggerUi.setup(openapiSpec, {
     customSiteTitle: 'Portfolio API — Swagger UI'
 }));
 
