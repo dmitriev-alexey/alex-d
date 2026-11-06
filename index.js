@@ -8,6 +8,8 @@ var serveStatic = require('serve-static');
 var compression = require('compression');
 var minify = require('express-minify');
 
+var crypto = require('crypto');
+
 var swaggerUi = require('swagger-ui-express');
 var openapiSpec = require('./openapi');
 
@@ -55,7 +57,7 @@ app.use(compression());     // gzip
 // ДО express-minify, чтобы он не переминифицировал их на каждый запрос - на
 // слабой CPU Render это вешало отдачу swagger-ui-bundle.js. gzip (выше) при
 // этом сохраняется.
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openapiSpec, {
+app.use('/api-docs', swaggerAuth, swaggerUi.serve, swaggerUi.setup(openapiSpec, {
     customSiteTitle: 'Portfolio API — Swagger UI'
 }));
 
@@ -156,7 +158,7 @@ app.use('/api', function (req, res, next) {
 
 // Сырая OpenAPI спека (для кодогенерации клиента). Swagger UI смонтирован
 // выше, до express-minify (см. комментарий там).
-app.get('/api/openapi.json', function (req, res) {
+app.get('/api/openapi.json', swaggerAuth, function (req, res) {
     res.json(openapiSpec);
 });
 
@@ -242,6 +244,40 @@ function setCustomCacheControl (res, path) {
         // Custom Cache-Control for HTML files
         res.setHeader('Cache-Control', 'public, max-age=3600'); // text/html кэшируем на один час
     }
+}
+
+// Basic Auth для документации API (/api-docs, /api/openapi.json). Включается
+// только если задан SWAGGER_PASSWORD (на Render - в разделе Environment);
+// если пароль не настроен, доки открыты - чтобы не залочиться локально.
+// Данные /api/* под эту защиту не попадают и остаются публичными.
+function swaggerAuth(req, res, next) {
+    var pass = process.env.SWAGGER_PASSWORD;
+    if (!pass) {
+        return next();
+    }
+    var user = process.env.SWAGGER_USER || 'admin';
+    var match = /^Basic (.+)$/.exec(req.headers.authorization || '');
+    if (match) {
+        var decoded = Buffer.from(match[1], 'base64').toString();
+        var sep = decoded.indexOf(':');
+        if (sep !== -1 &&
+            safeEqual(decoded.slice(0, sep), user) &&
+            safeEqual(decoded.slice(sep + 1), pass)) {
+            return next();
+        }
+    }
+    res.set('WWW-Authenticate', 'Basic realm="API docs", charset="UTF-8"');
+    return res.status(401).send('Authentication required.');
+}
+
+// Сравнение строк за постоянное время (защита от timing-атак).
+function safeEqual(a, b) {
+    var ab = Buffer.from(String(a));
+    var bb = Buffer.from(String(b));
+    if (ab.length !== bb.length) {
+        return false;
+    }
+    return crypto.timingSafeEqual(ab, bb);
 }
 
 // Делает относительный путь абсолютным URL (http(s)://host/...).
