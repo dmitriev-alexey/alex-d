@@ -50,6 +50,15 @@ app.use(function (req, res, next) {
 });
 
 app.use(compression());     // gzip
+
+// Swagger UI отдаёт уже минифицированные ассеты (~1.6 МБ bundle). Монтируем
+// ДО express-minify, чтобы он не переминифицировал их на каждый запрос - на
+// слабой CPU Render это вешало отдачу swagger-ui-bundle.js. gzip (выше) при
+// этом сохраняется.
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openapiSpec, {
+    customSiteTitle: 'Portfolio API — Swagger UI'
+}));
+
 app.use(minify());          // минимизация css и js
 // app.use(compression({
 //     // Сжимаем HTTP ответы, тело которых длиннее одного байта
@@ -145,19 +154,11 @@ app.use('/api', function (req, res, next) {
     next();
 });
 
-// Сырая OpenAPI спека (для кодогенерации клиента) и Swagger UI.
+// Сырая OpenAPI спека (для кодогенерации клиента). Swagger UI смонтирован
+// выше, до express-minify (см. комментарий там).
 app.get('/api/openapi.json', function (req, res) {
     res.json(openapiSpec);
 });
-// Ассеты Swagger UI уже минифицированы; повторная обработка через
-// express-minify (app.use(minify)) на слабой CPU Render вешает отдачу
-// swagger-ui-bundle.js. Отключаем minify для всех /api-docs ответов.
-app.use('/api-docs', function (req, res, next) {
-    res.minifyOptions = { enabled: false };
-    next();
-}, swaggerUi.serve, swaggerUi.setup(openapiSpec, {
-    customSiteTitle: 'Portfolio API — Swagger UI'
-}));
 
 app.get('/api/author', function (req, res) {
     var a = data.author;
