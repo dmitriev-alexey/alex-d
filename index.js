@@ -8,6 +8,9 @@ var serveStatic = require('serve-static');
 var compression = require('compression');
 var minify = require('express-minify');
 
+var swaggerUi = require('swagger-ui-express');
+var openapiSpec = require('./openapi');
+
 var app = express();
 
 var fs = require('fs');
@@ -44,6 +47,8 @@ app.set('views', __dirname + '/templates');
 app.set('view engine', 'ejs');
 
 app.set('port', (process.env.PORT || 6000));
+
+app.set('trust proxy', true);   // корректный req.protocol за прокси Render/Heroku (для абсолютных URL в /api)
 
 
 app.use(compression());     // gzip
@@ -88,6 +93,73 @@ app.get('/', function (request, response) {
     });
 });
 
+// ===== REST API (read-only JSON для мобильного/внешнего клиента) =====
+
+// CORS + no-cache для всех /api роутов
+app.use('/api', function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
+    res.header('Cache-Control', 'no-store');
+    if (req.method === 'OPTIONS') {
+        return res.sendStatus(204);
+    }
+    next();
+});
+
+// Сырая OpenAPI спека (для кодогенерации клиента) и Swagger UI.
+app.get('/api/openapi.json', function (req, res) {
+    res.json(openapiSpec);
+});
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openapiSpec, {
+    customSiteTitle: 'Portfolio API — Swagger UI'
+}));
+
+app.get('/api/author', function (req, res) {
+    var a = JSON.parse(JSON.stringify(authorJson));     // копия, чтобы не ломать относительные пути в EJS
+    a.avatar = absUrl(req, a.avatar);                   // age уже посчитан числом при старте
+    a.pdf = absUrl(req, a.pdf);
+    a.pdf_cv = absUrl(req, a.pdf_cv);
+    res.json(a);
+});
+
+app.get('/api/skills', function (req, res) {
+    res.json(skillsJson);
+});
+
+app.get('/api/educations', function (req, res) {
+    var list = JSON.parse(JSON.stringify(educationsJson));
+    list.forEach(function (e) { e.logo = absUrl(req, e.logo); });
+    res.json(list);
+});
+
+app.get('/api/categories', function (req, res) {
+    res.json(categoryJson);
+});
+
+app.get('/api/works', function (req, res) {
+    res.json(worksWithAbsUrls(req));
+});
+
+// Плоский список всех проектов — удобно для грида в мобильном клиенте.
+// Фильтр: /api/projects?category=category-20
+app.get('/api/projects', function (req, res) {
+    var category = req.query.category;
+    var projects = [];
+    worksWithAbsUrls(req).forEach(function (w) {
+        (w.projects || []).forEach(function (p) {
+            if (p.enable === false) {
+                return;
+            }
+            if (category && (p.category || []).indexOf(category) === -1) {
+                return;
+            }
+            p.company = w.name;             // откуда проект
+            projects.push(p);
+        });
+    });
+    res.json(projects);
+});
+
 app.use(function (request, response) {
     console.log("404 not found by originalUrl = " + request.originalUrl);
     response.status(404).render('error404');
@@ -111,6 +183,29 @@ function setCustomCacheControl (res, path) {
         // Custom Cache-Control for HTML files
         res.setHeader('Cache-Control', 'public, max-age=3600'); // text/html кэшируем на один час
     }
+}
+
+// Делает относительный путь абсолютным URL (http(s)://host/...).
+// Полные ссылки (http/https) и data: возвращаются как есть.
+function absUrl(req, p) {
+    if (!p || /^(https?:)?\/\//i.test(p) || /^data:/i.test(p)) {
+        return p;
+    }
+    var base = req.protocol + '://' + req.get('host') + '/';
+    return base + String(p).replace(/^\/+/, '');
+}
+
+// Копия works с абсолютными URL у логотипов и картинок проектов.
+function worksWithAbsUrls(req) {
+    var works = JSON.parse(JSON.stringify(workJson));
+    works.forEach(function (w) {
+        w.logo = absUrl(req, w.logo);
+        (w.projects || []).forEach(function (p) {
+            p.image_main = absUrl(req, p.image_main);
+            p.image_all = absUrl(req, p.image_all);
+        });
+    });
+    return works;
 }
 
 function getYearDiffWithMonth(startDate, endDate) {
